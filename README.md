@@ -4,8 +4,8 @@ About Xe Plugin
 
 Xe Plugin is a WordPress plugin framework which have built-in functionalities that are used in almost every plugin. So just focus on the main functionality that you want to built for WordPress.
 
-Getting Started With Xe Plugin
---------------------------------
+Getting Started
+---------------
 
 The first thing you want to do is copy the `xe-plugin` plugin directory and change the name to something else (like, say, `xurais`), and then you'll need to do a eight-step find and replace on the name in all the templates.
 
@@ -38,4 +38,4 @@ Good luck!
 Documentation
 -------------
 
-[http://docs.xecreators.pk/xe-plugin/](http://docs.xecreators.pk/xe-plugin/)
+[Click Here](http://docs.xecreators.pk/xe-plugin/) to read the documentation.
