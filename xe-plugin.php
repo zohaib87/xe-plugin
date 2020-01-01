@@ -36,6 +36,8 @@ class Xe_Plugin {
 
         require 'inc/class-plugin-options.php';
 
+        // Start your Plugin functionality from here
+
     }
 
     /**

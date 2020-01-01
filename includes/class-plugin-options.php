@@ -10,7 +10,7 @@ if (!class_exists('Xe_Plugin_Options')) :
 class Xe_Plugin_Options {
 
     public $plugin, $path, $url, 
-    $inc, $ext, $shortcodes, $css, $js, $img;
+    $inc, $ext, $srt, $css, $js, $img;
 
     function __construct() {
 
