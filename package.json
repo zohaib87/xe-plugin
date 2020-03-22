@@ -1,0 +1,17 @@
+{
+  "name": "Xe Plugin",
+  "version": "1.0.0",
+  "description": "Just a blank WordPress plugin.",
+  "main": "build.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Muhammad Zohaib - XeCreators",
+  "license": "GPL-2.0-or-later",
+  "devDependencies": {
+    "copy-dir": "^1.2.0",
+    "replace-in-file": "^5.0.2",
+    "rimraf": "^3.0.2",
+    "wp-pot": "^1.8.0"
+  }
+}

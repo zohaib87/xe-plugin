@@ -2,7 +2,7 @@
 /**
  * Xe Products Filter functions and definitions.
  *
- * @package Xe Products Filter
+ * @package Xe Plugin
  */
 
 if (!class_exists('Xe_Plugin_Options')) :

@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Xe Plugin
- * Description: Just another WordPress plugin.
+ * Description: Just a blank WordPress plugin.
  * Version:     1.0.0
  * Author:      Muhammad Zohaib - XeCreators
  * Author URI:  http://www.xecreators.pk
@@ -13,14 +13,14 @@
 if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 // check if class already exists
-if (!class_exists('Xe_Plugin')) :
+if (!class_exists('Xe_Plugin_Manager')) :
 
 /**
  * Theme's core plugin starts here. This class sets mode, adds required wp hooks and loads required object of structure.
  *
  * This class controls and access to all modules and classes.
  */
-class Xe_Plugin {
+class Xe_Plugin_Manager {
     
     function __construct() {
 
@@ -34,7 +34,7 @@ class Xe_Plugin {
 
     public function initialize() {
 
-        require 'inc/class-plugin-options.php';
+        require 'includes/class-plugin-options.php';
 
         // Start your Plugin functionality from here
 
@@ -60,6 +60,6 @@ class Xe_Plugin {
     }
 
 }
-new Xe_Plugin();
+new Xe_Plugin_Manager();
 
 endif;
