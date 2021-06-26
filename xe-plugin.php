@@ -1,10 +1,10 @@
 <?php
 /**
  * Plugin Name: Xe Plugin
- * Description: Just a blank WordPress plugin.
+ * Description: Just a starter WordPress plugin.
  * Version:     1.0.0
  * Author:      Muhammad Zohaib - XeCreators
- * Author URI:  http://www.xecreators.pk
+ * Author URI:  https://www.xecreators.pk
  * License:     GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: xe-plugin
@@ -12,54 +12,39 @@
 
 if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
-// check if class already exists
-if (!class_exists('Xe_Plugin_Manager')) :
+require 'helpers/functions.php';
 
 /**
- * Theme's core plugin starts here. This class sets mode, adds required wp hooks and loads required object of structure.
- *
- * This class controls and access to all modules and classes.
+ * Enqueue scripts and styles for admin and front end.
  */
-class Xe_Plugin_Manager {
-    
-    function __construct() {
+require _xe_plugin_directory() . '/controllers/setup.php';
 
-        register_activation_hook(__FILE__, array($this, 'plugin_activation'));
-        register_deactivation_hook(__FILE__, array($this, 'plugin_deactivation'));
-        add_action('plugins_loaded', array($this, 'load_textdomain'));
+/**
+ * Class that holds helper methods.
+ */
+require _xe_plugin_directory() . '/helpers/class-helpers.php';
 
-        $this->initialize();
-        
-    }
+/**
+ * Class to get and use plugin options.
+ */
+require _xe_plugin_directory() . '/controllers/class-plugin-options.php';
 
-    public function initialize() {
+/**
+ * Required plugins activation.
+ */
+require _xe_plugin_directory() . '/helpers/plugins-activator.php';
 
-        require 'includes/class-plugin-options.php';
+/**
+ * Enqueue scripts and styles for admin and front end.
+ */
+require _xe_plugin_directory() . '/controllers/scripts.php';
 
-        // Start your Plugin functionality from here
+/**
+ * Class for adding custom post types.
+ */
+require _xe_plugin_directory() . '/models/class-custom-post-types.php';
 
-    }
-
-    /**
-     * Plugin Activation 
-     */
-    public function plugin_activation() {
-    }
-
-    /**
-     * Plugin Deactivation 
-     */
-    public function plugin_deactivation() {
-    }
-
-    /**
-     * Translate plugin
-     */
-    public function load_textdomain() {
-        load_plugin_textdomain( 'xe-plugin', false, dirname( plugin_basename(__FILE__) ) . '/languages/' );
-    }
-
-}
-new Xe_Plugin_Manager();
-
-endif;
+/**
+ * Class for adding custom taxonomies.
+ */
+require _xe_plugin_directory() . '/models/class-custom-taxonomies.php';

@@ -3,3 +3,4 @@ node_modules/
 
 # Ignore the FTP file
 ftpsync.settings
+sftp-config.json

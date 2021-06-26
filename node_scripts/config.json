@@ -1,0 +1,18 @@
+{
+  "name": "Xe Plugin",
+  "proxy": "wpmu/",
+  "concat_css": [
+    "assets_dev/css/main.css"
+  ],
+  "min_css": [
+    "assets/css/main.css"
+  ],
+  "concat_js": [
+    "assets_dev/js/main.js"
+  ],
+  "min_js": [
+    "assets/js/main.js"
+  ],
+  "build": "E:/Projects/Xe Plugin",
+  "local_repo": "E:/Projects/Github/xe-plugin"
+}

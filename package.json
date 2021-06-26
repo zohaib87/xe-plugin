@@ -1,15 +1,24 @@
 {
-  "name": "Xe Plugin",
-  "version": "1.0.0",
-  "description": "Just a blank WordPress plugin.",
+  "name": "xe-plugin",
+  "version": "1.1.0",
+  "description": "Just a starter WordPress plugin.",
   "main": "build.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "init": "cd node_scripts && node init.js",
+    "build": "cd node_scripts && node build.js",
+    "copy": "cd node_scripts && node copy.js",
+    "serve": "gulp"
   },
-  "author": "Muhammad Zohaib - XeCreators",
   "license": "GPL-2.0-or-later",
   "devDependencies": {
+    "browser-sync": "^2.26.14",
     "copy-dir": "^1.2.0",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-uglify": "^3.0.2",
     "replace-in-file": "^5.0.2",
     "rimraf": "^3.0.2",
     "wp-pot": "^1.8.0"

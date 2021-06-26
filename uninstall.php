@@ -1,7 +1,7 @@
 <?php
 
 if (!defined('WP_UNINSTALL_PLUGIN')) {
-    die;
+  die;
 }
 
 $option_name = 'custom_option';
