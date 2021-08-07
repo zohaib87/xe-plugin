@@ -4,8 +4,6 @@ About Xe Plugin
 
 Xe Plugin is a starter WordPress plugin which have built-in functionalities that are used in almost every plugin. So just focus on the main functionality that you want to built for WordPress.
 
-[Click Here](http://docs.xecreators.pk/xe-plugin) for detailed documentation.
-
 Getting Started
 ---------------
 1. You must have latest version of [Nodejs](https://nodejs.org/en/) installed.
