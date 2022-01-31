@@ -12,17 +12,11 @@ Xe Plugin is a starter WordPress plugin which have built-in functionalities that
 ## Getting Started
 
 1. You must have latest version of [Nodejs](https://nodejs.org/en/) installed.
-2. Install `gulp` globally using `npm install gulp -g` from your command line.
-3. Change folder name to your plugin name. e.g: `xurais` or `xu-rais`.
-4. Navigate to `node_scripts` folder and open `config.json` with your favorite editor, Change `"name"` to your plugin name eg: `Xurais` or `Xu Rais` and change the `"proxy"` to your local WordPress site url.
+2. Change folder name to your plugin name. e.g: `xurais` or `xu-rais`.
+3. Navigate to `node_scripts` folder and open `config.json` with your favorite editor.
+4. Change `"name"` to your plugin name eg: `Xurais` or `Xu Rais` and change the `"proxy"` to your local WordPress site url.
 5. Open command line, navigate to project folder and run `npm install` to install dependencies.
-6. Now run `gulp init` command to automatically change text-domain, prefixes, DocBlocks etc to your plugin name.
-7. Run `gulp` command to watch your plugin files for changes and start making an awesome WordPress plugin. ;-)
-8. Once you have completed your plugin run `gulp build` command to generate a clean copy of your plugin. `.pot` file will also be generated inside languages folder. 
-
-## Useful Commands
-
-* `gulp css`: Concatenate and minify CSS files.
-* `gulp js`: Concatenate and minify JS files.
-* `gulp img`: Optimize images.
-* To automate all the above just use `gulp`. To stop automation use `CTRL+C` in windows and `CMD+C` on mac.
+6. Now run `npm run init` command to automatically change text-domain, prefixes, DocBlocks etc to your plugin name.
+7. Run `npm run serve` command to watch your plugin files for changes and auto reload browser. ;-)
+8. Once you have completed your plugin run `npm run build` command to generate a clean copy of your plugin. `.pot` file will also be generated inside languages folder. 
+9. To stop auto browser reload use `CTRL+C` in windows and `CMD+C` on mac.
