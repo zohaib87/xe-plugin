@@ -8,6 +8,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Just a starter WordPress plugin.
 
 == Changelog ==
+----- v1.1.4 ------------
+Removed: Freemius SDK.
+
 ----- v1.1.3 ------------
 Fixed: Minor bugs.
 Removed: Support for gulp, concat, minify and image minification.
