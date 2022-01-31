@@ -8,6 +8,17 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Just a starter WordPress plugin.
 
 == Changelog ==
+----- v1.1.3 ------------
+Fixed: Minor bugs.
+Removed: Support for gulp, concat, minify and image minification.
+
+----- v1.1.2 ------------
+New Added: Freemius SDK
+Fixed: Uninstall function now compatible with Freemius.
+
+----- v1.1.1 ------------
+Fixed: Minor Bugs.
+
 ----- v1.1.0 ------------
 New Added: Sample custom post types and taxonomies.
 Updated: Structure is now more like an MVC Framework.

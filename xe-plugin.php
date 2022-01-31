@@ -17,7 +17,7 @@ require 'helpers/functions.php';
 /**
  * Enqueue scripts and styles for admin and front end.
  */
-require _xe_plugin_directory() . '/controllers/setup.php';
+require _xe_plugin_directory() . '/includes/setup.php';
 
 /**
  * Class that holds helper methods.
@@ -27,24 +27,19 @@ require _xe_plugin_directory() . '/helpers/class-helpers.php';
 /**
  * Class to get and use plugin options.
  */
-require _xe_plugin_directory() . '/controllers/class-plugin-options.php';
-
-/**
- * Required plugins activation.
- */
-require _xe_plugin_directory() . '/helpers/plugins-activator.php';
+require _xe_plugin_directory() . '/helpers/class-plugin-options.php';
 
 /**
  * Enqueue scripts and styles for admin and front end.
  */
-require _xe_plugin_directory() . '/controllers/scripts.php';
+require _xe_plugin_directory() . '/includes/scripts.php';
 
 /**
  * Class for adding custom post types.
  */
-require _xe_plugin_directory() . '/models/class-custom-post-types.php';
+require _xe_plugin_directory() . '/includes/class-custom-post-types.php';
 
 /**
  * Class for adding custom taxonomies.
  */
-require _xe_plugin_directory() . '/models/class-custom-taxonomies.php';
+require _xe_plugin_directory() . '/includes/class-custom-taxonomies.php';
