@@ -2,7 +2,6 @@
 # About Xe Plugin
 
 [![Issues](https://img.shields.io/github/issues/XeCreators/xe-plugin)](https://github.com/XeCreators/xe-plugin/issues)
-[![Download Latest](https://img.shields.io/github/downloads/XeCreators/xe-plugin/total)](https://github.com/XeCreators/xe-plugin/releases/latest)
 [![Release Latest](https://img.shields.io/github/v/release/XeCreators/xe-plugin?color=yellowgreen)](https://github.com/XeCreators/xe-plugin/releases/latest)
 ![Repo Size](https://img.shields.io/github/repo-size/XeCreators/xe-plugin.svg)
 [![License](https://img.shields.io/github/license/XeCreators/xe-plugin)](https://github.com/XeCreators/xe-plugin/blob/master/LICENSE.md)
