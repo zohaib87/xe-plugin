@@ -1,5 +1,6 @@
 {
   "name": "Xe Plugin",
+  "global": "xep",
   "proxy": "wpmu/",
   "build": "E:/Projects/Xe Plugin",
   "local_repo": "E:/Projects/Github/xe-plugin"

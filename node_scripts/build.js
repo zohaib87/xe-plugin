@@ -32,9 +32,6 @@ copydir.sync( currentPlugin, targetUrl, {
     if (stat === 'directory' && path.basename(filename) === 'node_scripts') {
       return false;
     }
-    if (stat === 'directory' && path.basename(filename) === 'assets_dev') {
-      return false;
-    }
 
     // do not want copy files with specific extension
     if (stat === 'file' && path.extname(filepath) === '.psd') {
@@ -63,7 +60,7 @@ copydir.sync( currentPlugin, targetUrl, {
     if (stat === 'file' && path.basename(filepath) === 'init.js') {
       return false;
     }
-    if (stat === 'file' && path.basename(filepath) === 'gulpfile.js') {
+    if (stat === 'file' && path.basename(filepath) === 'browser_sync.js') {
       return false;
     }
 
@@ -88,9 +85,6 @@ console.log("node_modules folder removed.");
 
 rimraf.sync(targetUrl+'/node_scripts/');
 console.log("node_scripts folder removed.");
-
-rimraf.sync(targetUrl+'/assets_dev/');
-console.log("assets_dev folder removed.");
 
 // Generate POT file.
 wpPot({

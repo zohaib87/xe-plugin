@@ -1,8 +1,7 @@
 {
   "name": "xe-plugin",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Just a starter WordPress plugin.",
-  "main": "build.js",
   "scripts": {
     "init": "cd node_scripts && node init.js",
     "build": "cd node_scripts && node build.js",

@@ -5,6 +5,7 @@ var config = require('./config.json');
 var path = require('path');
 
 var name = config.name;
+var global = config.global;
 var nameLower = name.toLowerCase();
 var nameHyphen = nameLower.replace(/ /g, '-');
 var nameUnderscores = nameLower.replace(/ /g, '_');
@@ -14,7 +15,7 @@ var funcNames = nameUnderscores+"_";
 var styleCss = "Text Domain: "+nameHyphen;
 var dockBlocks = " "+name;
 var preHandles = nameHyphen+"-";
-var gloVars = "$"+nameUnderscores+"_opt";
+var gloVars = "$"+global+"_opt";
 var preClasses = name.replace(/ /g, '_')+"_";
 var folderNames = "/"+nameHyphen;
 
