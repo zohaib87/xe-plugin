@@ -11,7 +11,8 @@ Just a starter WordPress plugin.
 ----- v1.1.5 ------------
 New Added: Custom name for global variable in config.json
 New Added: Version control in scripts.
-Removed: Removed TGM plugin activation script.
+Removed: Repeated code from build.js.
+Removed: TGM plugin activation script.
 
 ----- v1.1.4 ------------
 Removed: Freemius SDK.
