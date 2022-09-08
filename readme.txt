@@ -10,6 +10,7 @@ Just a starter WordPress plugin.
 == Changelog ==
 ----- v1.1.5 ------------
 New Added: Custom name for global variable in config.json
+New Added: Version control in scripts.
 
 ----- v1.1.4 ------------
 Removed: Freemius SDK.
