@@ -28,7 +28,7 @@ var options = {
     currentPlugin+'/**/*.php',
     currentPlugin+'/readme.txt',
   ],
-  from: [/'xe-plugin'/g, /_xe_plugin_/g, /Text Domain: xe-plugin/g, / Xe Plugin/g, /xe-plugin-/g, /\$xe_plugin_opt/g, /Xe_Plugin_/g, /\/xe-plugin/g],
+  from: [/'xe-plugin'/g, /_xe_plugin_/g, /Text Domain: xe-plugin/g, / Xe Plugin/g, /xe-plugin-/g, /\$xep_opt/g, /Xe_Plugin_/g, /\/xe-plugin/g],
   to: [txtDomain, funcNames, styleCss, dockBlocks, preHandles, gloVars, preClasses, folderNames],
 };
 

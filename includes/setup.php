@@ -5,23 +5,23 @@
  * @package Xe Plugin
  */
 
-/**
- * Plugin Activation 
- */
+/*--------------------------------------------------------------
+# Plugin Activation
+--------------------------------------------------------------*/
 function _xe_plugin_activation() {
 }
 register_activation_hook(_xe_plugin_file(), '_xe_plugin_activation');
 
-/**
- * Plugin Deactivation 
- */
+/*--------------------------------------------------------------
+# Plugin Deactivation
+--------------------------------------------------------------*/
 function _xe_plugin_deactivation() {
 }
 register_deactivation_hook(_xe_plugin_file(), '_xe_plugin_deactivation');
 
-/**
- * Plugin Uninstall
- */
+/*--------------------------------------------------------------
+# Plugin Uninstall
+--------------------------------------------------------------*/
 function _xe_plugin_uninstall() {
 
 	global $wpdb;
@@ -34,17 +34,17 @@ function _xe_plugin_uninstall() {
  //  $wpdb->query("DELETE FROM {$wpdb->usermeta} WHERE meta_key IN ('opos_company', 'opos_contactno', 'opos_address', 'opos_city', 'opos_postalcode')");
 
  //  $wpdb->query("DELETE FROM {$wpdb->options} WHERE option_name = 'opos_options'");
-	
-}
-if ( function_exists('_xe_plugin_finit') ) :
-	_xe_plugin_finit()->add_action('after_uninstall', '_xe_plugin_uninstall');
-else :
-	register_uninstall_hook(_xe_plugin_file(), '_xe_plugin_uninstall');
-endif;
 
-/**
- * Translate plugin
- */
+}
+if ( function_exists('_xe_plugin_finit') ) {
+	_xe_plugin_finit()->add_action('after_uninstall', '_xe_plugin_uninstall');
+} else {
+	register_uninstall_hook(_xe_plugin_file(), '_xe_plugin_uninstall');
+}
+
+/*--------------------------------------------------------------
+# Translate Plugin
+--------------------------------------------------------------*/
 function _xe_plugin_load_textdomain() {
   load_plugin_textdomain( 'xe-plugin', false, dirname( plugin_basename(__FILE__) ) . '/languages/' );
 }

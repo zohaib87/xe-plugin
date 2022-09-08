@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Plugin functions and definitions.
  *
@@ -22,5 +22,5 @@ class Xe_Plugin_Options {
 	public function init_vars() {}
 
 }
-global $xe_plugin_opt;
-$xe_plugin_opt = new Xe_Plugin_Options();
+global $xep_opt;
+$xep_opt = new Xe_Plugin_Options();
