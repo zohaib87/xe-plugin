@@ -8,11 +8,14 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Just a starter WordPress plugin.
 
 == Changelog ==
------ v1.1.5 ------------
-New Added: Custom name for global variable in config.json
+----- v1.1.6 ------------
 New Added: Version control in scripts.
 Removed: Repeated code from build.js.
 Removed: TGM plugin activation script.
+
+----- v1.1.5 ------------
+New Added: Custom name for global variable in config.json
+
 
 ----- v1.1.4 ------------
 Removed: Freemius SDK.
