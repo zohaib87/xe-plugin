@@ -1,6 +1,7 @@
-# Ignore the node_modules directory
-node_modules/
+# Ignore directories
+node_modules
+.vscode
 
-# Ignore the FTP file
+# Ignore files
 ftpsync.settings
 sftp-config.json
