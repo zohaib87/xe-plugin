@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Functions that helps to ease plugin development.
  *
@@ -11,23 +11,23 @@ if (!class_exists('Xe_Plugin_Helpers')) :
 
 class Xe_Plugin_Helpers {
 
-  /**
-   * Auto load files from a directory.
-   */
+  /*--------------------------------------------------------------
+  # Auto load files from a directory
+  --------------------------------------------------------------*/
   public static function auto_load_files($path) {
 
     $files = glob($path);
 
     foreach ($files as $file) {
       if (basename($file) == 'index.php') continue;
-      require($file); 
+      require($file);
     }
 
   }
 
-  /**
-   * Minifying styles 
-   */
+  /*--------------------------------------------------------------
+  # Minifying styles
+  --------------------------------------------------------------*/
   public static function minify_css($css) {
 
     $css = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $css);
@@ -46,9 +46,9 @@ class Xe_Plugin_Helpers {
 
   }
 
-  /**
-   * Hex color to rgb conversion
-   */
+  /*--------------------------------------------------------------
+  # Hex color to rgb conversion
+  --------------------------------------------------------------*/
   public static function hex2rgb($color) {
 
     if ( $color[0] == '#' ) {
@@ -65,14 +65,14 @@ class Xe_Plugin_Helpers {
     $r = hexdec( $r );
     $g = hexdec( $g );
     $b = hexdec( $b );
-    
+
     return $r.', '.$g.', '.$b;
 
   }
 
-  /**
-   * Darken or Lighten Color
-   */
+  /*--------------------------------------------------------------
+  # Darken or Lighten Color
+  --------------------------------------------------------------*/
   public static function darken($color, $dif=20) {
 
     $color = str_replace('#','', $color);
@@ -107,9 +107,9 @@ class Xe_Plugin_Helpers {
 
   }
 
-  /**
-   * Adjusting spacing of classes
-   */
+  /*--------------------------------------------------------------
+  # Adjusting spacing of classes
+  --------------------------------------------------------------*/
   public static function classes( $classes = array() ) {
 
     $classes = implode(' ', $classes);
