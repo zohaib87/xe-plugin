@@ -8,8 +8,8 @@
 function _xe_plugin_scripts() {
 
   // Version Control
-  $mainCSS = '1.0.0';
-  $mainJS = '1.0.0';
+  $mainCSS = filemtime(_xe_plugin_directory() . '/assets/css/main.css');
+  $mainJS = filemtime(_xe_plugin_directory() . '/assets/css/main.js');
 
   /**
    * Styles
@@ -30,8 +30,8 @@ add_action('wp_enqueue_scripts', '_xe_plugin_scripts');
 function _xe_plugin_admin_scripts() {
 
   // Version Control
-  $mainCSS = '1.0.0';
-  $mainJS = '1.0.0';
+  $mainCSS = filemtime(_xe_plugin_directory() . '/assets/css/admin.css');
+  $mainJS = filemtime(_xe_plugin_directory() . '/assets/css/admin.js');
 
 	/**
    * Styles
