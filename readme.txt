@@ -8,6 +8,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Just a starter WordPress plugin.
 
 == Changelog ==
+----- v1.1.7 ------------
+Fixed: Version control for scripts auto changes when file is modified.
+
 ----- v1.1.6 ------------
 New Added: Version control in scripts.
 Removed: Repeated code from build.js.
