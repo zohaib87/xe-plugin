@@ -9,7 +9,7 @@ function _xe_plugin_scripts() {
 
   // Version Control
   $mainCSS = filemtime(_xe_plugin_directory() . '/assets/css/main.css');
-  $mainJS = filemtime(_xe_plugin_directory() . '/assets/css/main.js');
+  $mainJS = filemtime(_xe_plugin_directory() . '/assets/js/main.js');
 
   /**
    * Styles
@@ -31,7 +31,7 @@ function _xe_plugin_admin_scripts() {
 
   // Version Control
   $mainCSS = filemtime(_xe_plugin_directory() . '/assets/css/admin.css');
-  $mainJS = filemtime(_xe_plugin_directory() . '/assets/css/admin.js');
+  $mainJS = filemtime(_xe_plugin_directory() . '/assets/js/admin.js');
 
 	/**
    * Styles
