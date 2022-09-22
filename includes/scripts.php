@@ -8,7 +8,7 @@
 function _xe_plugin_scripts() {
 
   // Version Control
-  $mainCSS = filemtime(_xe_plugin_directory() . '/assets/css/main.css');
+  $mainCSS = filemtime(_xe_plugin_directory() . '/assets//css/main.css');
   $mainJS = filemtime(_xe_plugin_directory() . '/assets/js/main.js');
 
   /**
