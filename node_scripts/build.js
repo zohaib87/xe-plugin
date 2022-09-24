@@ -60,6 +60,7 @@ copydir.sync( currentPlugin, targetUrl, {
     // do not want copy directories
     var directories = [
       '.git',
+      '.github',
       '.vscode',
       'node_modules',
       'node_scripts'
