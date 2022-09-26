@@ -1,0 +1,36 @@
+name: Create Release Zip
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  release-project:
+    name: Release Project
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get latest created release info
+        id: latest_release_info
+        uses: jossef/action-latest-release-info@v1.1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/checkout@master
+      - name: Zip Project
+        uses: thedoctor0/zip-release@main
+        with:
+          type: zip
+          filename: ${{ github.event.repository.name }}.zip
+          directory: ../
+          exclusions: '*.git* *.md'
+          # exclusions e.g: '*.git* /*node_*/* *.json *.lock *.md'
+
+      - name: Upload Archive Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.latest_release_info.outputs.upload_url }}
+          asset_path: ../${{ github.event.repository.name }}.zip
+          asset_name: ${{ github.event.repository.name }}-${{ steps.latest_release_info.outputs.tag_name }}.zip
+          asset_content_type: application/zip
