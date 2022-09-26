@@ -94,8 +94,8 @@ console.log("node_scripts folder removed.");
 // Generate POT file.
 wpPot({
   destFile: targetUrl+'/languages/'+nameHyphen+'.pot',
-  domain: '',
+  relativeTo: targetUrl,
   package: name,
-  src: '**/*.php'
+  src: targetUrl+'/**/*.php'
 });
 console.log('POT file Generated.');
