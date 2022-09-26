@@ -1,11 +1,12 @@
 {
   "name": "xe-plugin",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "description": "Just a starter WordPress plugin.",
   "scripts": {
     "init": "cd node_scripts && node init.js",
     "build": "cd node_scripts && node build.js",
     "copy": "cd node_scripts && node copy.js",
+    "pot": "cd node_scripts && node pot.js",
     "serve": "cd node_scripts && node browser_sync.js"
   },
   "license": "GPL-2.0-or-later",

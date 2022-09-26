@@ -8,6 +8,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Just a starter WordPress plugin.
 
 == Changelog ==
+----- v1.1.9 ------------
+New Added: Standalone .pot file generation script.
+Fixed: Generating empty .pot file
+
 ----- v1.1.8 ------------
 Fixed: Minor bugs.
 
@@ -21,7 +25,6 @@ Removed: TGM plugin activation script.
 
 ----- v1.1.5 ------------
 New Added: Custom name for global variable in config.json
-
 
 ----- v1.1.4 ------------
 Removed: Freemius SDK.
