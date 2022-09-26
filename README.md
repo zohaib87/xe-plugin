@@ -3,6 +3,7 @@
 
 [![Issues](https://img.shields.io/github/issues/XeCreators/xe-plugin)](https://github.com/XeCreators/xe-plugin/issues)
 [![Release Latest](https://img.shields.io/github/v/release/XeCreators/xe-plugin?color=yellowgreen)](https://github.com/XeCreators/xe-plugin/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/XeCreators/xe-plugin/total)](https://github.com/XeCreators/xe-plugin/releases/latest)
 ![Repo Size](https://img.shields.io/github/repo-size/XeCreators/xe-plugin.svg)
 [![License](https://img.shields.io/github/license/XeCreators/xe-plugin)](https://github.com/XeCreators/xe-plugin/blob/master/LICENSE.md)
 
@@ -17,5 +18,5 @@ Xe Plugin is a starter WordPress plugin which have built-in functionalities that
 5. Open command line, navigate to project folder and run `npm install` to install dependencies.
 6. Now run `npm run init` command to automatically change text-domain, prefixes, DocBlocks etc to your plugin name.
 7. Run `npm run serve` command to watch your plugin files for changes and auto reload browser. ;-)
-8. Once you have completed your plugin run `npm run build` command to generate a clean copy of your plugin. `.pot` file will also be generated inside languages folder. 
+8. Once you have completed your plugin run `npm run build` command to generate a clean copy of your plugin. `.pot` file will also be generated inside languages folder.
 9. To stop auto browser reload use `CTRL+C` in windows and `CMD+C` on mac.
