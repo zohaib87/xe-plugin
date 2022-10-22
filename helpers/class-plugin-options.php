@@ -5,9 +5,13 @@
  * @package Xe Plugin
  */
 
+use Helpers\Xe_Plugin_Helpers as Helper;
+use Helpers\Xe_Plugin_Defaults as De;
+
 class Xe_Plugin_Options {
 
-  public $plugin;
+  // Global
+  public $localhost;
 
   function __construct() {
 
@@ -19,7 +23,12 @@ class Xe_Plugin_Options {
   /**
    * Initialize variables for use.
    */
-	public function init_vars() {}
+	public function init_vars() {
+
+    // Global
+    $this->localhost = Helper::localhost();
+
+  }
 
 }
 global $xep_opt;

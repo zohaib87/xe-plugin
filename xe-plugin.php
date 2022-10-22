@@ -20,6 +20,11 @@ require 'helpers/functions.php';
 require _xe_plugin_directory() . '/includes/setup.php';
 
 /**
+ * Object for containing default values.
+ */
+require _xe_plugin_directory() . '/helpers/class-defaults.php';
+
+/**
  * Class that holds helper methods.
  */
 require _xe_plugin_directory() . '/helpers/class-helpers.php';
@@ -33,6 +38,12 @@ require _xe_plugin_directory() . '/helpers/class-plugin-options.php';
  * Enqueue scripts and styles for admin and front end.
  */
 require _xe_plugin_directory() . '/includes/scripts.php';
+
+/**
+ * Menu or sub-menu Pages
+ */
+require _xe_plugin_directory() . '/includes/menu-pages.php';
+require _xe_plugin_directory() . '/includes/callbacks/options.php';
 
 /**
  * Class for adding custom post types.

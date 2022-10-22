@@ -7,29 +7,41 @@
 
 function _xe_plugin_add_menu_pages() {
 
-	function _xe_plugin_page() {
-		if ( _xe_plugin_finit()->is_paying()	) {
-			wp_redirect('edit.php?post_type=opos-sales');
-      exit;
-		}
-	}
-
+  /* Menu Pages */
 	add_menu_page(
     esc_html__('Xe Plugin', 'xe-plugin'),
     esc_html__('Xe Plugin', 'xe-plugin'),
     'manage_options',
-    'xe-plugin',
-    '_xe_plugin_page',
-    'dashicons-schedule',
-    3
+    'xe-plugin-options',
+    '_xe_plugin_options',
+    'dashicons-welcome-widgets-menus'
 	);
 
+  /* Submenu Pages */
+  add_submenu_page(
+    'xe-plugin-options',
+    esc_html__('Plugin Options', 'xe-plugin'),
+    esc_html__('Plugin Options', 'xe-plugin'),
+    'manage_options',
+    'xe-plugin-options',
+    '_xe_plugin_options',
+    1
+  );
+
 	add_submenu_page(
-		'xe-plugin',
-		esc_html__('Test Submenu', 'xe-plugin'),
-		esc_html__('Test Submenu', 'xe-plugin'),
+		'xe-plugin-options',
+		esc_html__('Sample Post Type', 'xe-plugin'),
+		esc_html__('Sample Post Type', 'xe-plugin'),
 		'manage_options',
-		'edit-tags.php?taxonomy=test-cat&post_type=test-cpt'
+		'edit-tags.php?post_type=sample-cpt'
+	);
+
+  add_submenu_page(
+		'xe-plugin-options',
+		esc_html__('Sample Taxonomy', 'xe-plugin'),
+		esc_html__('Sample Taxonomy', 'xe-plugin'),
+		'manage_options',
+		'edit-tags.php?taxonomy=sample-cat&post_type=sample-cpt'
 	);
 
 }
