@@ -2,6 +2,9 @@
 /**
  * Register custom menu and sub-menu pages.
  *
+ * @link https://developer.wordpress.org/reference/functions/add_menu_page/
+ * @link https://developer.wordpress.org/reference/functions/add_submenu_page/
+ *
  * @package Xe Plugin
  */
 
@@ -33,15 +36,23 @@ function _xe_plugin_add_menu_pages() {
 		esc_html__('Sample Post Type', 'xe-plugin'),
 		esc_html__('Sample Post Type', 'xe-plugin'),
 		'manage_options',
-		'edit-tags.php?post_type=sample-cpt'
+		'edit.php?post_type=xe-plugin-cpt'
 	);
 
   add_submenu_page(
 		'xe-plugin-options',
-		esc_html__('Sample Taxonomy', 'xe-plugin'),
-		esc_html__('Sample Taxonomy', 'xe-plugin'),
+		esc_html__('Sample Categories', 'xe-plugin'),
+		esc_html__('Sample Categories', 'xe-plugin'),
 		'manage_options',
-		'edit-tags.php?taxonomy=sample-cat&post_type=sample-cpt'
+		'edit-tags.php?taxonomy=xe-plugin-cat&post_type=xe-plugin-cpt'
+	);
+
+  add_submenu_page(
+		'xe-plugin-options',
+		esc_html__('Sample Tags', 'xe-plugin'),
+		esc_html__('Sample Tags', 'xe-plugin'),
+		'manage_options',
+		'edit-tags.php?taxonomy=xe-plugin-tag&post_type=xe-plugin-cpt'
 	);
 
 }
