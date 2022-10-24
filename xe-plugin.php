@@ -40,6 +40,11 @@ require _xe_plugin_directory() . '/helpers/class-plugin-options.php';
 require _xe_plugin_directory() . '/includes/scripts.php';
 
 /**
+ * MetaBoxes
+ */
+require _xe_plugin_directory() . '/includes/metaboxes/sample.php';
+
+/**
  * Menu or sub-menu Pages
  */
 require _xe_plugin_directory() . '/includes/menu-pages.php';
@@ -54,3 +59,8 @@ require _xe_plugin_directory() . '/includes/class-custom-post-types.php';
  * Class for adding custom taxonomies.
  */
 require _xe_plugin_directory() . '/includes/class-custom-taxonomies.php';
+
+/**
+ * Shortcodes
+ */
+require _xe_plugin_directory() . '/includes/shortcodes/sample.php';
