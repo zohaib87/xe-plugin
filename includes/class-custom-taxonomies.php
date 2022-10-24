@@ -2,6 +2,8 @@
 /**
  * Class for adding custom taxonomies.
  *
+ * @link https://developer.wordpress.org/reference/functions/register_taxonomy/
+ *
  * @package Xe Plugin
  */
 
@@ -11,11 +13,11 @@ if (!class_exists('Xe_Plugin_CustomTaxonomies')) {
 
     function __construct() {
 
-      // add_action( 'init', array($this, 'register_taxonomies'), 0 );
+      add_action( 'init', array($this, 'register_taxonomies'), 0 );
 
     }
 
-    protected function portfolio_categories() {
+    protected function sample_categories() {
 
       $labels = array(
         'name'              => 'Categories',
@@ -37,7 +39,36 @@ if (!class_exists('Xe_Plugin_CustomTaxonomies')) {
         'show_ui'           => true,
         'show_admin_column' => true,
         'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'xe-portfolio-categories' ),
+        'rewrite'           => array( 'slug' => 'xe-plugin-cat' ),
+      );
+
+      return $args;
+
+    }
+
+    protected function sample_tags() {
+
+      $labels = array(
+        'name'              => 'Tags',
+        'singular_name'     => 'Tag',
+        'search_items'      => 'Search Tags',
+        'all_items'         => 'All Tags',
+        'parent_item'       => 'Parent Tag',
+        'parent_item_colon' => 'Parent Tag:',
+        'edit_item'         => 'Edit Tag',
+        'update_item'       => 'Update Tag',
+        'add_new_item'      => 'Add New Tag',
+        'new_item_name'     => 'New Tag Name',
+        'menu_name'         => 'Tags',
+      );
+
+      $args = array(
+        'hierarchical'      => false,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'xe-plugin-tag' ),
       );
 
       return $args;
@@ -46,7 +77,8 @@ if (!class_exists('Xe_Plugin_CustomTaxonomies')) {
 
     public function register_taxonomies() {
 
-      register_taxonomy( 'xe-portfolio-categories', array('xe-portfolio'), $this->portfolio_categories() );
+      register_taxonomy( 'xe-plugin-cat', array('xe-plugin-cpt'), $this->sample_categories() );
+      register_taxonomy( 'xe-plugin-tag', array('xe-plugin-cpt'), $this->sample_tags() );
 
     }
 
