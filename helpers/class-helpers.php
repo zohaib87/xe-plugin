@@ -120,6 +120,69 @@ if (!class_exists('Xe_Plugin_Helpers')) {
     }
 
     /*--------------------------------------------------------------
+    # Update post meta fields
+    --------------------------------------------------------------*/
+    public static function update_field($post_id, $name, $is_array, $validation, $meta_key, $delete = false) {
+
+      if (!array_key_exists($name, $_POST) && $delete == false) {
+        return;
+      } elseif (!array_key_exists($name, $_POST) && $delete == true) {
+        delete_post_meta($post_id, $meta_key);
+        return;
+      }
+
+      if ($is_array == true) {
+
+        switch ($validation) {
+
+          case 'text' :
+            $updated_val = array_map('sanitize_text_field', $_POST[$name]);
+            break;
+
+          case 'intval' :
+            $updated_val = array_map('intval', $_POST[$name]);
+            break;
+
+          case 'floatval' :
+            $updated_val = array_map('floatval', $_POST[$name]);
+            break;
+
+          case 'textarea' :
+            $updated_val = array_map('sanitize_textarea_field', $_POST[$name]);
+            break;
+
+        }
+
+      } else {
+
+        switch ($validation) {
+
+          case 'text' :
+            $updated_val = sanitize_text_field($_POST[$name]);
+            break;
+
+          case 'intval' :
+            $updated_val = intval($_POST[$name]);
+            break;
+
+          case 'floatval' :
+            $updated_val = floatval($_POST[$name]);
+            break;
+
+          case 'textarea' :
+            $updated_val = sanitize_textarea_field($_POST[$name]);
+            break;
+
+        }
+
+      }
+      update_post_meta($post_id, $meta_key, $updated_val);
+
+      return $updated_val;
+
+    }
+
+    /*--------------------------------------------------------------
     # Check if its localhost
     --------------------------------------------------------------*/
     public static function localhost() {
