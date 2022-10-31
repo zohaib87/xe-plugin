@@ -21,9 +21,9 @@ if (!class_exists('Xe_Plugin_CustomPostTypes')) {
     protected function sample() {
 
       $labels = array(
-        'name'               => 'Sample',
+        'name'               => 'Samples',
         'singular_name'      => 'Sample',
-        'menu_name'          => 'Sample',
+        'menu_name'          => 'Samples',
         'name_admin_bar'     => 'Sample',
         'add_new'            => 'Add New',
         'add_new_item'       => 'Add New Sample',
