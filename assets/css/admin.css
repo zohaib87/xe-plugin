@@ -1,7 +1,67 @@
 /*--------------------------------------------------------------
-# Admin Styles
+# Meta Boxes
 --------------------------------------------------------------*/
-
+.xe-plugin-field:not(:last-of-type) {
+  margin: 0 0 12px;
+}
+.xe-plugin-label,
+.xe-plugin-input {
+	display: inline-block;
+}
+.xe-plugin-label {
+  width: 30%;
+  margin-bottom: 5px;
+}
+.xe-plugin-label, .xe-plugin-input {
+  vertical-align: top;
+  float: left;
+  box-sizing: border-box;
+}
+.xe-plugin-field:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+.xe-plugin-field-sm {
+	width: 65px;
+}
+.xe-plugin-field-md {
+	width: 120px;
+}
+.xe-plugin-field-full {
+	width: 100%;
+}
+.xe-plugin-field .select2-container--default .select2-selection--single,
+.xe-plugin-field .select2-container--default .select2-selection--multiple,
+.xe-plugin-field input[type=color],
+.xe-plugin-field input[type=date],
+.xe-plugin-field input[type=datetime-local],
+.xe-plugin-field input[type=datetime],
+.xe-plugin-field input[type=email],
+.xe-plugin-field input[type=month],
+.xe-plugin-field input[type=number],
+.xe-plugin-field input[type=password],
+.xe-plugin-field input[type=search],
+.xe-plugin-field input[type=tel],
+.xe-plugin-field input[type=text],
+.xe-plugin-field input[type=time],
+.xe-plugin-field input[type=url],
+.xe-plugin-field input[type=week],
+.xe-plugin-field input[type=checkbox],
+.wp-core-ui .xe-plugin-field select,
+.xe-plugin-field textarea {
+	border-radius: 0px;
+  border: 1px solid #ccc;
+  margin: 0;
+}
+.xe-plugin-field .select2-container--default .select2-selection--multiple .select2-selection__choice {
+  margin-bottom: 0;
+}
+.toplevel_page_xe-plugin-options .select2-container--default .select2-selection--single,
+.xe-plugin-field .select2-container--default .select2-selection--single,
+.wp-core-ui .xe-plugin-field select {
+	min-height: 30px;
+}
 /*--------------------------------------------------------------
 # Freemius
 --------------------------------------------------------------*/
