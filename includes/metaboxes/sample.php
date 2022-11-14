@@ -9,6 +9,7 @@
  */
 
 use Helpers\Xe_Plugin_Helpers as Helper;
+use Helpers\Xe_Plugin_Views as View;
 
 abstract class Xe_Plugin_SampleMetaBox {
 
@@ -45,11 +46,11 @@ abstract class Xe_Plugin_SampleMetaBox {
     $sample = get_post_meta($post->ID, '_sample', true);
 
     ?>
-      <div class="bmpos-field">
-        <div class="bmpos-label">
+      <div class="xe-plugin-field">
+        <div class="xe-plugin-label">
           <label for="sample">Serial No:</label>
         </div>
-        <div class="bmpos-input">
+        <div class="xe-plugin-input">
           <input type="text" name="sample" id="sample" value="<?php echo esc_attr($sample); ?>" required>
         </div>
       </div>
