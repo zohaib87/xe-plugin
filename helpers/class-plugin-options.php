@@ -16,7 +16,7 @@ class Xe_Plugin_Options {
   function __construct() {
 
     // Assign Option values to variables
-    add_action('wp', array($this, 'init_vars'));
+    add_action('init', array($this, 'init_vars'));
 
   }
 
