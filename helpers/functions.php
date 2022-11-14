@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Functions that helps to ease plugin development.
  *
