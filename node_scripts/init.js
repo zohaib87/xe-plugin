@@ -24,7 +24,7 @@ var currentPlugin = path.resolve(__dirname, '..');
 // Replacing strings
 var options = {
   files: [
-    currentPlugin+'/style.css',
+    currentPlugin+'/**/*.css',
     currentPlugin+'/**/*.php',
     currentPlugin+'/readme.txt',
   ],
