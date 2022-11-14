@@ -151,6 +151,14 @@ if (!class_exists('Xe_Plugin_Helpers')) {
             $updated_val = array_map('sanitize_textarea_field', $_POST[$name]);
             break;
 
+          case 'email' :
+            $updated_val = array_map('sanitize_email', $_POST[$name]);
+            break;
+
+          case 'url' :
+            $updated_val = array_map('sanitize_url', $_POST[$name]);
+            break;
+
         }
 
       } else {
@@ -171,6 +179,14 @@ if (!class_exists('Xe_Plugin_Helpers')) {
 
           case 'textarea' :
             $updated_val = sanitize_textarea_field($_POST[$name]);
+            break;
+
+          case 'email' :
+            $updated_val = sanitize_email($_POST[$name]);
+            break;
+
+          case 'url' :
+            $updated_val = sanitize_url($_POST[$name]);
             break;
 
         }
