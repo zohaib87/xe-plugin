@@ -21,6 +21,12 @@ function _xe_plugin_scripts() {
    */
   wp_enqueue_script( 'xe-plugin-main', _xe_plugin_directory_uri() . '/assets/js/main.js', array('jquery'), esc_attr($mainJS), true );
 
+  wp_localize_script('xe-plugin-main', 'xePluginObj', [
+    'ajaxurl' => admin_url('admin-ajax.php'),
+    'pluginUrl' => _xe_plugin_directory_uri(),
+    'nonce' => wp_create_nonce('_xe_plugin_ajax_nonce'),
+	]);
+
 }
 add_action('wp_enqueue_scripts', '_xe_plugin_scripts');
 
