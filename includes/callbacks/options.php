@@ -5,13 +5,15 @@
  * @package Xe Plugin
  */
 
+use Helpers\Xe_Billing_Views as View;
+
 function _xe_plugin_options() {
 
   global $xep_opt;
 
   ?>
     <div class="wrap">
-      <h1><?php echo esc_html('Plugin Options', 'xe-plugin'); ?></h1>
+      <h1><?php echo esc_html__('Plugin Options', 'xe-plugin'); ?></h1>
 
       <?php
         settings_errors();
@@ -19,37 +21,36 @@ function _xe_plugin_options() {
       ?>
 
       <h2 class="nav-tab-wrapper">
-        <a href="?page=<?php echo $_GET['page']; ?>&tab=general" class="nav-tab <?php echo ($active_tab == 'general') ? 'nav-tab-active' : ''; ?>">General Options</a>
+        <?php
+          View::plugin_option_tabs([
+            array( esc_html__('General Options', 'xe-plugin'), 'general', $active_tab )
+          ]);
+        ?>
       </h2>
 
       <form method="post" action="options.php" enctype="multipart/form-data">
 
         <?php
-          /*--------------------------------------------------------------
-          # General Tab
-          --------------------------------------------------------------*/
-          if ($active_tab === 'general') {
-
-            // settings_fields('xep-general');
-            // do_settings_sections('xep-general');
-
-            ?>
-              <table class="form-table" role="presentation">
-                <tbody>
-                  <!-- Sample -->
-                  <tr>
-                    <th scope="row">
-                      <label for="xep_sample"><?php echo esc_html__('Sample', 'xe-plugin'); ?></label>
-                    </th>
-                    <td>
-                      <input type="text" name="xep_sample" id="xep_sample" value="<?php //echo esc_attr($xep_opt->sample); ?>">
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            <?php
-          }
+          // settings_fields('xep_options');
+          // do_settings_sections('xep_options');
         ?>
+
+        <!-- # General Tab -->
+        <table class="form-table" role="presentation" style="<?php echo ($active_tab !== 'general') ? 'display: none;' : ''; ?>">
+          <tbody>
+            <!-- Sample -->
+            <tr>
+              <th scope="row">
+                <label for="xep_sample"><?php echo esc_html__('Sample', 'xe-plugin'); ?></label>
+              </th>
+              <td>
+                <input type="text" name="xep_sample" id="xep_sample" value="<?php //echo esc_attr($xep_opt->sample); ?>">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <?php submit_button(); ?>
       </form>
     </div>
   <?php
@@ -61,11 +62,11 @@ function _xe_plugin_options() {
  */
 function _xe_plugin_register_options() {
 
-  // $general_options = [
+  // $options = [
   //   'xep_sample',
   // ];
-  // foreach ($general_options as $option) {
-  //   register_setting('xep-general', $option);
+  // foreach ($options as $option) {
+  //   register_setting('xep_options', $option);
   // }
 
 }
