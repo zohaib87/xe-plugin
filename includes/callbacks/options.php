@@ -5,7 +5,7 @@
  * @package Xe Plugin
  */
 
-use Helpers\Xe_Billing_Views as View;
+use Helpers\Xe_Plugin_Views as View;
 
 function _xe_plugin_options() {
 
