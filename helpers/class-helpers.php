@@ -119,9 +119,16 @@ if (!class_exists('Xe_Plugin_Helpers')) {
 
     }
 
-    /*--------------------------------------------------------------
-    # Update post meta fields
-    --------------------------------------------------------------*/
+    /**
+     * # Update post meta fields
+     *
+     * @param int     $post_id      Current post id
+     * @param string  $name         Input name attribute
+     * @param bool    $is_array     If the input name attribute is array or not
+     * @param string  $validation   Sanitization type, accepts: 'text', 'intval', 'floatval', 'textarea', 'email', 'url'
+     * @param string  $meta_key     Post meta key
+     * @param string  $delete       If true, post meta will be deleted when the specified name attribute is not set.
+     */
     public static function update_field($post_id, $name, $is_array, $validation, $meta_key, $delete = false) {
 
       if (!array_key_exists($name, $_POST) && $delete == false) {

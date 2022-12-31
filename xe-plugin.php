@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) exit; // Exit if accessed directly
 require 'helpers/functions.php';
 
 /**
- * Enqueue scripts and styles for admin and front end.
+ * Plugin setup functions and definitions.
  */
 require _xe_plugin_directory() . '/includes/setup.php';
 
@@ -28,6 +28,11 @@ require _xe_plugin_directory() . '/helpers/class-defaults.php';
  * Class that holds helper methods.
  */
 require _xe_plugin_directory() . '/helpers/class-helpers.php';
+
+/**
+ * Class for reusable sections.
+ */
+require _xe_plugin_directory() . '/helpers/class-views.php';
 
 /**
  * Class to get and use plugin options.
@@ -59,6 +64,12 @@ require _xe_plugin_directory() . '/includes/class-custom-post-types.php';
  * Class for adding custom taxonomies.
  */
 require _xe_plugin_directory() . '/includes/class-custom-taxonomies.php';
+
+/**
+ * Class for adding custom WooCommerce fields, Tabs and Product types
+ */
+// require _xe_plugin_directory() . '/includes/class-product-backend.php';
+// require _xe_plugin_directory() . '/includes/class-product-frontend.php';
 
 /**
  * Shortcodes
