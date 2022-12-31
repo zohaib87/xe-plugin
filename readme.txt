@@ -1,13 +1,21 @@
 === Xe Plugin ===
 Requires at least: 5.6
-Tested up to: 6.0.3
-Requires PHP: 7.0
+Tested up to: 6.1
+Requires PHP: 7.4
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Just a starter WordPress plugin.
 
 == Changelog ==
+----- v1.1.12 ------------
+New Added: Sample classes for product types, custom fields, tabs.
+New Added: Views class for reusable sections.
+New Added: wp_localize_script() function.
+New Added: sanitize_email() and sanitize_url() to update_field().
+Fixed: Plugin options not saving.
+Fixed: Minor bugs.
+
 ----- v1.1.11 ------------
 New Added: Shortcode sample.
 New Added: Metabox sample.
