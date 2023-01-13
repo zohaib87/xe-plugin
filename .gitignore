@@ -1,6 +1,7 @@
 # Ignore directories
 node_modules
 .vscode
+site
 
 # Ignore files
 ftpsync.settings
