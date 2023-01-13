@@ -1,0 +1,44 @@
+site_name: XeFramework - Just another WordPress framework
+
+repo_name: XeCreators/xe-framework
+repo_url: https://github.com/XeCreators/xe-framework
+edit_uri: ''
+
+nav:
+  - Getting Started:
+    - Introduction: index.md
+    - Let's Start: start.md
+    - Automation: automation.md
+    - Manual Use: manual.md
+  - Helpers:
+    - Class Defaults: defaults.md
+    - Class Helpers: helpers.md
+  - Support: support.md
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+
+markdown_extensions:
+  - attr_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.critic:
+      mode: view
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/XeCreators
+    - icon: fontawesome/brands/facebook
+      link: https://facebook.com/XeCreators
+    - icon: fontawesome/brands/instagram
+      link: https://instagram.com/xecreatorsit
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/XeCreators
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/company/xecreators/
