@@ -1,5 +1,5 @@
 
-# About XePlugin
+# About Xe Plugin
 
 [![Issues](https://img.shields.io/github/issues/XeCreators/xe-plugin)](https://github.com/XeCreators/xe-plugin/issues)
 [![Release Latest](https://img.shields.io/github/v/release/XeCreators/xe-plugin?color=yellowgreen)](https://github.com/XeCreators/xe-plugin/releases/latest)
