@@ -1,22 +1,12 @@
 
-## About Framework
+## About
 
-This is just another WordPress framework + build process. It is built for developers to create awesome and highly customizable themes for clients or sell it on any marketplace.
+Xe Plugin is a starter WordPress plugin which have built-in functionalities that are used in almost every plugin. So just focus on the main functionality that you want to built for WordPress.
 
 ## Features
 
-* Auto browser reload.
-* Auto/manual `concatenate` or `minify` CSS and JavaScript files.
-* Auto/manual `image optimization`.
-* Remove unused CSS using PurgeCSS.
-* Theme Options (Customizer).
+* PLugin Options.
 * Highly Customizable and Easy to Customize.
-* Bootstrap 4 and Fontawesome 5 Icons.
-* Wide, Fluid and Boxed Layout.
-* Right, Left or Both Sides Sidebar Supported.
-* WooCommerce Ready.
-* Unlimited Widget Areas.
-* One Click Demo Import.
 * Forever Free.
 * Professional and Outstanding Support.
 
