@@ -8,8 +8,6 @@ nav:
   - Getting Started:
     - Introduction: index.md
     - Let's Start: start.md
-    - Automation: automation.md
-    - Manual Use: manual.md
   - Helpers:
     - Class Defaults: defaults.md
     - Class Helpers: helpers.md
