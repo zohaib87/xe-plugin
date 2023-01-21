@@ -23,4 +23,4 @@ Xe Plugin is a starter WordPress plugin which have built-in functionalities that
 5. Run `npm run init` command to change text-domain, prefixes, DocBlocks etc.
 6. Run `npm run build` command to generate a clean copy in destination folder.
 
-*Note:- `.pot` file will also be generated inside languages folder.*
+***Note:** `.pot` file will also be generated inside languages folder.*
