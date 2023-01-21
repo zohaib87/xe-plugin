@@ -20,7 +20,7 @@ Xe Plugin is a starter WordPress plugin which have built-in functionalities that
     - Change `"global"` to a unique prefix. e.g: `xurais` or `xus`.
     - Change `"build"` to your desired folder path.
 4. Open command line, navigate to project folder and run `npm install` to install dependencies.
-5. Now run `npm run init` command to automatically change text-domain, prefixes, DocBlocks etc to your plugin name.
+5. Run `npm run init` command to change text-domain, prefixes, DocBlocks etc.
 6. Run `npm run build` command to generate a clean copy in destination folder.
 
-*Note: `.pot` file will also be generated inside languages folder.*
+*Note:- `.pot` file will also be generated inside languages folder.*
