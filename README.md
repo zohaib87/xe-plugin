@@ -16,8 +16,11 @@ Xe Plugin is a starter WordPress plugin which have built-in functionalities that
 1. You must have latest version of [Nodejs](https://nodejs.org/en/) installed.
 2. Change folder name to your plugin name. e.g: `xurais` or `xu-rais`.
 3. Navigate to `node_scripts` folder and open `config.json` with your favorite editor.
-4. Change `"name"` to your plugin name eg: `Xurais` or `Xu Rais` and change the `"proxy"` to your local WordPress site url.
-5. Open command line, navigate to project folder and run `npm install` to install dependencies.
-6. Now run `npm run init` command to automatically change text-domain, prefixes, DocBlocks etc to your plugin name.
-8. Once you have completed your plugin run `npm run build` command to generate a clean copy of your plugin. `.pot` file will also be generated inside languages folder.
-9. To stop auto browser reload use `CTRL+C` in windows and `CMD+C` on mac.
+    - Change `"name"` to your plugin name eg: `Xurais` or `Xu Rais`.
+    - Change `"global"` to a unique prefix. e.g: `xurais` or `xus`.
+    - Change `"build"` to your desired folder path.
+4. Open command line, navigate to project folder and run `npm install` to install dependencies.
+5. Now run `npm run init` command to automatically change text-domain, prefixes, DocBlocks etc to your plugin name.
+6. Run `npm run build` command to generate a clean copy in destination folder.
+
+*Note: `.pot` file will also be generated inside languages folder.*
