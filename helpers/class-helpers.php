@@ -250,24 +250,6 @@ if (!class_exists('Xe_Plugin_Helpers')) {
 
     }
 
-    /*--------------------------------------------------------------
-    # Check if its localhost
-    --------------------------------------------------------------*/
-    public static function localhost() {
-
-      $localhost = array(
-        '127.0.0.1',
-        '::1'
-      );
-
-      if (in_array($_SERVER['REMOTE_ADDR'], $localhost)){
-        return true;
-      } else {
-        return false;
-      }
-
-    }
-
   }
 
 }
