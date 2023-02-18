@@ -15,9 +15,10 @@ var funcNames = nameUnderscores+"_";
 var styleCss = "Text Domain: "+nameHyphen;
 var dockBlocks = " "+name;
 var preHandles = nameHyphen+"-";
-var gloVars = "$"+global+"_opt";
+var globalVars = "$"+global+"_opt";
 var preClasses = name.replace(/ /g, '_')+"_";
 var folderNames = "/"+nameHyphen;
+var globalObj = "'"+global+"Obj'";
 
 var currentPlugin = path.resolve(__dirname, '..');
 
@@ -28,8 +29,8 @@ var options = {
     currentPlugin+'/**/*.php',
     currentPlugin+'/readme.txt',
   ],
-  from: [/'xe-plugin'/g, /_xe_plugin_/g, /Text Domain: xe-plugin/g, / Xe Plugin/g, /xe-plugin-/g, /\$xep_opt/g, /Xe_Plugin_/g, /\/xe-plugin/g],
-  to: [txtDomain, funcNames, styleCss, dockBlocks, preHandles, gloVars, preClasses, folderNames],
+  from: [/'xe-plugin'/g, /_xe_plugin_/g, /Text Domain: xe-plugin/g, / Xe Plugin/g, /xe-plugin-/g, /\$xep_opt/g, /Xe_Plugin_/g, /\/xe-plugin/g, /'xepObj'/g],
+  to: [txtDomain, funcNames, styleCss, dockBlocks, preHandles, globalVars, preClasses, folderNames, globalObj],
 };
 
 fs.rename(currentPlugin+'/xe-plugin.php', currentPlugin+'/'+nameHyphen+'.php', function(err) {
