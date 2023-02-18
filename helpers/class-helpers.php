@@ -11,9 +11,37 @@ if (!class_exists('Xe_Plugin_Helpers')) {
 
   class Xe_Plugin_Helpers {
 
-    /*--------------------------------------------------------------
-    # Auto load files from a directory
-    --------------------------------------------------------------*/
+    /**
+     * # Enqueue style or script with auto version control
+     *
+     * @link https://developer.wordpress.org/reference/functions/wp_enqueue_style/
+     * @link https://developer.wordpress.org/reference/functions/wp_enqueue_script/
+     *
+     * @param string    $script     Accepts 'style' or 'script'
+     * @param string    $handle     Name of the script. Should be unique.
+     * @param string    $src        Path of the script relative to plugins folder.
+     * @param array     $deps       An array of registered script handles this script depends on.
+     * @param string    $media      The media for which this stylesheet has been defined.
+     * @param bool      $in_footer  Whether to enqueue the script before </body> instead of in the <head>.
+     * @param string    $ver        Version of the script.
+     */
+    public static function enqueue($script, $handle, $src = '', $deps = array(), $media = 'all', $in_footer = true, $ver = '') {
+
+      $ver = empty($ver) ? filemtime(xe_billing_directory() . $src) : $ver;
+
+      if ($script == 'style') {
+        wp_enqueue_style( esc_attr($handle), xe_billing_directory_uri() . esc_attr($src), $deps, esc_attr($ver), esc_attr($media) );
+      } elseif ($script == 'script') {
+        wp_enqueue_script( esc_attr($handle), xe_billing_directory_uri() . esc_attr($src), $deps, esc_attr($ver), $in_footer);
+      }
+
+    }
+
+    /**
+     * # Auto load files from a directory
+     *
+     * @param string  $path   Path to files (*.php) that needs to be auto loaded.
+     */
     public static function auto_load_files($path) {
 
       $files = glob($path);
@@ -25,9 +53,13 @@ if (!class_exists('Xe_Plugin_Helpers')) {
 
     }
 
-    /*--------------------------------------------------------------
-    # Minifying styles
-    --------------------------------------------------------------*/
+    /**
+     * # Minifying styles
+     *
+     * @param string  $css   Not compressed css.
+     *
+     * @return string of minified css.
+     */
     public static function minify_css($css) {
 
       $css = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $css);
@@ -46,9 +78,13 @@ if (!class_exists('Xe_Plugin_Helpers')) {
 
     }
 
-    /*--------------------------------------------------------------
-    # Hex color to rgb conversion
-    --------------------------------------------------------------*/
+    /**
+     * # Hex color to rgb conversion
+     *
+     * @param string  $color   Hex color code.
+     *
+     * @return string of RGB color.
+     */
     public static function hex2rgb($color) {
 
       if ( $color[0] == '#' ) {
@@ -70,9 +106,14 @@ if (!class_exists('Xe_Plugin_Helpers')) {
 
     }
 
-    /*--------------------------------------------------------------
-    # Darken or Lighten Color
-    --------------------------------------------------------------*/
+    /**
+     * # Darken or Lighten Color
+     *
+     * @param string  $color  Hex color code.
+     * @param int     $dif    Number amount of lightning or darkening.
+     *
+     * @return string of lighter or darker color.
+     */
     public static function darken($color, $dif=20) {
 
       $color = str_replace('#','', $color);
@@ -107,9 +148,13 @@ if (!class_exists('Xe_Plugin_Helpers')) {
 
     }
 
-    /*--------------------------------------------------------------
-    # Adjusting spacing of classes
-    --------------------------------------------------------------*/
+    /**
+     * # Adjusting spacing of classes
+     *
+     * @param array   $classes   An array of classes
+     *
+     * @return string of classes with single space in between.
+     */
     public static function classes( $classes = array() ) {
 
       $classes = implode(' ', $classes);

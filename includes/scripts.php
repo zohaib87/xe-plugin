@@ -7,22 +7,18 @@
 
 function _xe_plugin_scripts() {
 
-  // Version Control
-  $mainCSS = filemtime(_xe_plugin_directory() . '/assets/css/main.css');
-  $mainJS = filemtime(_xe_plugin_directory() . '/assets/js/main.js');
-
   /**
    * Styles
    */
-  wp_enqueue_style( 'xe-plugin-main', _xe_plugin_directory_uri() . '/assets/css/main.css', array(), esc_attr($mainCSS) );
+  Helper::enqueue('style', 'xe-plugin-main', '/assets/css/main.css');
 
   /**
    * Scripts
    */
-  wp_enqueue_script( 'xe-plugin-main', _xe_plugin_directory_uri() . '/assets/js/main.js', array('jquery'), esc_attr($mainJS), true );
+  Helper::enqueue('script', 'xe-plugin-main', '/assets/js/main.js', ['jquery']);
 
-  wp_localize_script('xe-plugin-main', 'xePluginObj', [
-    'ajaxurl' => admin_url('admin-ajax.php'),
+  wp_localize_script('xe-plugin-main', 'xepObj', [
+    'ajaxUrl' => admin_url('admin-ajax.php'),
     'pluginUrl' => _xe_plugin_directory_uri(),
     'nonce' => wp_create_nonce('_xe_plugin_ajax_nonce'),
     'localhost' => $xep_opt->localhost
@@ -38,21 +34,17 @@ function _xe_plugin_admin_scripts() {
 
   global $current_screen, $xep_opt;
 
-  // Version Control
-  $mainCSS = filemtime(_xe_plugin_directory() . '/assets/css/admin.css');
-  $mainJS = filemtime(_xe_plugin_directory() . '/assets/js/admin.js');
-
 	/**
    * Styles
    */
-  wp_enqueue_style( 'xe-plugin-admin', _xe_plugin_directory_uri() . '/assets/css/admin.css', array(), esc_attr($mainCSS) );
+  Helper::enqueue('style', 'xe-plugin-admin', '/assets/css/admin.css');
 
   /**
    * Scripts
    */
-  wp_enqueue_script( 'xe-plugin-admin', _xe_plugin_directory_uri() . '/assets/js/admin.js', array('jquery'), esc_attr($mainJS), true );
+  Helper::enqueue('script', 'xe-plugin-admin', '/assets/js/admin.js', ['jquery']);
 
-  wp_localize_script('xe-plugin-admin', 'xePluginObj', [
+  wp_localize_script('xe-plugin-admin', 'xepObj', [
     'pluginUrl' => _xe_plugin_directory_uri(),
     'nonce' => wp_create_nonce('_xe_plugin_ajax_nonce'),
 		'postType' => $current_screen->post_type,
