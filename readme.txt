@@ -8,6 +8,13 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Just a starter WordPress plugin.
 
 == Changelog ==
+----- v1.1.13 ------------
+New Added: Enqueue method in helper class.
+New Added: localhost variable to localize script.
+New Added: Auto change of global obj prefix in scripts on npm run init.
+Moved: localhost method from helpers class to plugin options class.
+Fixed: Some minor bugs.
+
 ----- v1.1.12 ------------
 New Added: Sample classes for product types, custom fields, tabs.
 New Added: Views class for reusable sections.
