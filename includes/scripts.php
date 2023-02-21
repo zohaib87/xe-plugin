@@ -9,6 +9,8 @@ use Helpers\Xe_Plugin_Helpers as Helper;
 
 function _xe_plugin_scripts() {
 
+  global $xep_opt;
+
   /**
    * Styles
    */
