@@ -17,7 +17,7 @@ Xe Plugin is a starter WordPress plugin which have built-in functionalities that
 
 ## Download
 
-You can download the [Latest Stable Release](https://github.com/XeCreators/xe-plugin/releases/latest) or use the following command if you have composer installed.
+You can download the [latest stable release](https://github.com/XeCreators/xe-plugin/releases/latest) or use the following command if you have `composer` installed.
 
     composer create-project xecreators/xe-plugin
 
