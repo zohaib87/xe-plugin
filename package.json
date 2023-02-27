@@ -7,7 +7,7 @@
     "build": "cd node_scripts && node build.js",
     "copy": "cd node_scripts && node copy.js",
     "pot": "cd node_scripts && node pot.js",
-    "doc": "mkdocs gh-deploy --force"
+    "docs": "mkdocs gh-deploy --force"
   },
   "license": "GPL-2.0-or-later",
   "devDependencies": {
