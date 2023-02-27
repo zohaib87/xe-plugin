@@ -2,7 +2,7 @@
     "name": "xecreators/xe-plugin",
     "description": "Just a starter WordPress plugin.",
     "type": "project",
-    "license": "GPL-2.0-or-later",
+    "license": "GPL-2.0",
     "authors": [
         {
             "name": "Muhammad Zohaib"
