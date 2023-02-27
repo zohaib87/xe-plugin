@@ -11,16 +11,25 @@ Xe Plugin is a starter WordPress plugin which have built-in functionalities that
 
 [Explore Documentation »](https://xecreators.github.io/xe-plugin)
 
+## Requirements
+
+* Latest versions of [WordPress](https://wordpress.org/) and [Nodejs](https://nodejs.org/en/).
+
+## Download
+
+You can download the [Latest Stable Release](https://github.com/XeCreators/xe-plugin/releases/latest) or use the following command if you have composer installed.
+
+    composer create-project xecreators/xe-plugin
+
 ## Getting Started
 
-1. You must have latest version of [Nodejs](https://nodejs.org/en/) installed.
-2. Change folder name to your plugin name. e.g: `xurais` or `xu-rais`.
-3. Navigate to `node_scripts` folder and open `config.json` with your favorite editor.
+1. Change folder name to your plugin name. e.g: `xurais` or `xu-rais`.
+2. Navigate to `node_scripts` folder and open `config.json` with your favorite editor.
     - Change `"name"` to your plugin name eg: `Xurais` or `Xu Rais`.
     - Change `"global"` to a unique prefix. e.g: `xurais` or `xus`.
     - Change `"build"` to your desired folder path.
-4. Open command line, navigate to project folder and run `npm install` to install dependencies.
-5. Run `npm run init` command to change text-domain, prefixes, DocBlocks etc.
-6. Run `npm run build` command to generate a clean copy in destination folder.
+3. Open command line, navigate to project folder and run `npm install` to install dependencies.
+4. Run `npm run init` command to change text-domain, prefixes, DocBlocks etc.
+5. Run `npm run build` command to generate a clean copy in destination folder.
 
 *Note: `.pot` file will also be generated inside languages folder.*
