@@ -13,7 +13,7 @@ Xe Plugin is a starter WordPress plugin which have built-in functionalities that
 
 ## Requirements
 
-* Latest versions of [WordPress](https://wordpress.org/) and [Nodejs](https://nodejs.org/en/).
+Latest versions of [WordPress](https://wordpress.org/) and [Nodejs](https://nodejs.org/en/).
 
 ## Download
 
