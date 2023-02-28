@@ -9,17 +9,12 @@
 
 Xe Plugin is a starter WordPress plugin which have built-in functionalities that are used in almost every plugin. So just focus on the main functionality that you want to built for WordPress.
 
-[Explore Documentation »](https://xecreators.github.io/xe-plugin)
+[![Download Latest Release](https://img.shields.io/badge/Download_Latest_Release-blue?style=for-the-badge)](https://github.com/XeCreators/xe-plugin/releases/latest)
+[![Explore Documentation »](https://img.shields.io/badge/Explore_Documentation-282a2e?style=for-the-badge)](https://xecreators.github.io/xe-plugin)
 
 ## Requirements
 
 Latest version of [WordPress](https://wordpress.org/) and [Nodejs](https://nodejs.org/en/).
-
-## Download
-
-You can download the [latest stable release](https://github.com/XeCreators/xe-plugin/releases/latest) or use the following command if you have `composer` installed.
-
-    composer create-project xecreators/xe-plugin
 
 ## Getting Started
 
