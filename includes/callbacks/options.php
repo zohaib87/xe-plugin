@@ -22,7 +22,7 @@ function _xe_plugin_options() {
 
       <h2 class="nav-tab-wrapper">
         <?php
-          View::plugin_option_tabs([
+          View::pluginOptionTabs([
             array( esc_html__('General Options', 'xe-plugin'), 'general', $active_tab )
           ]);
         ?>

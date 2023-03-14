@@ -5,9 +5,9 @@
  * @package Xe Plugin
  */
 
-namespace Helpers;
+namespace Xe_Plugin\Helpers;
 
-class Xe_Plugin_Defaults {
+class Defaults {
 
   // General
   public static $default;
@@ -20,4 +20,3 @@ class Xe_Plugin_Defaults {
   }
 
 }
-new Xe_Plugin_Defaults();

@@ -12,7 +12,7 @@
 
 if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
-require 'helpers/functions.php';
+require 'functions.php';
 
 /**
  * Plugin setup functions and definitions.
@@ -22,22 +22,22 @@ require _xe_plugin_directory() . '/includes/setup.php';
 /**
  * Object for containing default values.
  */
-require _xe_plugin_directory() . '/helpers/class-defaults.php';
+require _xe_plugin_directory() . '/Helpers/Defaults.php';
 
 /**
  * Class that holds helper methods.
  */
-require _xe_plugin_directory() . '/helpers/class-helpers.php';
+require _xe_plugin_directory() . '/Helpers/Helpers.php';
 
 /**
  * Class for reusable sections.
  */
-require _xe_plugin_directory() . '/helpers/class-views.php';
+require _xe_plugin_directory() . '/Helpers/Views.php';
 
 /**
  * Class to get and use plugin options.
  */
-require _xe_plugin_directory() . '/helpers/class-plugin-options.php';
+require _xe_plugin_directory() . '/Helpers/PluginOptions.php';
 
 /**
  * Enqueue scripts and styles for admin and front end.

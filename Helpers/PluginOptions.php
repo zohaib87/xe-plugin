@@ -5,10 +5,12 @@
  * @package Xe Plugin
  */
 
-use Helpers\Xe_Plugin_Helpers as Helper;
-use Helpers\Xe_Plugin_Defaults as De;
+namespace Xe_Plugin\Helpers;
 
-class Xe_Plugin_Options {
+use Xe_Plugin\Helpers\Helpers as Helper;
+use Xe_Plugin\Helpers\Defaults as De;
+
+class PluginOptions {
 
   // Others
   public $localhost;
@@ -16,14 +18,14 @@ class Xe_Plugin_Options {
   function __construct() {
 
     // Assign Option values to variables
-    add_action('init', array($this, 'init_vars'));
+    add_action('init', array($this, 'initVars'));
 
   }
 
   /**
    * # Initialize variables for use.
    */
-	public function init_vars() {
+	public function initVars() {
 
     // Others
     $this->localhost = $this->localhost();
@@ -50,4 +52,4 @@ class Xe_Plugin_Options {
 
 }
 global $xep_opt;
-$xep_opt = new Xe_Plugin_Options();
+$xep_opt = new PluginOptions();

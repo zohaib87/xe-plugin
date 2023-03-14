@@ -8,7 +8,7 @@
  * @package Xe Plugin
  */
 
-use Helpers\Xe_Plugin_Helpers as Helper;
+use Xe_Plugin\Helpers\Helpers as Helper;
 use Helpers\Xe_Plugin_Views as View;
 
 abstract class Xe_Plugin_SampleMetaBox {
@@ -93,7 +93,7 @@ abstract class Xe_Plugin_SampleMetaBox {
     }
 
     // Saving or Updating the data
-    Helper::update_field($post_id, 'sample', false, 'text', '_sample'); // $post_id, $name, $is_array, $validation, $meta_key, $delete = false
+    Helper::updateField($post_id, 'sample', false, 'text', '_sample'); // $post_id, $name, $is_array, $validation, $meta_key, $delete = false
 
   }
 

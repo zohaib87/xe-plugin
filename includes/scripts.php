@@ -5,7 +5,7 @@
  * @package Xe Plugin
  */
 
-use Helpers\Xe_Plugin_Helpers as Helper;
+use Xe_Plugin\Helpers\Helpers as Helper;
 
 function _xe_plugin_scripts() {
 
