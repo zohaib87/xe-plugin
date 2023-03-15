@@ -17,7 +17,9 @@
  * @package Xe Plugin
  */
 
-class Xe_Plugin_ProductBackend {
+namespace Xe_Plugin\Includes;
+
+class Product_Backend {
 
   function __construct() {
 
@@ -52,4 +54,4 @@ class Xe_Plugin_ProductBackend {
   }
 
 }
-new Xe_Plugin_ProductBackend();
+new Product_Backend();

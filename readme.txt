@@ -26,7 +26,7 @@ Fixed: Some minor bugs.
 New Added: Sample classes for product types, custom fields, tabs.
 New Added: Views class for reusable sections.
 New Added: wp_localize_script() function.
-New Added: sanitize_email() and sanitize_url() to updateField().
+New Added: sanitize_email() and sanitize_url() to update_field().
 Fixed: Plugin options not saving.
 Fixed: Minor bugs.
 

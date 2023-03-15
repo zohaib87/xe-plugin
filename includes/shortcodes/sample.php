@@ -7,9 +7,19 @@
  * @package Xe Plugin
  */
 
-function _xe_plugin_sample() {
+namespace Xe_Plugin\Includes\Shortcodes;
 
-  return 'Shortcode must always return the output and should never echo it.';
+class Sample {
+
+  function __construct() {
+    add_shortcode('xe_plugin_sample', [$this, 'sample']);
+  }
+
+  public function sample() {
+
+    return 'Shortcode must always return the output and should never echo it.';
+
+  }
 
 }
-add_shortcode('xe_plugin_sample', '_xe_plugin_sample');
+new Sample();

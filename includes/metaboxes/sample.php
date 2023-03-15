@@ -8,37 +8,38 @@
  * @package Xe Plugin
  */
 
-use Xe_Plugin\Helpers\Helpers as Helper;
-use Helpers\Xe_Plugin_Views as View;
+namespace Xe_Plugin\Includes\MetaBoxes;
 
-abstract class Xe_Plugin_SampleMetaBox {
+use Xe_Plugin\Helpers\Helpers as Helper;
+use Xe_Plugin\Helpers\Views as View;
+
+class Sample {
+
+  function __construct() {
+
+    add_action('add_meta_boxes', [$this, 'add']);
+    add_action('save_post_'.$this->post_type(), [$this, 'save']);
+
+  }
 
   /**
-   * Set up and add the meta box.
+   * # Define post type for current metabox
    */
-  public static function add() {
+  protected function post_type() {
+    return 'xe-plugin-cpt';
+  }
 
-    $screens = [
-      'xe-plugin-cpt'
-    ];
-
-    foreach ($screens as $screen) {
-      add_meta_box(
-        'sample_meta_box', // Unique ID
-        'Sample Title', // Box title
-        [ self::class, 'html' ], // Content callback, must be of type callable
-        $screen, // Post type
-        'normal', // The context within the screen where the box should display
-        'default' // Priority
-      );
-    }
-
+  /**
+   * # Set up and add the meta box.
+   */
+  public function add() {
+    add_meta_box('sample_meta_box', esc_html__('Sample Title', 'xem-pos'), [$this, 'html'], $this->post_type());
   }
 
   /**
    * Display the meta box HTML to the user.
    */
-  public static function html( $post ) {
+  public function html($post) {
 
     // Add an nonce field so we can check for it later.
     wp_nonce_field('xe_plugin_cpt_meta_box', 'xe_plugin_cpt_meta_box_nonce');
@@ -61,7 +62,7 @@ abstract class Xe_Plugin_SampleMetaBox {
   /**
    * Save the meta box selections.
    */
-  public static function save( int $post_id ) {
+  public function save(int $post_id) {
 
     // Check if our nonce is set.
     if ( !isset($_POST['xe_plugin_cpt_meta_box_nonce']) ) {
@@ -93,10 +94,9 @@ abstract class Xe_Plugin_SampleMetaBox {
     }
 
     // Saving or Updating the data
-    Helper::updateField($post_id, 'sample', false, 'text', '_sample'); // $post_id, $name, $is_array, $validation, $meta_key, $delete = false
+    Helper::update_field($post_id, 'sample', false, 'text', '_sample'); // $post_id, $name, $is_array, $validation, $meta_key, $delete = false
 
   }
 
 }
-add_action( 'add_meta_boxes', ['Xe_Plugin_SampleMetaBox', 'add'] );
-add_action( 'save_post_xe-plugin-cpt', ['Xe_Plugin_SampleMetaBox', 'save'] );
+new Sample();

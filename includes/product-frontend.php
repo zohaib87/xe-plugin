@@ -8,19 +8,21 @@
  * @package Xe Plugin
  */
 
-class Xe_Plugin_ProductFrontend {
+namespace Xe_Plugin\Includes;
+
+class Product_Frontend {
 
   function __construct() {
 
-    add_action('woocommerce_init',[$this, 'remove_woocommerce_hooks'], 10);
+    add_action('woocommerce_init', [$this, 'remove_woocommerce_hooks'], 10);
 
-    add_action('woocommerce_before_add_to_cart_button', [$this, 'product_add_on'], 9);
-    add_filter('woocommerce_add_to_cart_validation', [$this, 'product_add_on_validation'], 10, 3);
-    add_filter('woocommerce_add_cart_item_data', [$this, 'product_add_on_cart_item_data'], 10, 2);
-    add_filter('woocommerce_get_item_data', [$this, 'product_add_on_display_cart'], 10, 2);
-    add_action('woocommerce_add_order_item_meta', [$this, 'product_add_on_order_item_meta'], 10, 2);
-    add_filter('woocommerce_order_item_product', [$this, 'product_add_on_display_order'], 10, 2);
-    add_filter('woocommerce_email_order_meta_fields', [$this, 'product_add_on_display_emails']);
+    add_action('woocommerce_before_add_to_cart_button', [$this, 'product_addon'], 9);
+    add_filter('woocommerce_add_to_cart_validation', [$this, 'product_addon_validation'], 10, 3);
+    add_filter('woocommerce_add_cart_item_data', [$this, 'product_addon_cart_item_data'], 10, 2);
+    add_filter('woocommerce_get_item_data', [$this, 'product_addon_display_cart'], 10, 2);
+    add_action('woocommerce_add_order_item_meta', [$this, 'product_addon_order_item_meta'], 10, 2);
+    add_filter('woocommerce_order_item_product', [$this, 'product_addon_display_order'], 10, 2);
+    add_filter('woocommerce_email_order_meta_fields', [$this, 'product_addon_display_emails']);
     add_action('woocommerce_before_calculate_totals', [$this, 'before_calculate_totals'], 10, 1);
 
   }
@@ -28,7 +30,7 @@ class Xe_Plugin_ProductFrontend {
   /**
    * 1. Show custom input field above Add to Cart
    */
-  public function product_add_on() {
+  public function product_addon() {
 
     $value = isset($_POST['sample_add_on']) ? sanitize_text_field($_POST['sample_add_on']) : '';
 
@@ -44,7 +46,7 @@ class Xe_Plugin_ProductFrontend {
   /**
    * 2. Throw error if custom input field empty
    */
-  public function product_add_on_validation($passed, $product_id, $qty) {
+  public function product_addon_validation($passed, $product_id, $qty) {
 
     if ( isset($_POST['sample_add_on']) && sanitize_text_field($_POST['sample_add_on']) == '' ) {
       wc_add_notice('Sample field is required', 'error');
@@ -58,7 +60,7 @@ class Xe_Plugin_ProductFrontend {
   /**
    * 3. Save custom input field value into cart item data
    */
-  function product_add_on_cart_item_data($cart_item, $product_id) {
+  function product_addon_cart_item_data($cart_item, $product_id) {
 
     $product = wc_get_product($product_id);
     $price = $product->get_price();
@@ -75,7 +77,7 @@ class Xe_Plugin_ProductFrontend {
   /**
    * 4. Display custom input field value @ Cart
    */
-  function product_add_on_display_cart($data, $cart_item) {
+  function product_addon_display_cart($data, $cart_item) {
 
     if ( isset($cart_item['sample_add_on']) ) {
       $data[] = array(
@@ -91,7 +93,7 @@ class Xe_Plugin_ProductFrontend {
   /**
    * 5. Save custom input field value into order item meta
    */
-  public function product_add_on_order_item_meta($item_id, $values) {
+  public function product_addon_order_item_meta($item_id, $values) {
 
     if ( !empty($values['sample_add_on']) ) {
       wc_add_order_item_meta( $item_id, 'Custom Text Add-On', $values['sample_add_on'], true );
@@ -102,7 +104,7 @@ class Xe_Plugin_ProductFrontend {
   /**
    * 6. Display custom input field value into order table
    */
-  public function product_add_on_display_order($cart_item, $order_item) {
+  public function product_addon_display_order($cart_item, $order_item) {
 
     if ( isset($order_item['sample_add_on']) ) {
       $cart_item['sample_add_on'] = $order_item['sample_add_on'];
@@ -115,7 +117,7 @@ class Xe_Plugin_ProductFrontend {
   /**
    * 7. Display custom input field value into order emails
    */
-  public function product_add_on_display_emails($fields) {
+  public function product_addon_display_emails($fields) {
 
     $fields['sample_add_on'] = esc_html__('Custom Text Add-On', 'xe-plugin');
 
@@ -154,4 +156,4 @@ class Xe_Plugin_ProductFrontend {
   }
 
 }
-new Xe_Plugin_ProductFrontend();
+new Product_Frontend();

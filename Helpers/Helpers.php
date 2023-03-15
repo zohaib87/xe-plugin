@@ -40,7 +40,7 @@ class Helpers {
    *
    * @param string  $path   Path to files (*.php) that needs to be auto loaded.
    */
-  public static function autoLoadFiles($path) {
+  public static function auto_load_files($path) {
 
     $files = glob($path);
 
@@ -58,7 +58,7 @@ class Helpers {
    *
    * @return string of minified css.
    */
-  public static function minifyCss($css) {
+  public static function minify_css($css) {
 
     $css = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $css);
     $css = str_replace(array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), '', $css);
@@ -83,7 +83,7 @@ class Helpers {
    *
    * @return string of RGB color.
    */
-  public static function hexToRgb($color) {
+  public static function hex2rgb($color) {
 
     if ( $color[0] == '#' ) {
       $color = substr( $color, 1 );
@@ -172,7 +172,7 @@ class Helpers {
    * @param string  $meta_key     Post meta key
    * @param string  $delete       If true, post meta will be deleted when the specified name attribute is not set.
    */
-  public static function updateField($post_id, $name, $is_array, $validation, $meta_key, $delete = false) {
+  public static function update_field($post_id, $name, $is_array, $validation, $meta_key, $delete = false) {
 
     if (!array_key_exists($name, $_POST) && $delete == false) {
       return;

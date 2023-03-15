@@ -12,7 +12,7 @@ class Views {
   /**
    * # Tabs for Plugin Options
    */
-  public static function pluginOptionTabs($tabs) {
+  public static function plugin_option_tabs($tabs) {
 
     foreach ($tabs as $tab) {
 

@@ -8,52 +8,71 @@
  * @package Xe Plugin
  */
 
-function _xe_plugin_add_menu_pages() {
+namespace Xe_Plugin\Includes;
 
-  /* Menu Pages */
-	add_menu_page(
-    esc_html__('Xe Plugin', 'xe-plugin'),
-    esc_html__('Xe Plugin', 'xe-plugin'),
-    'manage_options',
-    'xe-plugin-options',
-    '_xe_plugin_options',
-    'dashicons-welcome-widgets-menus'
-	);
+use Xe_Plugin\Includes\Callbacks\Plugin_Options;
 
-  /* Submenu Pages */
-  add_submenu_page(
-    'xe-plugin-options',
-    esc_html__('Plugin Options', 'xe-plugin'),
-    esc_html__('Plugin Options', 'xe-plugin'),
-    'manage_options',
-    'xe-plugin-options',
-    '_xe_plugin_options',
-    1
-  );
+class Menu_Pages {
 
-	add_submenu_page(
-		'xe-plugin-options',
-		esc_html__('Sample Post Type', 'xe-plugin'),
-		esc_html__('Sample Post Type', 'xe-plugin'),
-		'manage_options',
-		'edit.php?post_type=xe-plugin-cpt'
-	);
+  function __construct() {
 
-  add_submenu_page(
-		'xe-plugin-options',
-		esc_html__('Sample Categories', 'xe-plugin'),
-		esc_html__('Sample Categories', 'xe-plugin'),
-		'manage_options',
-		'edit-tags.php?taxonomy=xe-plugin-cat&post_type=xe-plugin-cpt'
-	);
+    add_action('admin_menu', [$this, 'add_menu_pages']);
 
-  add_submenu_page(
-		'xe-plugin-options',
-		esc_html__('Sample Tags', 'xe-plugin'),
-		esc_html__('Sample Tags', 'xe-plugin'),
-		'manage_options',
-		'edit-tags.php?taxonomy=xe-plugin-tag&post_type=xe-plugin-cpt'
-	);
+  }
+
+  /**
+   * # Add menu and sub-menu pages
+   */
+  public function add_menu_pages() {
+
+    $plugin_options = new Plugin_Options();
+
+    /* Menu Pages */
+    add_menu_page(
+      esc_html__('Xe Plugin', 'xe-plugin'),
+      esc_html__('Xe Plugin', 'xe-plugin'),
+      'manage_options',
+      'xe-plugin-options',
+      [$plugin_options, 'html'],
+      'dashicons-welcome-widgets-menus'
+    );
+
+    /* Submenu Pages */
+    add_submenu_page(
+      'xe-plugin-options',
+      esc_html__('Plugin Options', 'xe-plugin'),
+      esc_html__('Plugin Options', 'xe-plugin'),
+      'manage_options',
+      'xe-plugin-options',
+      [$plugin_options, 'html'],
+      1
+    );
+
+    add_submenu_page(
+      'xe-plugin-options',
+      esc_html__('Sample Post Type', 'xe-plugin'),
+      esc_html__('Sample Post Type', 'xe-plugin'),
+      'manage_options',
+      'edit.php?post_type=xe-plugin-cpt'
+    );
+
+    add_submenu_page(
+      'xe-plugin-options',
+      esc_html__('Sample Categories', 'xe-plugin'),
+      esc_html__('Sample Categories', 'xe-plugin'),
+      'manage_options',
+      'edit-tags.php?taxonomy=xe-plugin-cat&post_type=xe-plugin-cpt'
+    );
+
+    add_submenu_page(
+      'xe-plugin-options',
+      esc_html__('Sample Tags', 'xe-plugin'),
+      esc_html__('Sample Tags', 'xe-plugin'),
+      'manage_options',
+      'edit-tags.php?taxonomy=xe-plugin-tag&post_type=xe-plugin-cpt'
+    );
+
+  }
 
 }
-add_action('admin_menu', '_xe_plugin_add_menu_pages');
+new Menu_Pages();

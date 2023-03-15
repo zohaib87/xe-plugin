@@ -10,7 +10,7 @@ namespace Xe_Plugin\Helpers;
 use Xe_Plugin\Helpers\Helpers as Helper;
 use Xe_Plugin\Helpers\Defaults as De;
 
-class PluginOptions {
+class Plugin_Options {
 
   // Others
   public $localhost;
@@ -18,14 +18,14 @@ class PluginOptions {
   function __construct() {
 
     // Assign Option values to variables
-    add_action('init', array($this, 'initVars'));
+    add_action('init', array($this, 'init_vars'));
 
   }
 
   /**
    * # Initialize variables for use.
    */
-	public function initVars() {
+	public function init_vars() {
 
     // Others
     $this->localhost = $this->localhost();
@@ -52,4 +52,4 @@ class PluginOptions {
 
 }
 global $xep_opt;
-$xep_opt = new PluginOptions();
+$xep_opt = new Plugin_Options();
