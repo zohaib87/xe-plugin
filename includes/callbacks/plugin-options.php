@@ -82,4 +82,4 @@ class Plugin_Options {
   }
 
 }
-new PluginOptions();
+new Plugin_Options();
