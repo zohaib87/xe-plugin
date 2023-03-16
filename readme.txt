@@ -12,11 +12,6 @@ Just a starter WordPress plugin.
 Updated: All functions to Classes except for functions.php file.
 Updated: preClasses to namespaces in init.js for string replacing.
 Removed: copy.js script completely.
-Removed: Download using composer.
-Fixed: Some minor bugs.
-
------ v1.1.15 ------------
-New Added: Download using composer.
 Fixed: Some minor bugs.
 
 ----- v1.1.14 ------------
