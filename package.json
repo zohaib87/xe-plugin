@@ -5,7 +5,6 @@
   "scripts": {
     "init": "cd node_scripts && node init.js",
     "build": "cd node_scripts && node build.js",
-    "copy": "cd node_scripts && node copy.js",
     "pot": "cd node_scripts && node pot.js",
     "docs": "mkdocs gh-deploy --force"
   },

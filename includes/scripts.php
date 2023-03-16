@@ -5,56 +5,71 @@
  * @package Xe Plugin
  */
 
-use Helpers\Xe_Plugin_Helpers as Helper;
+namespace Xe_Plugin\Includes;
 
-function _xe_plugin_scripts() {
+use Xe_Plugin\Helpers\Helpers as Helper;
 
-  global $xep_opt;
+class Scripts {
+
+  function __construct() {
+
+    add_action('wp_enqueue_scripts', [$this, 'frontend']);
+    add_action('admin_enqueue_scripts', [$this, 'admin'], 9999);
+
+  }
 
   /**
-   * Styles
+   * # Enqueue scripts and styles for front-end.
    */
-  Helper::enqueue('style', 'xe-plugin-main', '/assets/css/main.css');
+  public function frontend() {
+
+    global $xep_opt;
+
+    /**
+     * Styles
+     */
+    Helper::enqueue('style', 'xe-plugin-main', '/assets/css/main.css');
+
+    /**
+     * Scripts
+     */
+    Helper::enqueue('script', 'xe-plugin-main', '/assets/js/main.js', ['jquery']);
+
+    wp_localize_script('xe-plugin-main', 'xepObj', [
+      'ajaxUrl' => admin_url('admin-ajax.php'),
+      'pluginUrl' => _xe_plugin_directory_uri(),
+      'nonce' => wp_create_nonce('_xe_plugin_ajax_nonce'),
+      'localhost' => $xep_opt->localhost
+    ]);
+
+  }
 
   /**
-   * Scripts
+   * # Enqueue scripts and styles for admin panel.
    */
-  Helper::enqueue('script', 'xe-plugin-main', '/assets/js/main.js', ['jquery']);
+  public function admin() {
 
-  wp_localize_script('xe-plugin-main', 'xepObj', [
-    'ajaxUrl' => admin_url('admin-ajax.php'),
-    'pluginUrl' => _xe_plugin_directory_uri(),
-    'nonce' => wp_create_nonce('_xe_plugin_ajax_nonce'),
-    'localhost' => $xep_opt->localhost
-	]);
+    global $current_screen, $xep_opt;
+
+    /**
+     * Styles
+     */
+    Helper::enqueue('style', 'xe-plugin-admin', '/assets/css/admin.css');
+
+    /**
+     * Scripts
+     */
+    Helper::enqueue('script', 'xe-plugin-admin', '/assets/js/admin.js', ['jquery']);
+
+    wp_localize_script('xe-plugin-admin', 'xepObj', [
+      'pluginUrl' => _xe_plugin_directory_uri(),
+      'nonce' => wp_create_nonce('_xe_plugin_ajax_nonce'),
+      'postType' => $current_screen->post_type,
+      'base' => $current_screen->base,
+      'localhost' => $xep_opt->localhost
+    ]);
+
+  }
 
 }
-add_action('wp_enqueue_scripts', '_xe_plugin_scripts');
-
-/**
- * Enqueue scripts and styles for admin panel.
- */
-function _xe_plugin_admin_scripts() {
-
-  global $current_screen, $xep_opt;
-
-	/**
-   * Styles
-   */
-  Helper::enqueue('style', 'xe-plugin-admin', '/assets/css/admin.css');
-
-  /**
-   * Scripts
-   */
-  Helper::enqueue('script', 'xe-plugin-admin', '/assets/js/admin.js', ['jquery']);
-
-  wp_localize_script('xe-plugin-admin', 'xepObj', [
-    'pluginUrl' => _xe_plugin_directory_uri(),
-    'nonce' => wp_create_nonce('_xe_plugin_ajax_nonce'),
-		'postType' => $current_screen->post_type,
-		'base' => $current_screen->base,
-    'localhost' => $xep_opt->localhost
-	]);
-
-}
-add_action( 'admin_enqueue_scripts', '_xe_plugin_admin_scripts', 9999 );
+new Scripts();

@@ -5,10 +5,12 @@
  * @package Xe Plugin
  */
 
-use Helpers\Xe_Plugin_Helpers as Helper;
-use Helpers\Xe_Plugin_Defaults as De;
+namespace Xe_Plugin\Helpers;
 
-class Xe_Plugin_Options {
+use Xe_Plugin\Helpers\Helpers as Helper;
+use Xe_Plugin\Helpers\Defaults as De;
+
+class Plugin_Options {
 
   // Others
   public $localhost;
@@ -50,4 +52,4 @@ class Xe_Plugin_Options {
 
 }
 global $xep_opt;
-$xep_opt = new Xe_Plugin_Options();
+$xep_opt = new Plugin_Options();
