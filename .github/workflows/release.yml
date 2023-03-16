@@ -22,7 +22,7 @@ jobs:
           type: zip
           filename: ${{ github.event.repository.name }}.zip
           directory: ../
-          exclusions: '*.git* *.md'
+          exclusions: '*.git* *.md *.yml /*docs/*'
           # exclusions e.g: '*.git* /*node_*/* *.json *.lock *.md'
 
       - name: Upload Archive Release Asset
