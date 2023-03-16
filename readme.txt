@@ -8,6 +8,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Just a starter WordPress plugin.
 
 == Changelog ==
+----- v1.2.3 ------------
+Fixed: Some minor bugs.
+
 ----- v1.2.2 ------------
 Updated: File names according to WP Coding Standards.
 
