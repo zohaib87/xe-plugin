@@ -25,12 +25,12 @@ class Helpers {
    */
   public static function enqueue($script, $handle, $src = '', $deps = array(), $media = 'all', $in_footer = true, $ver = '') {
 
-    $ver = empty($ver) ? filemtime(xe_billing_directory() . $src) : $ver;
+    $ver = empty($ver) ? filemtime(_xe_plugin_directory() . $src) : $ver;
 
     if ($script == 'style') {
-      wp_enqueue_style( esc_attr($handle), xe_billing_directory_uri() . esc_attr($src), $deps, esc_attr($ver), esc_attr($media) );
+      wp_enqueue_style( esc_attr($handle), _xe_plugin_directory_uri() . esc_attr($src), $deps, esc_attr($ver), esc_attr($media) );
     } elseif ($script == 'script') {
-      wp_enqueue_script( esc_attr($handle), xe_billing_directory_uri() . esc_attr($src), $deps, esc_attr($ver), $in_footer);
+      wp_enqueue_script( esc_attr($handle), _xe_plugin_directory_uri() . esc_attr($src), $deps, esc_attr($ver), $in_footer);
     }
 
   }
