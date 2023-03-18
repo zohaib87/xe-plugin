@@ -35,4 +35,4 @@ Latest version of [WordPress](https://wordpress.org/) and [Nodejs](https://nodej
 
 Your [pull requests](https://github.com/XeCreators/xe-plugin/pulls) will be highly welcomed. If you're looking for something to start with, you can check the [issues](https://github.com/XeCreators/xe-plugin/issues) or open one about something you want to contribute and we can discuss it before your pull request.
 
-Keep in mind that code should meet the [WordPress Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/)
+Keep in mind that code should meet the [WordPress Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/)
