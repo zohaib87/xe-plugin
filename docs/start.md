@@ -1,5 +1,5 @@
 
-## Get Framework
+## Get Starter Plugin
 
 Download fresh copy of [Xe Plugin](https://github.com/XeCreators/xe-plugin) and extract it to you development environment. Change folder name to your theme name. e.g: `xurais` or `xu-rais`.
 
@@ -23,11 +23,15 @@ You can check `npm` version using the following command.
 
         "name": "Xurais",
 
+4. Chang `global` to a friendly and short name. eg: `xur` or `xura` (Lowercase).
+
+        "global": "xur",
+
 5. Open command line, navigate to project folder and run this command to install dependencies:
 
         npm install
 
-3. Now run following command to automatically change `text-domain`, `prefixes` and `DocBlocks` to your theme name.
+6. Now run following command to automatically change `text-domain`, `prefixes`, `DocBlocks`, `global variables` and `global object (JavaScript)` according to your `config.json` file.
 
         npm run init
 
@@ -38,7 +42,7 @@ Open `config.json` inside `node_scripts` folder and change `build` path to your 
 
     "build": "E:/Projects/Xe Plugin",
 
-Once you have completed your theme, run the below command to generate a clean copy. `.pot` file will also be generated inside languages folder.
+Once you have completed your plugin, run the below command to generate a clean copy. `.pot` file will also be generated inside languages folder.
 
     npm run build
 
