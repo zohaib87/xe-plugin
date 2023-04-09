@@ -248,4 +248,51 @@ class Helpers {
 
   }
 
+  /**
+   * # Verify or check for nonce, auto save and post type.
+   *
+   * @param string  $action      Nonce action ID
+   * @param string  $nonce       Nonce ID
+   * @param string  $post_type   Post type for which saving is going to proceed
+   * @param string  $post_id     Current post ID
+   *
+   * @return bool true or false
+   */
+  public static function verify_save( $action, $nonce, $post_type, $post_id ) {
+
+    // Check if our nonce is set.
+    if ( ! isset( $_POST[$nonce] ) ) {
+      return false;
+    }
+
+    // Verify that the nonce is valid.
+    if ( ! wp_verify_nonce( $_POST[$nonce], $action ) ) {
+      return false;
+    }
+
+    // If this is an autosave, our form has not been submitted,
+    // so we don't want to do anything.
+    if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {
+      return false;
+    }
+
+    // Check the user's permissions.
+    if ( $post_type == $_POST['post_type'] ) {
+
+      if ( ! current_user_can( 'edit_page', $post_id ) ) {
+        return false;
+      }
+
+    } else {
+
+      if ( ! current_user_can( 'edit_post', $post_id ) ) {
+        return false;
+      }
+
+    }
+
+    return true;
+
+  }
+
 }
