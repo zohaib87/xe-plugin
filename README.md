@@ -3,13 +3,13 @@
 
 [![Issues](https://img.shields.io/github/issues/XeCreators/xe-plugin)](https://github.com/XeCreators/xe-plugin/issues)
 [![Release Latest](https://img.shields.io/github/v/release/XeCreators/xe-plugin?color=yellowgreen)](https://github.com/XeCreators/xe-plugin/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/XeCreators/xe-plugin/total)](https://github.com/XeCreators/xe-plugin/releaseslatest/download/xe-plugin.zip)
+[![Downloads](https://img.shields.io/github/downloads/XeCreators/xe-plugin/total)](https://github.com/XeCreators/xe-plugin/releases/latest/download/xe-plugin.zip)
 ![Repo Size](https://img.shields.io/github/repo-size/XeCreators/xe-plugin.svg)
 [![License](https://img.shields.io/github/license/XeCreators/xe-plugin)](https://github.com/XeCreators/xe-plugin/blob/master/LICENSE.md)
 
 Xe Plugin is a starter WordPress plugin which have built-in functionalities that are used in almost every plugin. So just focus on the main functionality that you want to built for WordPress.
 
-[![Download Latest Release](https://img.shields.io/badge/Download_Latest_Release-blue?style=for-the-badge)](https://github.com/XeCreators/xe-plugin/releaseslatest/download/xe-plugin.zip)
+[![Download Latest Release](https://img.shields.io/badge/Download_Latest_Release-blue?style=for-the-badge)](https://github.com/XeCreators/xe-plugin/releases/latest/download/xe-plugin.zip)
 [![Explore Documentation »](https://img.shields.io/badge/Explore_Documentation-282a2e?style=for-the-badge)](https://xecreators.github.io/xe-plugin)
 
 ## Requirements
