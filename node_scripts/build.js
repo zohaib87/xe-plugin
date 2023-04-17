@@ -2,9 +2,9 @@
 var config = require('./config.json');
 var fs  = require('fs');
 var wpPot = require('wp-pot');
-var copydir = require('copy-dir');
+var copyDir = require('copy-dir');
 var path = require('path');
-var rimraf = require("rimraf");
+var rimraf = require('rimraf');
 
 var name = config.name;
 var nameLower = name.toLowerCase();
@@ -18,10 +18,10 @@ fs.rmSync(targetUrl, {
   recursive: true,
   force: true
 });
-console.log("Old folder removed.");
+console.log('Old folder removed.');
 
 // Copy Theme
-copydir.sync( currentPlugin, targetUrl, {
+copyDir.sync( currentPlugin, targetUrl, {
 
   utimes: true,  // keep add time and modify time
   mode: true,    // keep file mode
@@ -63,7 +63,8 @@ copydir.sync( currentPlugin, targetUrl, {
       '.github',
       '.vscode',
       'node_modules',
-      'node_scripts'
+      'node_scripts',
+      'src'
     ];
     if ( stat === 'directory' && directories.includes(path.basename(filename)) ) {
       return false;
