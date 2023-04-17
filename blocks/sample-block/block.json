@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/block.json",
+  "apiVersion": 2,
+  "name": "xe-plugin/sample-block",
+  "title": "Sample Block",
+  "textdomain": "xe-plugin",
+  "icon": "universal-access-alt",
+  "category": "layout",
+  "example": {},
+  "editorScript": "file:./index.js"
+}
