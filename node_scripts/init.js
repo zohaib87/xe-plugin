@@ -29,6 +29,7 @@ var options = {
   files: [
     currentPlugin+'/**/*.css',
     currentPlugin+'/**/*.php',
+    currentPlugin+'/**/block.json',
     currentPlugin+'/readme.txt',
   ],
   from: [ /'xe-plugin'/g, /_xe_plugin_/g, /Text Domain: xe-plugin/g, / Xe Plugin/g, /xe-plugin-/g, /\$xep_opt/g, /Xe_Plugin\\/g, /\/xe-plugin/g, /'xepObj'/g, /xep-/g, /_xep_/g ],
