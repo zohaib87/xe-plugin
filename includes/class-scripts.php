@@ -15,6 +15,7 @@ class Scripts {
 
     add_action( 'wp_enqueue_scripts', [ $this, 'frontend'] );
     add_action( 'admin_enqueue_scripts', [ $this, 'admin' ], 9999 );
+    add_action( 'init', [ $this, 'blocks' ] );
 
   }
 
@@ -68,6 +69,27 @@ class Scripts {
       'base' => $current_screen->base,
       'localhost' => $xep_opt->localhost
     ] );
+
+  }
+
+  /**
+   * # Register blocks
+   */
+  public function blocks() {
+
+    register_block_type( _xe_plugin_directory() . '/blocks/sample-block/' );
+
+    /**
+     * May be extended to wp_set_script_translations( 'my-handle', 'my-domain',
+     * plugin_dir_path( MY_PLUGIN ) . 'languages' ) ). For details see
+     *
+     * @link https://make.wordpress.org/core/2018/11/09/new-javascript-i18n-support-in-wordpress/
+     */
+    if ( function_exists( 'wp_set_script_translations' ) ) {
+
+      wp_set_script_translations( 'sample-block', 'xe-plugin' );
+
+    }
 
   }
 
