@@ -8,9 +8,13 @@ nav:
   - Getting Started:
     - Introduction: index.md
     - Let's Start: start.md
+    - Main Plugin File: main.md
   - Helpers:
-    - Class Defaults: defaults.md
-    - Class Helpers: helpers.md
+    - Functions: functions.md
+    - Class Defaults: class-defaults.md
+    - Class Helpers: class-helpers.md
+    - Class Plugin Options: class-plugin-options.md
+    - Class Views: class-views.md
   - Support: support.md
 
 theme:
