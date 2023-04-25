@@ -55,7 +55,7 @@ class Setup {
    * # Translate Plugin
    */
   public function load_textdomain() {
-    load_plugin_textdomain( 'xe-plugin', false, dirname( plugin_basename(__FILE__) ) . '/languages/' );
+    load_plugin_textdomain( 'xe-plugin', false, _xe_plugin_directory() . '/languages/' );
   }
 
 }
