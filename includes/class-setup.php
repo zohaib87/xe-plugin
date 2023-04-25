@@ -11,13 +11,13 @@ class Setup {
 
   function __construct() {
 
-    register_activation_hook(_xe_plugin_file(), [$this, 'activation']);
-    register_deactivation_hook(_xe_plugin_file(), [$this, 'deactivation']);
-    register_uninstall_hook(_xe_plugin_file(), [self::class, 'uninstall']);
-    add_action('plugins_loaded', [$this, 'load_textdomain']);
+    register_activation_hook( _xe_plugin_file(), [ $this, 'activation' ] );
+    register_deactivation_hook( _xe_plugin_file(), [ $this, 'deactivation' ] );
+    register_uninstall_hook( _xe_plugin_file(), [ self::class, 'uninstall' ] );
+    add_action( 'plugins_loaded', [ $this, 'load_textdomain' ] );
 
     // Replace the 'register_uninstall_hook' with following if Freemius SDK is used.
-    // _xe_plugin_fs()->add_action('after_uninstall', [$this, 'uninstall']);
+    // _xe_plugin_fs()->add_action( 'after_uninstall', [ self::class, 'uninstall' ] );
 
   }
 
