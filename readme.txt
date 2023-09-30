@@ -1,6 +1,6 @@
 === Xe Plugin ===
 Requires at least: 5.6
-Tested up to: 6.2
+Tested up to: 6.3
 Requires PHP: 7.4
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -8,6 +8,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Just a starter WordPress plugin.
 
 == Changelog ==
+----- v1.2.5 ------------
+New Added: debug property in Helpers\Plugin_Options class.
+Fixed: Some minor bugs.
+
 ----- v1.2.4 ------------
 New Added: verify_save method in helpers class.
 Fixed: CSS & Nonce prefixes change on initialization.
