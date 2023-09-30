@@ -7,7 +7,7 @@
 
 namespace Xe_Plugin\Helpers;
 
-use Xe_Plugin\Helpers\Helpers as Helper;
+use Xe_Plugin\Helpers\Helpers;
 use Xe_Plugin\Helpers\Defaults as De;
 
 class Plugin_Options {
@@ -18,7 +18,7 @@ class Plugin_Options {
   function __construct() {
 
     // Assign Option values to variables
-    add_action('init', array($this, 'init_vars'));
+    add_action( 'init', [ $this, 'init_vars' ] );
 
   }
 
@@ -28,7 +28,27 @@ class Plugin_Options {
 	public function init_vars() {
 
     // Others
+    $this->debug = $this->debug();
     $this->localhost = $this->localhost();
+
+  }
+
+  /**
+   * # Check if debug mode and log is enabled
+   */
+  protected function debug() {
+
+    if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+
+      if ( defined( 'WP_DEBUG_LOG' ) && WP_DEBUG_LOG ) {
+
+        return true;
+
+      }
+
+    }
+
+    return false;
 
   }
 
@@ -42,10 +62,14 @@ class Plugin_Options {
       '::1'
     );
 
-    if (in_array($_SERVER['REMOTE_ADDR'], $localhost)){
+    if ( in_array( $_SERVER['REMOTE_ADDR'], $localhost ) ) {
+
       return true;
+
     } else {
+
       return false;
+
     }
 
   }

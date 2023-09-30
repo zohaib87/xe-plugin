@@ -15,7 +15,7 @@ class Defaults {
   function __construct() {
 
     // General
-    Self::$default = 'default';
+    self::$default = 'default';
 
   }
 
