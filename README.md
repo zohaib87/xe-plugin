@@ -37,7 +37,7 @@ Your [pull requests](https://github.com/zohaib87/xe-plugin/pulls) will be highly
 
 Keep in mind that code should meet the [WordPress Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/).
 
-### Getting Started on Contribution
+#### Getting Started on Contribution
 
 1. You must have latest version of [WordPress](https://wordpress.org/) and [Nodejs](https://nodejs.org/en/).
 2. Open command line, navigate to project folder and run `npm install` to install dependencies.
