@@ -35,10 +35,7 @@ Latest version of [WordPress](https://wordpress.org/) and [Nodejs](https://nodej
 
 Your [pull requests](https://github.com/zohaib87/xe-plugin/pulls) will be highly welcomed. If you're looking for something to start with, you can check the [issues](https://github.com/zohaib87/xe-plugin/issues) or open one about something you want to contribute and we can discuss it before your pull request.
 
-- You must have latest version of [WordPress](https://wordpress.org/) and [Nodejs](https://nodejs.org/en/).
-- Open command line, clone the repository using:
-  ```
-  git clone https://github.com/zohaib87/xe-plugin.git
-  ```
-- Navigate to cloned repository folder using command line and run `npm install` to install dependencies.
-- Keep in mind that code should meet the [WordPress Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/).
+1. You must have latest version of [WordPress](https://wordpress.org/) and [Nodejs](https://nodejs.org/en/).
+2. Download or clone the repository.
+3. Open command line navigate to the local repository and run `npm install` to install dependencies.
+4. Keep in mind that code should meet the [WordPress Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/).
