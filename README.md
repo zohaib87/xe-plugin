@@ -37,5 +37,5 @@ Your [pull requests](https://github.com/zohaib87/xe-plugin/pulls) will be highly
 
 1. You must have latest version of [WordPress](https://wordpress.org/) and [Nodejs](https://nodejs.org/en/).
 2. Download or clone the repository.
-3. Open command line navigate to the local repository and run `npm install` to install dependencies.
+3. Open command line, navigate to the local repository and run `npm install` to install dependencies.
 4. Keep in mind that code should meet the [WordPress Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/).
