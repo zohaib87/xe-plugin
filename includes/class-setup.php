@@ -9,15 +9,74 @@ namespace Xe_Plugin\Includes;
 
 class Setup {
 
-  function __construct() {
+  public function __construct() {
 
-    register_activation_hook(_xe_plugin_file(), [$this, 'activation']);
-    register_deactivation_hook(_xe_plugin_file(), [$this, 'deactivation']);
-    register_uninstall_hook(_xe_plugin_file(), [self::class, 'uninstall']);
-    add_action('plugins_loaded', [$this, 'load_textdomain']);
+    add_action( 'template_redirect', [ $this, 'redirect_if_not_logged_in' ] );
+    add_action( 'template_redirect', [ $this, 'redirect_if_logged_in' ] );
+
+    register_activation_hook( _xe_plugin_file(), [ $this, 'activation' ] );
+    register_deactivation_hook( _xe_plugin_file(), [ $this, 'deactivation' ] );
+    register_uninstall_hook( _xe_plugin_file(), [ self::class, 'uninstall' ] );
+    add_action( 'plugins_loaded', [ $this, 'load_textdomain' ] );
 
     // Replace the 'register_uninstall_hook' with following if Freemius SDK is used.
     // _xe_plugin_fs()->add_action('after_uninstall', [$this, 'uninstall']);
+
+  }
+
+  /**
+   * # Redirect if not logged in
+   */
+  public function redirect_if_not_logged_in() {
+
+    global $xep_opt;
+
+    $current_template = get_post_meta( get_the_ID(), '_wp_page_template', true );
+
+    // Get templates which needs authentication/login
+    $filtered_templates = array_filter( $xep_opt->templates, function ( $template ) {
+
+      return $template['auth'] === true;
+
+    } );
+
+    // Get only keys of page templates
+    $templates = array_keys( $filtered_templates );
+
+    if ( in_array( $current_template, $templates ) && ! is_user_logged_in() ) {
+
+      wp_redirect( get_permalink( Helpers::get_template_id( 'xep-login' ) ) );
+      exit;
+
+    }
+
+  }
+
+  /**
+   * # Redirect if logged in
+   */
+  public function redirect_if_logged_in() {
+
+    global $xep_opt;
+
+    $current_template = get_post_meta( get_the_ID(), '_wp_page_template', true );
+
+    // Get templates which does not need authentication/login
+    $filtered_templates = array_filter( $xep_opt->templates, function ( $template ) {
+
+      return $template['auth'] === false;
+
+    } );
+
+    // Get only keys of page templates
+    $templates = array_keys( $filtered_templates );
+
+    if ( in_array( $current_template, $templates ) && is_user_logged_in() ) {
+
+      wp_redirect( get_permalink( Helpers::get_template_id( 'xep-dashboard' ) ) );
+      exit;
+
+    }
 
   }
 

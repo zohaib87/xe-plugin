@@ -35,6 +35,11 @@ require _xe_plugin_directory() . '/helpers/class-helpers.php';
 require _xe_plugin_directory() . '/helpers/class-views.php';
 
 /**
+ * Class for templates.
+ */
+require _xe_plugin_directory() . '/includes/class-templates.php';
+
+/**
  * Class to get and use plugin options.
  */
 require _xe_plugin_directory() . '/helpers/class-plugin-options.php';

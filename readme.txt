@@ -1,13 +1,18 @@
 === Xe Plugin ===
-Requires at least: 5.6
-Tested up to: 6.3
-Requires PHP: 7.4
+Requires at least: 6
+Tested up to: 6.6
+Requires PHP: 8
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Just a starter WordPress plugin.
 
 == Changelog ==
+----- v1.2.6 ------------
+New Added: Page Templates support.
+Updated: Class Views static methods to action hooks.
+Fixed: Some minor bugs.
+
 ----- v1.2.5 ------------
 New Added: debug property in Helpers\Plugin_Options class.
 Fixed: Some minor bugs.

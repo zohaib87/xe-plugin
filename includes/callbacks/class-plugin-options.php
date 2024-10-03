@@ -7,13 +7,11 @@
 
 namespace Xe_Plugin\Includes\Callbacks;
 
-use Xe_Plugin\Helpers\Views as View;
-
 class Plugin_Options {
 
-  function __construct() {
+  public function __construct() {
 
-    add_action('admin_init', [$this, 'register_options']);
+    add_action( 'admin_init', [ $this, 'register_options' ] );
 
   }
 
@@ -23,38 +21,38 @@ class Plugin_Options {
 
     ?>
       <div class="wrap">
-        <h1><?php echo esc_html__('Plugin Options', 'xe-plugin'); ?></h1>
+        <h1><?php echo esc_html__( 'Plugin Options', 'xe-plugin' ); ?></h1>
 
         <?php
           settings_errors();
-          $active_tab = isset($_GET['tab']) ? $_GET['tab'] : 'general';
+          $active_tab = isset( $_GET['tab'] ) ? $_GET['tab'] : 'general';
         ?>
 
         <h2 class="nav-tab-wrapper">
           <?php
-            View::plugin_option_tabs([
-              array( esc_html__('General Options', 'xe-plugin'), 'general', $active_tab )
-            ]);
+            do_action( '_xe_plugin_option_tabs', [
+              array( esc_html__( 'General Options', 'xe-plugin' ), 'general', $active_tab )
+            ] );
           ?>
         </h2>
 
         <form method="post" action="options.php" enctype="multipart/form-data">
 
           <?php
-            // settings_fields('xep_options');
-            // do_settings_sections('xep_options');
+            // settings_fields( 'xep_options' );
+            // do_settings_sections( 'xep_options' );
           ?>
 
           <!-- # General Tab -->
-          <table class="form-table" role="presentation" style="<?php echo ($active_tab !== 'general') ? 'display: none;' : ''; ?>">
+          <table class="form-table" role="presentation" style="<?php echo ( $active_tab !== 'general' ) ? 'display: none;' : ''; ?>">
             <tbody>
               <!-- Sample -->
               <tr>
                 <th scope="row">
-                  <label for="xep_sample"><?php echo esc_html__('Sample', 'xe-plugin'); ?></label>
+                  <label for="_xep_sample"><?php echo esc_html__( 'Sample', 'xe-plugin' ); ?></label>
                 </th>
                 <td>
-                  <input type="text" name="xep_sample" id="xep_sample" value="<?php //echo esc_attr($xep_opt->sample); ?>">
+                  <input type="text" name="_xep_sample" id="_xep_sample" value="<?php echo esc_attr( $xep_opt->sample ); ?>">
                 </td>
               </tr>
             </tbody>
@@ -73,10 +71,10 @@ class Plugin_Options {
   public function register_options() {
 
     // $options = [
-    //   'xep_sample',
+    //   '_xep_sample',
     // ];
-    // foreach ($options as $option) {
-    //   register_setting('xep_options', $option);
+    // foreach ( $options as $option ) {
+    //   register_setting( 'xep_options', $option );
     // }
 
   }
