@@ -23,14 +23,18 @@ class Helpers {
    * @param bool      $in_footer  Whether to enqueue the script before </body> instead of in the <head>.
    * @param string    $ver        Version of the script.
    */
-  public static function enqueue($script, $handle, $src = '', $deps = array(), $media = 'all', $in_footer = true, $ver = '') {
+  public static function enqueue( $script, $handle, $src = '', $deps = array(), $media = 'all', $in_footer = true, $ver = '' ) {
 
-    $ver = empty($ver) ? filemtime(_xe_plugin_directory() . $src) : $ver;
+    $ver = empty( $ver ) ? filemtime( _xe_plugin_directory() . $src ) : $ver;
 
-    if ($script == 'style') {
-      wp_enqueue_style( esc_attr($handle), _xe_plugin_directory_uri() . esc_attr($src), $deps, esc_attr($ver), esc_attr($media) );
-    } elseif ($script == 'script') {
-      wp_enqueue_script( esc_attr($handle), _xe_plugin_directory_uri() . esc_attr($src), $deps, esc_attr($ver), $in_footer);
+    if ( $script == 'style' ) {
+
+      wp_enqueue_style( esc_attr( $handle ), _xe_plugin_directory_uri() . esc_attr( $src ), $deps, esc_attr( $ver ), esc_attr( $media ) );
+
+    } elseif ( $script == 'script' ) {
+
+      wp_enqueue_script( esc_attr( $handle ), _xe_plugin_directory_uri() . esc_attr( $src ), $deps, esc_attr( $ver ), $in_footer );
+
     }
 
   }
@@ -40,7 +44,7 @@ class Helpers {
    *
    * @param string  $path   Path to files (*.php) that needs to be auto loaded.
    */
-  public static function auto_load_files($path) {
+  public static function auto_load_files( $path ) {
 
     $files = glob($path);
 
@@ -58,7 +62,7 @@ class Helpers {
    *
    * @return string of minified css.
    */
-  public static function minify_css($css) {
+  public static function minify_css( $css ) {
 
     $css = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $css);
     $css = str_replace(array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), '', $css);
@@ -83,7 +87,7 @@ class Helpers {
    *
    * @return string of RGB color.
    */
-  public static function hex2rgb($color) {
+  public static function hex2rgb( $color ) {
 
     if ( $color[0] == '#' ) {
       $color = substr( $color, 1 );
@@ -112,7 +116,7 @@ class Helpers {
    *
    * @return string of lighter or darker color.
    */
-  public static function darken($color, $dif=20) {
+  public static function darken( $color, $dif = 20 ) {
 
     $color = str_replace('#','', $color);
     $rgb = '';
@@ -172,18 +176,23 @@ class Helpers {
    * @param string  $meta_key     Post meta key
    * @param string  $delete       If true, post meta will be deleted when the specified name attribute is not set.
    */
-  public static function update_field($post_id, $name, $is_array, $validation, $meta_key, $delete = false) {
+  public static function update_field( $post_id, $name, $is_array, $validation, $meta_key, $delete = false ) {
 
-    if (!array_key_exists($name, $_POST) && $delete == false) {
+    if ( ! array_key_exists( $name, $_POST ) && $delete == false ) {
+
       return;
-    } elseif (!array_key_exists($name, $_POST) && $delete == true) {
+
+    } elseif ( ! array_key_exists( $name, $_POST ) && $delete == true ) {
+
       delete_post_meta($post_id, $meta_key);
+
       return;
+
     }
 
-    if ($is_array == true) {
+    if ( $is_array == true ) {
 
-      switch ($validation) {
+      switch ( $validation ) {
 
         case 'text' :
           $updated_val = array_map('sanitize_text_field', $_POST[$name]);
@@ -213,7 +222,7 @@ class Helpers {
 
     } else {
 
-      switch ($validation) {
+      switch ( $validation ) {
 
         case 'text' :
           $updated_val = sanitize_text_field($_POST[$name]);
@@ -242,7 +251,8 @@ class Helpers {
       }
 
     }
-    update_post_meta($post_id, $meta_key, $updated_val);
+
+    update_post_meta( $post_id, $meta_key, $updated_val );
 
     return $updated_val;
 
@@ -292,6 +302,92 @@ class Helpers {
     }
 
     return true;
+
+  }
+
+  /**
+   * # Check if a page template is in use.
+   *
+   * @param string  $template_name   meta_key of the template
+   * @param string  $page_id         ID of the current page
+   *
+   * @return bool
+   */
+  public static function template_used( $template_name, $page_id = null ) {
+
+    $pages = get_posts( [
+      'post_type'   => 'page',
+      'meta_key'    => '_wp_page_template',
+      'meta_value'  => $template_name,
+      'post_status' => 'publish',
+      'numberposts' => -1,
+      'exclude'     => array( $page_id )
+    ] );
+
+    return ! empty( $pages );
+
+  }
+
+  /**
+   * # Check if its page template
+   *
+   * @return bool
+   */
+  public static function is_template() {
+
+    $current_template = get_post_meta( get_the_ID(), '_wp_page_template', true );
+    $is_template = ( strpos( $current_template, 'xep-' ) !== false ) ? true : false;
+
+    return $is_template;
+
+  }
+
+  /**
+   * # Get page template id
+   *
+   * @param string  $template_name  Name of the template that's store in database.
+   *
+   * @return int ID of the page template
+   */
+  public static function get_template_id( $template_name = '' ) {
+
+    $template = get_pages( [
+      'meta_key' => '_wp_page_template',
+      'meta_value' => $template_name
+    ] );
+
+    return ( $template ) ? $template[0]->ID : '';
+
+  }
+
+  /**
+   * # Get user name by ID
+   *
+   * @param int  $id   ID of the user
+   *
+   * @return string name of the user
+   */
+  public static function get_name( $id, $is_object = true ) {
+
+    if ( $is_object ) {
+
+      $data = get_userdata( $id );
+      $first_name = ! empty( $data->first_name ) ? $data->first_name : '';
+      $last_name = ! empty( $data->last_name ) ? $data->last_name : '';
+      $username = ! empty( $data->user_login ) ? $data->user_login : '';
+
+    } else {
+
+      $data = (object) get_userdata( $id );
+      $first_name = property_exists( $data, 'first_name' ) ? $data->first_name : '';
+      $last_name = property_exists( $data, 'last_name' ) ? $data->last_name : '';
+      $username = property_exists( $data, 'user_login' ) ? $data->user_login : '';
+
+    }
+
+    $name = trim( $first_name . ' ' . $last_name );
+
+    return ! empty( $name ) ? $name : $username;
 
   }
 

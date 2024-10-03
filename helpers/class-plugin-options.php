@@ -8,14 +8,18 @@
 namespace Xe_Plugin\Helpers;
 
 use Xe_Plugin\Helpers\Helpers;
-use Xe_Plugin\Helpers\Defaults as De;
+use Xe_Plugin\Helpers\Defaults;
+use Xe_Plugin\Includes\Templates;
 
 class Plugin_Options {
 
-  // Others
-  public $localhost;
+  // General
+  public $sample,
 
-  function __construct() {
+  // Others
+  $templates, $debug, $localhost;
+
+  public function __construct() {
 
     // Assign Option values to variables
     add_action( 'init', [ $this, 'init_vars' ] );
@@ -27,7 +31,13 @@ class Plugin_Options {
    */
 	public function init_vars() {
 
+    $templates = new Templates();
+
+    // General
+    $this->sample = get_option( '_xep_sample', Defaults::$sample );
+
     // Others
+    $this->templates = $templates->templates();
     $this->debug = $this->debug();
     $this->localhost = $this->localhost();
 

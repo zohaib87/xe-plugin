@@ -10,13 +10,14 @@ namespace Xe_Plugin\Helpers;
 class Defaults {
 
   // General
-  public static $default;
+  public static $sample;
 
-  function __construct() {
+  public function __construct() {
 
     // General
-    self::$default = 'default';
+    self::$sample = 'Sample Text';
 
   }
 
 }
+new Defaults();
