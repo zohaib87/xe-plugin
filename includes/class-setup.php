@@ -7,6 +7,8 @@
 
 namespace Xe_Plugin\Includes;
 
+use Xe_Plugin\Helpers\Helpers;
+
 class Setup {
 
   public function __construct() {

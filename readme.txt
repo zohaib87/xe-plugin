@@ -8,6 +8,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Just a starter WordPress plugin.
 
 == Changelog ==
+----- v1.2.7 ------------
+Fixed: Some minor bugs.
+
 ----- v1.2.6 ------------
 New Added: Page Templates support.
 Updated: Class Views static methods to action hooks.
