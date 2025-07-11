@@ -1,7 +1,7 @@
 {
   "name": "xe-plugin",
-  "version": "1.2.6",
-  "description": "Just a starter WordPress plugin.",
+  "version": "1.2.7",
+  "description": "A modern, boilerplate WordPress plugin structure with a streamlined build process — perfect for developers building custom or commercial plugins.",
   "scripts": {
     "init": "cd node_scripts && node init.js",
     "build": "cd node_scripts && node build.js",

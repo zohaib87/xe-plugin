@@ -7,7 +7,18 @@
 ![Repo Size](https://img.shields.io/github/repo-size/zohaib87/xe-plugin.svg)
 [![License](https://img.shields.io/github/license/zohaib87/xe-plugin)](https://github.com/zohaib87/xe-plugin/blob/master/LICENSE.md)
 
-Xe Plugin is a starter WordPress plugin which have built-in functionalities that are used in almost every plugin. So just focus on the main functionality that you want to built for WordPress.
+Xe Plugin is a starter boilerplate for WordPress plugin developers. It provides a clean, modular codebase along with a pre-configured build process to speed up plugin development. Designed with scalability in mind, this plugin helps you quickly set up your own functionality — whether you’re building for clients or preparing a product for the marketplace.
+
+**Key Features:**
+
+* Organized file structure following WordPress best practices
+* Saves time by providing reusable core plugin features
+* Easily extendable to support custom post types, shortcodes, admin pages, and more
+* Ideal for rapid development of client projects or commercial plugins
+
+**Who it's for:**
+
+Freelancers, agencies, or product developers who want a reliable, modern foundation for creating powerful WordPress plugins.
 
 [![Download Latest Release](https://img.shields.io/badge/Download_Latest_Release-blue?style=for-the-badge)](https://github.com/zohaib87/xe-plugin/releases/latest/download/xe-plugin.zip)
 [![Explore Documentation »](https://img.shields.io/badge/Explore_Documentation-282a2e?style=for-the-badge)](https://zohaib87.github.io/xe-plugin)

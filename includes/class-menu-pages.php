@@ -14,9 +14,9 @@ use Xe_Plugin\Includes\Callbacks\Plugin_Options;
 
 class Menu_Pages {
 
-  function __construct() {
+  public function __construct() {
 
-    add_action('admin_menu', [$this, 'add_menu_pages']);
+    add_action( 'admin_menu', [ $this, 'add_menu_pages' ] );
 
   }
 
