@@ -1,16 +1,19 @@
 <?php
 /**
  * Plugin Name: Xe Plugin
- * Description: Just a starter WordPress plugin.
+ * Description: A modern, boilerplate WordPress plugin structure with a streamlined build process — perfect for developers building custom or commercial plugins.
  * Version:     1.0.0
- * Author:      Muhammad Zohaib - XeCreators
+ * Author:      Muhammad Zohaib
  * Author URI:  https://www.xecreators.pk
  * License:     GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: xe-plugin
+ *
+ * This plugin is based on Xe Plugin: https://github.com/zohaib87/xe-plugin
+ * Copyright (c) 2019 Muhammad Zohaib. Licensed under the GNU GPL v2 or later.
  */
 
-if (!defined('ABSPATH')) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 require 'helpers/functions.php';
 
