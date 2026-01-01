@@ -1,5 +1,5 @@
 {
   "name": "Xe Plugin",
-  "global": "xep",
+  "global": "xePlugin",
   "build": "E:/Projects/Xe Plugin"
 }

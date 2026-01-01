@@ -8,14 +8,23 @@
  * @package Xe Plugin
  */
 
-namespace Xe_Plugin\Includes\MetaBoxes;
+namespace Xe_Plugin\Admin\MetaBoxes;
 
-use Xe_Plugin\Helpers\Helpers as Helper;
-use Xe_Plugin\Helpers\Views as View;
+use Xe_Plugin\Utils;
 
 class Sample {
 
-  function __construct() {
+  /**
+   * Constructor (optional) for initial setup.
+   */
+  public function __construct() {}
+
+  /**
+   * Register the hooks and filters.
+   *
+   * @return void
+   */
+  public function register(): void {
 
     add_action( 'add_meta_boxes', [ $this, 'add' ] );
     add_action( 'save_post_'.$this->post_type(), [ $this, 'save'] );
@@ -23,28 +32,32 @@ class Sample {
   }
 
   /**
-   * # Define post type for current metabox
+   * Define post type for current metabox
    */
-  protected function post_type() {
+  protected function post_type(): string {
+
     return 'xe-plugin-cpt';
+
   }
 
   /**
-   * # Set up and add the meta box.
+   * Set up and add the metabox.
    */
-  public function add() {
-    add_meta_box( 'sample_meta_box', esc_html__( 'Sample Title', 'xem-pos' ), [ $this, 'html' ], $this->post_type() );
+  public function add(): void {
+
+    add_meta_box( 'sample_meta_box', esc_html__( 'Sample Title', 'xe-plugin' ), [ $this, 'render' ], $this->post_type() );
+
   }
 
   /**
-   * Display the meta box HTML to the user.
+   * Render the metabox.
    */
-  public function html( $post ) {
+  public function render( $post ): void {
 
     // Add an nonce field so we can check for it later.
     wp_nonce_field( 'xep_cpt_meta_box', 'xep_cpt_meta_box_nonce' );
 
-    $sample = get_post_meta($post->ID, '_sample', true);
+    $sample = get_post_meta( $post->ID, '_sample', true );
 
     ?>
       <div class="xe-plugin-field">
@@ -52,7 +65,7 @@ class Sample {
           <label for="sample"><?php echo esc_html__( 'Serial No:', 'xe-plugin' ); ?></label>
         </div>
         <div class="xe-plugin-input">
-          <input type="text" name="sample" id="sample" value="<?php echo esc_attr($sample); ?>" required>
+          <input type="text" name="sample" id="sample" value="<?php echo esc_attr( $sample ); ?>" required>
         </div>
       </div>
     <?php
@@ -64,7 +77,7 @@ class Sample {
    */
   public function save( int $post_id ) {
 
-    $verify_save = Helper::verify_save(
+    $verify_save = Utils::verify_save(
       'xep_cpt_meta_box',
       'xep_cpt_meta_box_nonce',
       $this->post_type(),
@@ -76,9 +89,8 @@ class Sample {
     }
 
     // Saving or Updating the data
-    Helper::update_field($post_id, 'sample', false, 'text', '_sample'); // $post_id, $name, $is_array, $validation, $meta_key, $delete = false
+    Utils::update_field( $post_id, 'sample', false, 'text', '_sample' ); // $post_id, $name, $is_array, $validation, $meta_key, $delete = false
 
   }
 
 }
-new Sample();

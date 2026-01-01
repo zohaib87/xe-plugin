@@ -1,6 +1,6 @@
 === Xe Plugin ===
 Requires at least: 6
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 7.4
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -24,6 +24,11 @@ Freelancers, agencies, or product developers who want a reliable, modern foundat
 
 == Changelog ==
 
+= 1.3.0 =
+
+* New Added: PSR-4 autoloading.
+* Updated: namespaces and class locations.
+
 = 1.2.7 =
 
 * Fixed: Some minor bugs
@@ -36,7 +41,7 @@ Freelancers, agencies, or product developers who want a reliable, modern foundat
 
 = 1.2.5 =
 
-* New Added: debug property in Helpers\Plugin_Options class.
+* New Added: debug property in Helpers\PluginOptions class.
 * Fixed: Some minor bugs.
 
 = 1.2.4 =

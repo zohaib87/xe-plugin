@@ -7,30 +7,40 @@
  * @package Xe Plugin
  */
 
-namespace Xe_Plugin\Includes;
+namespace Xe_Plugin;
 
-class Custom_Taxonomies {
+class CustomTaxonomies {
 
-  function __construct() {
+  /**
+   * Constructor (optional) for initial setup.
+   */
+  public function __construct() {}
 
-    add_action( 'init', array($this, 'register'), 0 );
+  /**
+   * Register the hooks and filters.
+   *
+   * @return void
+   */
+  public function register(): void {
+
+    add_action( 'init', [ $this, 'register_taxonomies' ], 0 );
 
   }
 
   protected function sample_categories() {
 
     $labels = array(
-      'name'              => esc_html__('Categories', 'xe-plugin'),
-      'singular_name'     => esc_html__('Category', 'xe-plugin'),
-      'search_items'      => esc_html__('Search Categories', 'xe-plugin'),
-      'all_items'         => esc_html__('All Categories', 'xe-plugin'),
-      'parent_item'       => esc_html__('Parent Category', 'xe-plugin'),
-      'parent_item_colon' => esc_html__('Parent Category:', 'xe-plugin'),
-      'edit_item'         => esc_html__('Edit Category', 'xe-plugin'),
-      'update_item'       => esc_html__('Update Category', 'xe-plugin'),
-      'add_new_item'      => esc_html__('Add New Category', 'xe-plugin'),
-      'new_item_name'     => esc_html__('New Category Name', 'xe-plugin'),
-      'menu_name'         => esc_html__('Categories', 'xe-plugin'),
+      'name'              => esc_html__( 'Categories', 'xe-plugin' ),
+      'singular_name'     => esc_html__( 'Category', 'xe-plugin' ),
+      'search_items'      => esc_html__( 'Search Categories', 'xe-plugin' ),
+      'all_items'         => esc_html__( 'All Categories', 'xe-plugin' ),
+      'parent_item'       => esc_html__( 'Parent Category', 'xe-plugin' ),
+      'parent_item_colon' => esc_html__( 'Parent Category:', 'xe-plugin' ),
+      'edit_item'         => esc_html__( 'Edit Category', 'xe-plugin' ),
+      'update_item'       => esc_html__( 'Update Category', 'xe-plugin' ),
+      'add_new_item'      => esc_html__( 'Add New Category', 'xe-plugin' ),
+      'new_item_name'     => esc_html__( 'New Category Name', 'xe-plugin' ),
+      'menu_name'         => esc_html__( 'Categories', 'xe-plugin' ),
     );
 
     $args = array(
@@ -75,12 +85,16 @@ class Custom_Taxonomies {
 
   }
 
-  public function register() {
+  /**
+   * Register custom taxonomies.
+   *
+   * @return void
+   */
+  public function register_taxonomies(): void {
 
-    register_taxonomy( 'xe-plugin-cat', array('xe-plugin-cpt'), $this->sample_categories() );
-    register_taxonomy( 'xe-plugin-tag', array('xe-plugin-cpt'), $this->sample_tags() );
+    register_taxonomy( 'xe-plugin-cat', [ 'xe-plugin-cpt' ], $this->sample_categories() );
+    register_taxonomy( 'xe-plugin-tag', [ 'xe-plugin-cpt' ], $this->sample_tags() );
 
   }
 
 }
-new Custom_Taxonomies();

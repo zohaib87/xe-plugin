@@ -5,12 +5,12 @@
  * @package Xe Plugin
  */
 
-namespace Xe_Plugin\Helpers;
+namespace Xe_Plugin;
 
-class Helpers {
+class Utils {
 
   /**
-   * # Enqueue style or script with auto version control
+   * Enqueue style or script with auto version control
    *
    * @link https://developer.wordpress.org/reference/functions/wp_enqueue_style/
    * @link https://developer.wordpress.org/reference/functions/wp_enqueue_script/
@@ -25,22 +25,22 @@ class Helpers {
    */
   public static function enqueue( $script, $handle, $src = '', $deps = array(), $media = 'all', $in_footer = true, $ver = '' ) {
 
-    $ver = empty( $ver ) ? filemtime( _xe_plugin_directory() . $src ) : $ver;
+    $ver = empty( $ver ) ? filemtime( _xe_plugin()->path( esc_attr( $src ) ) ) : $ver;
 
     if ( $script == 'style' ) {
 
-      wp_enqueue_style( esc_attr( $handle ), _xe_plugin_directory_uri() . esc_attr( $src ), $deps, esc_attr( $ver ), esc_attr( $media ) );
+      wp_enqueue_style( esc_attr( $handle ), _xe_plugin()->url( esc_attr( $src ) ), $deps, esc_attr( $ver ), esc_attr( $media ) );
 
     } elseif ( $script == 'script' ) {
 
-      wp_enqueue_script( esc_attr( $handle ), _xe_plugin_directory_uri() . esc_attr( $src ), $deps, esc_attr( $ver ), $in_footer );
+      wp_enqueue_script( esc_attr( $handle ), _xe_plugin()->url( esc_attr( $src ) ), $deps, esc_attr( $ver ), $in_footer );
 
     }
 
   }
 
   /**
-   * # Auto load files from a directory
+   * Auto load files from a directory
    *
    * @param string  $path   Path to files (*.php) that needs to be auto loaded.
    */
@@ -56,7 +56,7 @@ class Helpers {
   }
 
   /**
-   * # Minifying styles
+   * Minifying styles
    *
    * @param string  $css   Not compressed css.
    *
@@ -81,7 +81,7 @@ class Helpers {
   }
 
   /**
-   * # Hex color to rgb conversion
+   * Hex color to rgb conversion
    *
    * @param string  $color   Hex color code.
    *
@@ -109,7 +109,7 @@ class Helpers {
   }
 
   /**
-   * # Darken or Lighten Color
+   * Darken or Lighten Color
    *
    * @param string  $color  Hex color code.
    * @param int     $dif    Number amount of lightning or darkening.
@@ -151,7 +151,7 @@ class Helpers {
   }
 
   /**
-   * # Adjusting spacing of classes
+   * Adjusting spacing of classes
    *
    * @param array   $classes   An array of classes
    *
@@ -167,7 +167,7 @@ class Helpers {
   }
 
   /**
-   * # Update post meta fields
+   * Update post meta fields
    *
    * @param int     $post_id      Current post id
    * @param string  $name         Input name attribute
@@ -259,7 +259,7 @@ class Helpers {
   }
 
   /**
-   * # Verify or check for nonce, auto save and post type.
+   * Verify or check for nonce, auto save and post type.
    *
    * @param string  $action      Nonce action ID
    * @param string  $nonce       Nonce ID
@@ -306,7 +306,7 @@ class Helpers {
   }
 
   /**
-   * # Check if a page template is in use.
+   * Check if a page template is in use.
    *
    * @param string  $template_name   meta_key of the template
    * @param string  $page_id         ID of the current page
@@ -329,7 +329,7 @@ class Helpers {
   }
 
   /**
-   * # Check if its page template
+   * Check if its page template
    *
    * @return bool
    */
@@ -343,7 +343,7 @@ class Helpers {
   }
 
   /**
-   * # Get page template id
+   * Get page template id
    *
    * @param string  $template_name  Name of the template that's store in database.
    *
@@ -361,7 +361,7 @@ class Helpers {
   }
 
   /**
-   * # Get user name by ID
+   * Get user name by ID
    *
    * @param int  $id   ID of the user
    *
@@ -388,6 +388,47 @@ class Helpers {
     $name = trim( $first_name . ' ' . $last_name );
 
     return ! empty( $name ) ? $name : $username;
+
+  }
+
+  /**
+   * Check if debug mode and log is enabled
+   */
+  public static function debug() {
+
+    if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+
+      if ( defined( 'WP_DEBUG_LOG' ) && WP_DEBUG_LOG ) {
+
+        return '1';
+
+      }
+
+    }
+
+    return '';
+
+  }
+
+  /**
+   * Check if its localhost
+   */
+  public static function localhost() {
+
+    $localhost = array(
+      '127.0.0.1',
+      '::1'
+    );
+
+    if ( in_array( $_SERVER['REMOTE_ADDR'], $localhost ) ) {
+
+      return '1';
+
+    } else {
+
+      return '';
+
+    }
 
   }
 

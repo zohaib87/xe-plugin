@@ -1,28 +1,24 @@
 
-var fs  = require('fs');
-var replace = require('replace-in-file');
-var config = require('./config.json');
-var path = require('path');
+var fs  = require( 'fs' );
+var replace = require( 'replace-in-file' );
+var config = require( './config.json' );
+var path = require( 'path' );
 
 var name = config.name;
 var global = config.global;
 var nameLower = name.toLowerCase();
-var nameHyphen = nameLower.replace(/ /g, '-');
-var nameUnderscores = nameLower.replace(/ /g, '_');
+var nameHyphen = nameLower.replace( / /g, '-' );
+var nameUnderscores = nameLower.replace( / /g, '_' );
 
-var txtDomain = "'"+nameHyphen+"'";
+var textDomain = "'"+nameHyphen+"'";
 var funcNames = nameUnderscores+"_";
-var styleCss = "Text Domain: "+nameHyphen;
-var dockBlocks = " "+name;
+var mainPluginFile = "Text Domain: "+nameHyphen;
+var docBlocks = " "+name;
 var preHandles = nameHyphen+"-";
-var globalVars = "$"+global+"_opt";
-var namespaces = name.replace(/ /g, '_')+"\\";
-var folderNames = "/"+nameHyphen;
-var globalObj = "'"+global+"Obj'";
-var cssPrefixes = global+'-';
-var nonces = global+'_';
+var namespaces = name.replace( / /g, '_' )+"\\";
+var globalObj = "'"+global+"'";
 
-var currentPlugin = path.resolve(__dirname, '..');
+var currentPlugin = path.resolve( __dirname, '..' );
 
 // Replacing strings
 var options = {
@@ -31,19 +27,26 @@ var options = {
     currentPlugin+'/**/*.php',
     currentPlugin+'/readme.txt',
   ],
-  from: [ /'xe-plugin'/g, /_xe_plugin_/g, /Text Domain: xe-plugin/g, / Xe Plugin/g, /xe-plugin-/g, /\$xep_opt/g, /Xe_Plugin\\/g, /\/xe-plugin/g, /'xepObj'/g, /xep-/g, /_xep_/g ],
-  to: [ txtDomain, funcNames, styleCss, dockBlocks, preHandles, globalVars, namespaces, folderNames, globalObj, cssPrefixes, nonces ],
+  from: [ /'xe-plugin'/g, /_xe_plugin_/g, /Text Domain: xe-plugin/g, / Xe Plugin/g, /xe-plugin-/g, /Xe_Plugin\\/g, /'xePlugin'/g ],
+  to: [ textDomain, funcNames, mainPluginFile, docBlocks, preHandles, namespaces, globalObj ],
 };
 
-fs.rename(currentPlugin+'/xe-plugin.php', currentPlugin+'/'+nameHyphen+'.php', function(err) {
-  if (err) console.log('ERROR: ' + err);
-});
+fs.rename( currentPlugin+'/xe-plugin.php', currentPlugin+'/'+nameHyphen+'.php', function( error ) {
+
+  if ( error ) console.log( 'ERROR: ' + error );
+
+} );
 
 try {
-  var results = replace.sync(options);
-  console.log('Text Domains, Function Names, Dock Blocks, Prefix Handles and Classes replaced.');
-  // console.log('Replacement results:', results);
+
+  var results = replace.sync( options );
+
+  console.log( 'Text Domains, Function Names, Dock Blocks, Prefix Handles and Classes replaced.' );
+  // console.log( 'Replacement results:', results );
+
 }
-catch (error) {
-  console.error('Error occurred:', error);
+catch ( error ) {
+
+  console.error( 'Error occurred:', error );
+
 }

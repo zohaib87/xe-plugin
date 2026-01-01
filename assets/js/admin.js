@@ -4,9 +4,9 @@
 ( function ( $ ) {
 
 	/**
-   * # Active menu fix
+   * Active menu fix
    */
-  if ( xepObj.postType.indexOf( 'xe-plugin-' ) !== -1 && ( xepObj.base == 'post' || xepObj.base == 'edit-tags' ) ) {
+  if ( xePlugin.postType.indexOf( 'xe-plugin-' ) !== -1 && ( xePlugin.base == 'post' || xePlugin.base == 'edit-tags' ) ) {
 
     $( '#toplevel_page_xe-plugin-options, #toplevel_page_xe-plugin-options > a.toplevel_page_xe-plugin-options' )
       .removeClass( 'wp-not-current-submenu' )

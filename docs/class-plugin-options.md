@@ -16,7 +16,7 @@ Simply add `public` variables inside class and assign values to it in `init_vars
 This class is initialized by default into a global variable. You can see the variable name at the end of the class.
 
     global $xep_opt;
-    $xep_opt = new Xe_Plugin_Options();
+    $xep_opt = new PluginOptions();
 
 You will be able to use any where in your plugin after calling it.
 
