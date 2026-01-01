@@ -5,9 +5,10 @@
  * @package Xe Plugin
  */
 
-namespace Xe_Plugin\Includes;
+namespace Xe_Plugin;
 
-use Xe_Plugin\Helpers\Helpers;
+use Xe_Plugin\Utils;
+use Xe_Plugin\PageTemplates;
 
 class Setup {
 
@@ -16,10 +17,10 @@ class Setup {
     add_action( 'template_redirect', [ $this, 'redirect_if_not_logged_in' ] );
     add_action( 'template_redirect', [ $this, 'redirect_if_logged_in' ] );
 
-    register_activation_hook( _xe_plugin_file(), [ $this, 'activation' ] );
-    register_deactivation_hook( _xe_plugin_file(), [ $this, 'deactivation' ] );
-    register_uninstall_hook( _xe_plugin_file(), [ self::class, 'uninstall' ] );
-    add_action( 'plugins_loaded', [ $this, 'load_textdomain' ] );
+    register_activation_hook( _xe_plugin()->file(), [ $this, 'activation' ] );
+    register_deactivation_hook( _xe_plugin()->file(), [ $this, 'deactivation' ] );
+    register_uninstall_hook( _xe_plugin()->file(), [ self::class, 'uninstall' ] );
+    add_action( 'init', [ $this, 'load_textdomain' ] );
 
     // Replace the 'register_uninstall_hook' with following if Freemius SDK is used.
     // _xe_plugin_fs()->add_action('after_uninstall', [$this, 'uninstall']);
@@ -27,27 +28,27 @@ class Setup {
   }
 
   /**
-   * # Redirect if not logged in
+   * Redirect if not logged in
    */
   public function redirect_if_not_logged_in() {
 
-    global $xep_opt;
+    $page_templates = new PageTemplates();
 
     $current_template = get_post_meta( get_the_ID(), '_wp_page_template', true );
 
     // Get templates which needs authentication/login
-    $filtered_templates = array_filter( $xep_opt->templates, function ( $template ) {
+    $filtered_templates = array_filter( $page_templates->templates(), function ( $template ) {
 
       return $template['auth'] === true;
 
     } );
 
     // Get only keys of page templates
-    $templates = array_keys( $filtered_templates );
+    $template_keys = array_keys( $filtered_templates );
 
-    if ( in_array( $current_template, $templates ) && ! is_user_logged_in() ) {
+    if ( in_array( $current_template, $template_keys ) && ! is_user_logged_in() ) {
 
-      wp_redirect( get_permalink( Helpers::get_template_id( 'xep-login' ) ) );
+      wp_redirect( get_permalink( Utils::get_template_id( 'xep-login' ) ) );
       exit;
 
     }
@@ -55,27 +56,27 @@ class Setup {
   }
 
   /**
-   * # Redirect if logged in
+   * Redirect if logged in
    */
   public function redirect_if_logged_in() {
 
-    global $xep_opt;
+    $page_templates = new PageTemplates();
 
     $current_template = get_post_meta( get_the_ID(), '_wp_page_template', true );
 
     // Get templates which does not need authentication/login
-    $filtered_templates = array_filter( $xep_opt->templates, function ( $template ) {
+    $filtered_templates = array_filter( $page_templates->templates(), function ( $template ) {
 
       return $template['auth'] === false;
 
     } );
 
     // Get only keys of page templates
-    $templates = array_keys( $filtered_templates );
+    $template_keys = array_keys( $filtered_templates );
 
-    if ( in_array( $current_template, $templates ) && is_user_logged_in() ) {
+    if ( in_array( $current_template, $template_keys ) && is_user_logged_in() ) {
 
-      wp_redirect( get_permalink( Helpers::get_template_id( 'xep-dashboard' ) ) );
+      wp_redirect( get_permalink( Utils::get_template_id( 'xep-dashboard' ) ) );
       exit;
 
     }
@@ -83,19 +84,19 @@ class Setup {
   }
 
   /**
-   * # Plugin Activation
+   * Plugin Activation
    */
   public function activation() {
   }
 
   /**
-   * # Plugin Deactivation
+   * Plugin Deactivation
    */
   public function deactivation() {
   }
 
   /**
-   * # Plugin Uninstall
+   * Plugin Uninstall
    */
   public static function uninstall() {
 
@@ -113,11 +114,12 @@ class Setup {
   }
 
   /**
-   * # Translate Plugin
+   * Translate Plugin
    */
   public function load_textdomain() {
+
     load_plugin_textdomain( 'xe-plugin', false, dirname( plugin_basename(__FILE__) ) . '/languages/' );
+
   }
 
 }
-new Setup();

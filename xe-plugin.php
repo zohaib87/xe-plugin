@@ -4,7 +4,7 @@
  * Description: A modern, boilerplate WordPress plugin structure with a streamlined build process — perfect for developers building custom or commercial plugins.
  * Version:     1.0.0
  * Author:      Muhammad Zohaib
- * Author URI:  https://www.xecreators.pk
+ * Author URI:  https://wpguru.pk
  * License:     GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: xe-plugin
@@ -15,71 +15,47 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-require 'helpers/functions.php';
+/**
+ * Plugin constants: paths, URLs, and main file references
+ */
+define( 'XE_PLUGIN_FILE', __FILE__ );
+define( 'XE_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
+define( 'XE_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( 'XE_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 
 /**
- * Plugin setup functions and definitions.
+ * Composer autoload
  */
-require _xe_plugin_directory() . '/includes/class-setup.php';
+require XE_PLUGIN_PATH . 'vendor/autoload.php';
 
 /**
- * Object for containing default values.
+ * Returns the main plugin instance.
+ *
+ * Acts as a global access point for plugin services like options, paths, and URLs.
+ *
+ * @return \Xe_Plugin\Plugin Singleton instance of the Plugin class.
  */
-require _xe_plugin_directory() . '/helpers/class-defaults.php';
+function _xe_plugin(): \Xe_Plugin\Plugin {
+
+  return \Xe_Plugin\Plugin::instance();
+
+}
 
 /**
- * Class that holds helper methods.
+ * Bootstrap the plugin.
+ *
+ * Registers all services and hooks via the Bootstrap class.
+ *
+ * @return void
  */
-require _xe_plugin_directory() . '/helpers/class-helpers.php';
+function _xe_plugin_bootstrap(): void {
 
-/**
- * Class for reusable sections.
- */
-require _xe_plugin_directory() . '/helpers/class-views.php';
+  // Initialize Plugin services
+  \Xe_Plugin\Plugin::instance()->register();
 
-/**
- * Class for templates.
- */
-require _xe_plugin_directory() . '/includes/class-templates.php';
+  // Initialize Bootstrap services
+  $bootstrap = new \Xe_Plugin\Bootstrap();
+  $bootstrap->register();
 
-/**
- * Class to get and use plugin options.
- */
-require _xe_plugin_directory() . '/helpers/class-plugin-options.php';
-
-/**
- * Enqueue scripts and styles for admin and front end.
- */
-require _xe_plugin_directory() . '/includes/class-scripts.php';
-
-/**
- * MetaBoxes
- */
-require _xe_plugin_directory() . '/includes/metaboxes/class-sample.php';
-
-/**
- * Menu or sub-menu Pages
- */
-require _xe_plugin_directory() . '/includes/class-menu-pages.php';
-require _xe_plugin_directory() . '/includes/callbacks/class-plugin-options.php';
-
-/**
- * Class for adding custom post types.
- */
-require _xe_plugin_directory() . '/includes/class-custom-post-types.php';
-
-/**
- * Class for adding custom taxonomies.
- */
-require _xe_plugin_directory() . '/includes/class-custom-taxonomies.php';
-
-/**
- * Class for adding custom WooCommerce fields, Tabs and Product types
- */
-// require _xe_plugin_directory() . '/includes/class-product-backend.php';
-// require _xe_plugin_directory() . '/includes/class-product-frontend.php';
-
-/**
- * Shortcodes
- */
-require _xe_plugin_directory() . '/includes/shortcodes/class-sample.php';
+}
+add_action( 'plugins_loaded', '_xe_plugin_bootstrap' );

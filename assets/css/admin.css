@@ -1,67 +1,78 @@
 /*--------------------------------------------------------------
 # Meta Boxes
 --------------------------------------------------------------*/
-.xep-field:not(:last-of-type) {
+.xe-plugin-field:not(:last-of-type) {
   margin: 0 0 12px;
 }
-.xep-label,
-.xep-input {
+
+.xe-plugin-label,
+.xe-plugin-input {
 	display: inline-block;
 }
-.xep-label {
+
+.xe-plugin-label {
   width: 30%;
   margin-bottom: 5px;
 }
-.xep-label, .xep-input {
+
+.xe-plugin-label, .xe-plugin-input {
   vertical-align: top;
   float: left;
   box-sizing: border-box;
 }
-.xep-field:after {
+
+.xe-plugin-field:after {
   content: " ";
   display: table;
   clear: both;
 }
-.xep-field-sm {
+
+.xe-plugin-field-sm {
 	width: 65px;
 }
-.xep-field-md {
+
+.xe-plugin-field-md {
 	width: 120px;
 }
-.xep-field-full {
+
+.xe-plugin-field-full {
 	width: 100%;
 }
-.xep-field .select2-container--default .select2-selection--single,
-.xep-field .select2-container--default .select2-selection--multiple,
-.xep-field input[type=color],
-.xep-field input[type=date],
-.xep-field input[type=datetime-local],
-.xep-field input[type=datetime],
-.xep-field input[type=email],
-.xep-field input[type=month],
-.xep-field input[type=number],
-.xep-field input[type=password],
-.xep-field input[type=search],
-.xep-field input[type=tel],
-.xep-field input[type=text],
-.xep-field input[type=time],
-.xep-field input[type=url],
-.xep-field input[type=week],
-.xep-field input[type=checkbox],
-.wp-core-ui .xep-field select,
-.xep-field textarea {
+
+.xe-plugin-field .select2-container--default .select2-selection--single,
+.xe-plugin-field .select2-container--default .select2-selection--multiple,
+.xe-plugin-field input[type=color],
+.xe-plugin-field input[type=date],
+.xe-plugin-field input[type=datetime-local],
+.xe-plugin-field input[type=datetime],
+.xe-plugin-field input[type=email],
+.xe-plugin-field input[type=month],
+.xe-plugin-field input[type=number],
+.xe-plugin-field input[type=password],
+.xe-plugin-field input[type=search],
+.xe-plugin-field input[type=tel],
+.xe-plugin-field input[type=text],
+.xe-plugin-field input[type=time],
+.xe-plugin-field input[type=url],
+.xe-plugin-field input[type=week],
+.xe-plugin-field input[type=checkbox],
+.wp-core-ui .xe-plugin-field select,
+.xe-plugin-field textarea {
 	border-radius: 0px;
   border: 1px solid #ccc;
   margin: 0;
 }
-.xep-field .select2-container--default .select2-selection--multiple .select2-selection__choice {
+
+.xe-plugin-field .select2-container--default .select2-selection--multiple .select2-selection__choice {
   margin-bottom: 0;
 }
-.toplevel_page_xep-options .select2-container--default .select2-selection--single,
-.xep-field .select2-container--default .select2-selection--single,
-.wp-core-ui .xep-field select {
+
+.toplevel_page_xe-plugin-options .select2-container--default .select2-selection--single,
+.xe-plugin-field .select2-container--default .select2-selection--single,
+.wp-core-ui .xe-plugin-field select {
 	min-height: 30px;
 }
+
 /*--------------------------------------------------------------
 # Freemius
 --------------------------------------------------------------*/
@@ -70,6 +81,7 @@
   text-align: center !important;
   margin: 20px 20px 0 2px !important;
 }
+
 #fs_account .postbox {
   max-width: 100%;
 }

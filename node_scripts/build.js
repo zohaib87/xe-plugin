@@ -1,24 +1,24 @@
 
-var config = require('./config.json');
-var fs  = require('fs');
-var wpPot = require('wp-pot');
-var copydir = require('copy-dir');
-var path = require('path');
-var rimraf = require("rimraf");
+var config = require( './config.json' );
+var fs  = require( 'fs' );
+var wpPot = require( 'wp-pot' );
+var copydir = require( 'copy-dir' );
+var path = require( 'path' );
+var rimraf = require( "rimraf" );
 
 var name = config.name;
 var nameLower = name.toLowerCase();
-var nameHyphen = nameLower.replace(/ /g, '-');
+var nameHyphen = nameLower.replace( / /g, '-' );
 
 var targetUrl = config.build+'/'+nameHyphen;
-var currentPlugin = path.resolve(__dirname, '..');
+var currentPlugin = path.resolve( __dirname, '..' );
 
 // Delete old folder
-fs.rmSync(targetUrl, {
+fs.rmSync( targetUrl, {
   recursive: true,
   force: true
-});
-console.log("Old folder removed.");
+} );
+console.log( "Old folder removed." );
 
 // Copy Theme
 copydir.sync( currentPlugin, targetUrl, {
@@ -27,14 +27,14 @@ copydir.sync( currentPlugin, targetUrl, {
   mode: true,    // keep file mode
   cover: true,    // cover file when exists, default is true
 
-  filter: function(stat, filepath, filename) {
+  filter: function( stat, filepath, filename ) {
 
     // do not want copy files with specific extension
     var extensions = [
       '.psd',
       '.settings'
     ];
-    if ( stat === 'file' && extensions.includes(path.extname(filepath)) ) {
+    if ( stat === 'file' && extensions.includes( path.extname( filepath ) ) ) {
       return false;
     }
 
@@ -53,7 +53,7 @@ copydir.sync( currentPlugin, targetUrl, {
       'README.md',
       'LICENSE.md'
     ];
-    if (stat === 'file' && fileNames.includes(path.basename(filepath)) ) {
+    if ( stat === 'file' && fileNames.includes( path.basename( filepath ) ) ) {
       return false;
     }
 
@@ -65,12 +65,12 @@ copydir.sync( currentPlugin, targetUrl, {
       'node_modules',
       'node_scripts'
     ];
-    if ( stat === 'directory' && directories.includes(path.basename(filename)) ) {
+    if ( stat === 'directory' && directories.includes( path.basename( filename ) ) ) {
       return false;
     }
 
     // do not want copy symbolicLink directories
-    if (stat === 'symbolicLink') {
+    if ( stat === 'symbolicLink' ) {
       return false;
     }
 
@@ -79,23 +79,23 @@ copydir.sync( currentPlugin, targetUrl, {
   }
 
 });
-console.log('Plugin copied successfully.');
+console.log( 'Plugin copied successfully.' );
 
 // Remove unnecessary folders/files.
-rimraf.sync(targetUrl+'/.vscode/');
-console.log(".vscode folder removed.");
+rimraf.sync( targetUrl+'/.vscode/' );
+console.log( ".vscode folder removed." );
 
-rimraf.sync(targetUrl+'/node_modules/');
-console.log("node_modules folder removed.");
+rimraf.sync(targetUrl+'/node_modules/' );
+console.log( "node_modules folder removed." );
 
-rimraf.sync(targetUrl+'/node_scripts/');
-console.log("node_scripts folder removed.");
+rimraf.sync( targetUrl+'/node_scripts/' );
+console.log( "node_scripts folder removed." );
 
 // Generate POT file.
-wpPot({
+wpPot( {
   destFile: targetUrl+'/languages/'+nameHyphen+'.pot',
   relativeTo: targetUrl,
   package: name,
   src: targetUrl+'/**/*.php'
-});
-console.log('POT file Generated.');
+} );
+console.log( 'POT file Generated.' );
