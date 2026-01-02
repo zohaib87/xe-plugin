@@ -1,6 +1,6 @@
 <?php
 /**
- * Shortcodes functions
+ * Shortcodes class
  *
  * @link https://developer.wordpress.org/reference/functions/add_shortcode/
  *
@@ -17,13 +17,13 @@ class Shortcodes {
   public function __construct() {}
 
   /**
-   * Register the hooks and filters.
+   * Register the shortcodes.
    *
    * @return void
    */
   public function register(): void {
 
-    add_shortcode( 'xe_plugin_sample', [ $this, 'sample' ] );
+    add_shortcode( '_xe_plugin_sample', [ $this, 'sample' ] );
 
   }
 

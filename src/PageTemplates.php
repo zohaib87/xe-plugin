@@ -5,7 +5,7 @@
  * @package Xe Plugin
  */
 
-namespace Xe_Plugin\Frontend;
+namespace Xe_Plugin;
 
 use Xe_Plugin\Utils;
 

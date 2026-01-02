@@ -12,7 +12,17 @@ use Xe_Plugin\PageTemplates;
 
 class Setup {
 
-  public function __construct() {
+  /**
+   * Constructor (optional) for initial setup.
+   */
+  public function __construct() {}
+
+  /**
+   * Register the hooks and filters.
+   *
+   * @return void
+   */
+  public function register(): void {
 
     add_action( 'template_redirect', [ $this, 'redirect_if_not_logged_in' ] );
     add_action( 'template_redirect', [ $this, 'redirect_if_logged_in' ] );
@@ -23,7 +33,7 @@ class Setup {
     add_action( 'init', [ $this, 'load_textdomain' ] );
 
     // Replace the 'register_uninstall_hook' with following if Freemius SDK is used.
-    // _xe_plugin_fs()->add_action('after_uninstall', [$this, 'uninstall']);
+    // _xe_plugin_fs()->add_action( 'after_uninstall', [ $this, 'uninstall' ] );
 
   }
 
@@ -102,14 +112,14 @@ class Setup {
 
     global $wpdb;
 
-    // $wpdb->query("DELETE FROM {$wpdb->posts} WHERE post_type IN ('opos-sales', 'opos-frames', 'opos-glasses', 'opos-w-customers')");
+    // $wpdb->query("DELETE FROM {$wpdb->posts} WHERE post_type IN ('xep-sales', 'xep-frames', 'xep-glasses', 'xep-w-customers')");
     // $wpdb->query("DELETE FROM {$wpdb->postmeta} WHERE post_id NOT IN (SELECT id FROM {$wpdb->posts})");
 
-    // $wpdb->query("DELETE FROM {$wpdb->term_taxonomy} WHERE taxonomy = 'opos-glasses-cat'");
+    // $wpdb->query("DELETE FROM {$wpdb->term_taxonomy} WHERE taxonomy = 'xep-glasses-cat'");
 
-    // $wpdb->query("DELETE FROM {$wpdb->usermeta} WHERE meta_key IN ('opos_company', 'opos_contactno', 'opos_address', 'opos_city', 'opos_postalcode')");
+    // $wpdb->query("DELETE FROM {$wpdb->usermeta} WHERE meta_key IN ('xep_company', 'xep_contactno', 'xep_address', 'xep_city', 'xep_postalcode')");
 
-    // $wpdb->query("DELETE FROM {$wpdb->options} WHERE option_name = 'opos_options'");
+    // $wpdb->query("DELETE FROM {$wpdb->options} WHERE option_name = 'xep_options'");
 
   }
 
@@ -118,7 +128,7 @@ class Setup {
    */
   public function load_textdomain() {
 
-    load_plugin_textdomain( 'xe-plugin', false, dirname( plugin_basename(__FILE__) ) . '/languages/' );
+    load_plugin_textdomain( 'xe-plugin', false, dirname( XE_PLUGIN_BASENAME ) . '/languages/' );
 
   }
 
