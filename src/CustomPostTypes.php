@@ -61,6 +61,7 @@ class CustomPostTypes {
       'hierarchical'       => false,
       'supports'           => array( 'title', 'editor', 'thumbnail', 'comments', 'revisions' ),
     );
+
     return register_post_type( 'xe-plugin-cpt', $args );
 
   }

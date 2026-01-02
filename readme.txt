@@ -26,8 +26,9 @@ Freelancers, agencies, or product developers who want a reliable, modern foundat
 
 = 1.3.0 =
 
-* New Added: PSR-4 autoloading.
-* Updated: namespaces and class locations.
+* New: Added PSR-4 autoloading.
+* New: Added elementor widget samples.
+* Updated: Namespaces and class locations.
 
 = 1.2.7 =
 
