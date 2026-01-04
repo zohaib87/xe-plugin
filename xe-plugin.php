@@ -9,7 +9,7 @@
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: xe-plugin
  *
- * This plugin is based on Xe Plugin: https://github.com/zohaib87/xe-plugin
+ * This plugin is based on: https://github.com/zohaib87/xe-plugin
  * Copyright (c) 2019 Muhammad Zohaib. Licensed under the GNU GPL v2 or later.
  */
 

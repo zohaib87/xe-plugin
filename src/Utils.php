@@ -306,61 +306,6 @@ class Utils {
   }
 
   /**
-   * Check if a page template is in use.
-   *
-   * @param string  $template_name   meta_key of the template
-   * @param string  $page_id         ID of the current page
-   *
-   * @return bool
-   */
-  public static function template_used( $template_name, $page_id = null ) {
-
-    $pages = get_posts( [
-      'post_type'   => 'page',
-      'meta_key'    => '_wp_page_template',
-      'meta_value'  => $template_name,
-      'post_status' => 'publish',
-      'numberposts' => -1,
-      'exclude'     => array( $page_id )
-    ] );
-
-    return ! empty( $pages );
-
-  }
-
-  /**
-   * Check if its page template
-   *
-   * @return bool
-   */
-  public static function is_template() {
-
-    $current_template = get_post_meta( get_the_ID(), '_wp_page_template', true );
-    $is_template = ( strpos( $current_template, 'xep-' ) !== false ) ? true : false;
-
-    return $is_template;
-
-  }
-
-  /**
-   * Get page template id
-   *
-   * @param string  $template_name  Name of the template that's store in database.
-   *
-   * @return int ID of the page template
-   */
-  public static function get_template_id( $template_name = '' ) {
-
-    $template = get_pages( [
-      'meta_key' => '_wp_page_template',
-      'meta_value' => $template_name
-    ] );
-
-    return ( $template ) ? $template[0]->ID : '';
-
-  }
-
-  /**
    * Get user name by ID
    *
    * @param int  $id   ID of the user
@@ -393,27 +338,31 @@ class Utils {
 
   /**
    * Check if debug mode and log is enabled
+   *
+   * @return bool
    */
-  public static function debug() {
+  public static function debug(): bool {
 
     if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
 
       if ( defined( 'WP_DEBUG_LOG' ) && WP_DEBUG_LOG ) {
 
-        return '1';
+        return true;
 
       }
 
     }
 
-    return '';
+    return false;
 
   }
 
   /**
    * Check if its localhost
+   *
+   * @return bool
    */
-  public static function localhost() {
+  public static function localhost(): bool {
 
     $localhost = array(
       '127.0.0.1',
@@ -422,11 +371,11 @@ class Utils {
 
     if ( in_array( $_SERVER['REMOTE_ADDR'], $localhost ) ) {
 
-      return '1';
+      return true;
 
     } else {
 
-      return '';
+      return false;
 
     }
 

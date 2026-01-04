@@ -9,7 +9,7 @@
 
 namespace Xe_Plugin;
 
-class CustomPostTypes {
+class PostTypes {
 
   /**
    * Constructor (optional) for initial setup.

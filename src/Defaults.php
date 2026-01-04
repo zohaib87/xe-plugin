@@ -10,14 +10,18 @@ namespace Xe_Plugin;
 final class Defaults {
 
   /**
-   * The array of default option values.
+   * Array of all default option values.
    *
-   * @var array<string, mixed>
+   * @return array<string, mixed> Array of all default option values.
    */
-  private array $data = [
-    'currency'    => 'PKR',
-    'sample'      => 'Sample Text',
-  ];
+  public function all(): array {
+
+    return [
+      'currency'    => 'PKR',
+      'sample'      => esc_html__( 'Sample Text', 'xe-plugin' ),
+    ];
+
+  }
 
   /**
    * Get a single default value by key.
@@ -31,18 +35,9 @@ final class Defaults {
    */
   public function get( string $key, $default = null ) {
 
-    return $this->data[ $key ] ?? $default;
+    $all = $this->all();
 
-  }
-
-  /**
-   * Get all default values as an associative array.
-   *
-   * @return array<string, mixed> Array of all default option values.
-   */
-  public function all(): array {
-
-    return $this->data;
+    return $all[ $key ] ?? $default;
 
   }
 
