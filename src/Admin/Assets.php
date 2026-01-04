@@ -8,6 +8,7 @@
 namespace Xe_Plugin\Admin;
 
 use Xe_Plugin\Utils;
+use Xe_Plugin\Strings;
 
 class Assets {
 
@@ -50,7 +51,8 @@ class Assets {
       'postType' => $current_screen->post_type,
       'base' => $current_screen->base,
       'localhost' => Utils::localhost(),
-      'debug' => Utils::debug()
+      'debug' => Utils::debug(),
+      'strings' => Strings::all()
     ] );
 
   }

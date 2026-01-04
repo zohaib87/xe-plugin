@@ -8,6 +8,7 @@
 namespace Xe_Plugin\Frontend;
 
 use Xe_Plugin\Utils;
+use Xe_Plugin\Strings;
 
 class Assets {
 
@@ -47,7 +48,8 @@ class Assets {
       'pluginUrl' => _xe_plugin()->url(),
       'nonce' => wp_create_nonce( '_xe_plugin_ajax_nonce' ),
       'localhost' => Utils::localhost(),
-      'debug' => Utils::debug()
+      'debug' => Utils::debug(),
+      'strings' => Strings::all()
     ] );
 
   }
