@@ -2,7 +2,6 @@
 node_modules
 .vscode
 site
-vendor
 
 # Ignore files
 ftpsync.settings
