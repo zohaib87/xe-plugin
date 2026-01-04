@@ -24,6 +24,11 @@ Freelancers, agencies, or product developers who want a reliable, modern foundat
 
 == Changelog ==
 
+= 1.3.2 =
+
+* New: Added `Strings` class to centralize all translation strings.
+* New: Passed plugin messages and labels to JavaScript via `wp_localize_script`.
+
 = 1.3.1 =
 
 * New: Added internal rewrite endpoints with template support.
