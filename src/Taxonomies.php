@@ -9,7 +9,7 @@
 
 namespace Xe_Plugin;
 
-class CustomTaxonomies {
+class Taxonomies {
 
   /**
    * Constructor (optional) for initial setup.

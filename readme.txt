@@ -24,6 +24,10 @@ Freelancers, agencies, or product developers who want a reliable, modern foundat
 
 == Changelog ==
 
+= 1.3.1 =
+
+* New: Added internal rewrite endpoints with template support.
+
 = 1.3.0 =
 
 * New: Added PSR-4 autoloading.

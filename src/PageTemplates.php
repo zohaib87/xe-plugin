@@ -7,8 +7,6 @@
 
 namespace Xe_Plugin;
 
-use Xe_Plugin\Utils;
-
 class PageTemplates {
 
   /**
@@ -23,17 +21,19 @@ class PageTemplates {
    */
   public function register(): void {
 
-    add_filter( 'theme_page_templates', [ $this, 'page_templates' ] );
-    add_filter( 'page_template', [ $this, 'page_template_locations' ] );
+    add_filter( 'theme_page_templates', [ $this, 'add' ] );
+    add_filter( 'page_template', [ $this, 'locations' ] );
 
   }
 
   /**
-   * Initialize templates
+   * Return all page templates registered by the plugin.
+   *
+   * @var array<string, mixed>
    */
-  public function templates() {
+  public function all(): array {
 
-    $page_templates = _xe_plugin()->path( 'page-templates' );
+    $page_templates = XE_PLUGIN_PATH . 'page-templates';
 
     return [
       'xep-login' => [
@@ -69,15 +69,15 @@ class PageTemplates {
    *
    * @link https://wordpress.stackexchange.com/a/350995/201597
    */
-  public function page_templates( $templates ) {
+  public function add( $templates ): array {
 
     global $post;
 
     $current_template = get_post_meta( $post->ID, '_wp_page_template', true );
 
-    foreach ( $this->templates() as $key => $template ) {
+    foreach ( $this->all() as $key => $template ) {
 
-      if ( $template['single_use'] === true && ! Utils::template_used( $key, $post ? $post->ID : null ) || ( $post && $current_template === $key ) ) {
+      if ( $template['single_use'] === true && ! $this->in_use( $key, $post ? $post->ID : null ) || ( $post && $current_template === $key ) ) {
 
         $templates[ $key ] = $template['title'];
 
@@ -100,9 +100,9 @@ class PageTemplates {
    *
    * @link https://wordpress.stackexchange.com/a/350995/201597
    */
-  public function page_template_locations( $page_template ) {
+  public function locations( $page_template ): string {
 
-    foreach ( $this->templates() as $key => $template ) {
+    foreach ( $this->all() as $key => $template ) {
 
       if ( get_page_template_slug() === $key ) {
 
@@ -115,6 +115,63 @@ class PageTemplates {
     }
 
     return $page_template;
+
+  }
+
+  /**
+   * Check if a page template is in use.
+   *
+   * @param string  $template_key    meta_key of the template
+   * @param string  $page_id         ID of the current page
+   *
+   * @return bool
+   */
+  public function in_use( $template_key, $page_id = null ): bool {
+
+    $pages = get_posts( [
+      'post_type'   => 'page',
+      'meta_key'    => '_wp_page_template',
+      'meta_value'  => $template_key,
+      'post_status' => 'publish',
+      'numberposts' => -1,
+      'exclude'     => array( $page_id )
+    ] );
+
+    return ! empty( $pages );
+
+  }
+
+  /**
+   * Check whether the current template has a specific key or its prefix.
+   *
+   * @param string  $key   Page template key or prefix e.g: 'xep-'
+   *
+   * @return bool
+   */
+  public function is_current( $key ): bool {
+
+    $current_template = get_post_meta( get_the_ID(), '_wp_page_template', true );
+    $is_template = ( strpos( $current_template, $key ) !== false ) ? true : false;
+
+    return $is_template;
+
+  }
+
+  /**
+   * Get page template key
+   *
+   * @param string  $template_key  Key of the template that's store in database.
+   *
+   * @return string
+   */
+  public function get_page_id( $template_key = '' ): string {
+
+    $template = get_pages( [
+      'meta_key' => '_wp_page_template',
+      'meta_value' => $template_key
+    ] );
+
+    return ( $template ) ? $template[0]->ID : '';
 
   }
 
