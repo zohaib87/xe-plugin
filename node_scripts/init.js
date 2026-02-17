@@ -28,6 +28,7 @@ var options = {
     currentPlugin+'/**/*.css',
     currentPlugin+'/**/*.php',
     currentPlugin+'/readme.txt',
+    currentPlugin+'/composer.json'
   ],
   from: [ /'xe-plugin'/g, /_xe_plugin_/g, /Text Domain: xe-plugin/g, / Xe Plugin/g, /xe-plugin-/g, /Xe_Plugin\\/g, /XE_PLUGIN_/g, /'xePlugin'/g ],
   to: [ textDomain, funcNames, mainPluginFile, docBlocks, preHandles, namespaces, globals, globalObj ],

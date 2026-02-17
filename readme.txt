@@ -24,6 +24,10 @@ Freelancers, agencies, or product developers who want a reliable, modern foundat
 
 == Changelog ==
 
+= 1.3.3 =
+
+* Fixed: Some minor bugs.
+
 = 1.3.2 =
 
 * New: Added `Strings` class to centralize all translation strings.
