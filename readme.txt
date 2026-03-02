@@ -24,6 +24,10 @@ Freelancers, agencies, or product developers who want a reliable, modern foundat
 
 == Changelog ==
 
+= 1.3.5 =
+
+* Fixed: Some minor bugs.
+
 = 1.3.4 =
 
 * Fixed: Some prefixes were not being renamed during initialization.

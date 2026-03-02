@@ -16,7 +16,7 @@ var funcNames = nameUnderscores;
 var mainPluginFile = "Text Domain: "+nameHyphen;
 var docBlocks = " "+name;
 var preHandles = nameHyphen+"-";
-var namespaces = name.replace( / /g, '_' );
+var namespaces = name.replace( / /g, '' );
 var globals = nameUpper.replace( / /g, '_' )+"_";
 var globalObj = "'"+global+"'";
 
