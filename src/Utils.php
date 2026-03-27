@@ -40,18 +40,62 @@ class Utils {
   }
 
   /**
-   * Auto load files from a directory
+   * Render style or script with auto version control for web app
    *
-   * @param string  $path   Path to files (*.php) that needs to be auto loaded.
+   * @param string    $rel        Accepts 'style', 'script', 'icon' or 'preconnect'
+   * @param string    $handle     Name of the script. Should be unique.
+   * @param string    $src        Path of the script relative to plugins folder.
+   * @param string    $media      The media for which this stylesheet has been defined.
    */
-  public static function auto_load_files( $path ) {
+  public static function render_asset( $rel, $handle, $src, $media = 'all', $crossorigin = false ) {
 
-    $files = glob($path);
+    $ver = ( $rel === 'style' || $rel === 'script' ) ? filemtime( _xe_plugin()->path() . $src ) : null;
 
-    foreach ($files as $file) {
-      if (basename($file) == 'index.php') continue;
-      require($file);
+    if ( $rel === 'style' ) {
+
+      echo '<link rel="stylesheet" id="' . esc_attr( $handle ) . '" href="' . esc_url( _xe_plugin()->url() . $src . '?' . $ver ) . '" media="' . esc_attr( $media ) . '">' . "\n";
+
+    } elseif ( $rel === 'script' ) {
+
+      echo '<script src="' . esc_url( _xe_plugin()->url() . $src . '?' . $ver ) . '" id="' . esc_attr( $handle ) . '"></script>' . "\n";
+
+    } elseif ( $rel === 'icon' ) {
+
+      echo '<link rel="icon" href="' . esc_url( $src ) . '">' . "\n";
+
+    } elseif ( $rel === 'preconnect' ) {
+
+      $crossorigin = $crossorigin === true ? 'crossorigin' : '';
+
+      echo '<link rel="preconnect" href="' . esc_url( $src ) . '" ' . esc_attr( $crossorigin ) . '>' . "\n";
+
     }
+
+  }
+
+  /**
+   * Adds inline JavaScript data for localization of a script.
+   *
+   * @param string $object_name  The name of the JavaScript object to contain the localized data.
+   * @param array  $data         The PHP data to pass into JavaScript as an associative array.
+   *
+   * @return void
+   */
+  public static function localize_script( $object_name, $data ) {
+
+    // Ensure $data is an array for JSON encoding
+    if ( ! is_array( $data ) ) {
+      return;
+    }
+
+    // Prepare the data as a JSON object for inline JavaScript
+    $json_data = wp_json_encode( $data );
+
+    // Escape the object name for safe JavaScript output
+    $object_name = esc_js( $object_name );
+
+    // Create the inline JavaScript to define the object
+    echo '<script type="text/javascript">var ' . $object_name . ' = ' . $json_data . ';</script>' . "\n";
 
   }
 
