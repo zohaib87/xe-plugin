@@ -57,7 +57,7 @@ class Assets {
   }
 
   /**
-   * Enqueue styles
+   * Render styles
    */
   public function head() {
 
@@ -69,12 +69,12 @@ class Assets {
     /**
      * Inline styles
      */
-    $this->add_inline_styles();
+    Utils::add_inline_styles( $this->dynamic_css() );
 
   }
 
   /**
-   * Enqueue scripts
+   * Render scripts
    */
   public function foot() {
 
@@ -117,21 +117,6 @@ class Assets {
 		";
 
 		return $css;
-
-	}
-
-  /**
-   * Add inline styles
-   */
-	public function add_inline_styles() {
-
-    $main_css = $this->dynamic_css();
-
-    if ( ! empty( $main_css ) ) {
-
-      echo "<style type='text/css'>" . Utils::minify_css( $main_css ) . "</style>";
-
-    }
 
 	}
 

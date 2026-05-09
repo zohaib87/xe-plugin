@@ -25,7 +25,7 @@ Freelancers, agencies, or product developers who want a reliable, modern foundat
 
 ## Requirements
 
-Latest version of [WordPress](https://wordpress.org/) and [Nodejs](https://nodejs.org/en/).
+Latest version of [WordPress](https://wordpress.org/), [Composer](https://getcomposer.org) and [Nodejs](https://nodejs.org/en/).
 
 ## Getting Started
 
@@ -46,7 +46,7 @@ Latest version of [WordPress](https://wordpress.org/) and [Nodejs](https://nodej
 
 Your [pull requests](https://github.com/zohaib87/xe-plugin/pulls) will be highly welcomed. If you're looking for something to start with, you can check the [issues](https://github.com/zohaib87/xe-plugin/issues) or open one about something you want to contribute and we can discuss it before your pull request.
 
-1. You must have latest version of [WordPress](https://wordpress.org/) and [Nodejs](https://nodejs.org/en/).
+1. You must have latest version of [WordPress](https://wordpress.org/), [Composer](https://getcomposer.org) and [Nodejs](https://nodejs.org/en/).
 2. Create a fork of this repository.
 3. Clone the fork on your local machine. Your remote repo on Github is called `origin`.
 4. Add the original repository as a remote called `upstream`.

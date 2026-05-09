@@ -10,7 +10,7 @@
    *
    * @link http://natko.com/wordpress-ajax-login-without-a-plugin-the-right-way/
    */
-  $( '#login_btn' ).on( 'click', function ( e ) {
+  $( '#login' ).on( 'submit', function ( e ) {
 
     e.preventDefault();
 
@@ -21,15 +21,15 @@
 			method: 'POST',
 			dataType: 'json',
 			data: {
-				action: 'xem_pos_user_login',
-				user_login: $( '#user_login' ).val(),
-				user_password: $( '#user_password' ).val(),
-				remember_me: $( '#remember_me' ).is( ':checked' ) ? true : false,
+				action: '_xe_plugin_user_login',
+				user_login: $( '#user-login' ).val(),
+				user_password: $( '#user-password' ).val(),
+				remember_me: $( '#remember-me' ).is( ':checked' ) ? true : false,
 				nonce: xePlugin.nonce
 			},
 			beforeSend: function () {
 
-				$( '#login_btn' ).addClass( 'disabled' );
+				$( '#login-btn' ).addClass( 'disabled' );
 				$( '#alerts' ).html( xemPosAlert( 'info', xePlugin.strings.pleaseWait, true, false ) );
 
 			},
@@ -49,7 +49,7 @@
 
 					} else {
 
-						window.location.href = xePlugin.dashboardUrl;
+						window.location.href = xePlugin.strings.dashboardUrl;
 
 					}
 
@@ -71,7 +71,7 @@
 			},
 			complete: function () {
 
-				$( '#login_btn' ).removeClass( 'disabled' );
+				$( '#login-btn' ).removeClass( 'disabled' );
 
 			},
 		} );
@@ -81,7 +81,7 @@
 	/**
 	 * Reset password
 	 */
-	$( '#reset_btn' ).on( 'click', function ( e ) {
+	$( '#password-reset' ).on( 'click', function ( e ) {
 
 		e.preventDefault();
 
@@ -90,19 +90,19 @@
 			method: 'POST',
 			dataType: 'json',
 			data: {
-				action: 'xem_pos_reset_password',
-				user_login: $( '#user_login' ).val(),
+				action: '_xe_plugin_reset_password',
+				user_login: $( '#user-login' ).val(),
 				nonce: xePlugin.nonce
 			},
 			beforeSend: function () {
 
-				$( '#reset_btn' ).addClass( 'disabled' );
+				$( '#reset-btn' ).addClass( 'disabled' );
 				$( '#alerts' ).html( xemPosAlert( 'info', xePlugin.strings.pleaseWait, true, false ) );
 
 			},
 			success: function ( data ) {
 
-				$( '#reset_btn' ).removeClass( 'disabled' );
+				$( '#reset-btn' ).removeClass( 'disabled' );
 
 				if ( data.error != '' ) {
 

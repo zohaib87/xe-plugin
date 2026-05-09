@@ -8,16 +8,17 @@
 namespace Xe_Plugin;
 
 use Xe_Plugin\Setup;
+use Xe_Plugin\Endpoints;
 use Xe_Plugin\PageTemplates;
 use Xe_Plugin\PostTypes;
 use Xe_Plugin\Taxonomies;
+use Xe_Plugin\Ajax;
 use Xe_Plugin\Elementor;
 use Xe_Plugin\Admin\Assets as AdminAssets;
 use Xe_Plugin\Admin\Views as AdminViews;
 use Xe_Plugin\Admin\MenuPages;
 use Xe_Plugin\Frontend\Views as FrontendViews;
 use Xe_Plugin\Frontend\Assets as FrontendAssets;
-use Xe_Plugin\Frontend\Endpoints;
 use Xe_Plugin\Frontend\Shortcodes;
 
 class Bootstrap {
@@ -29,9 +30,11 @@ class Bootstrap {
    */
   protected array $global = [
     Setup::class,
+    Endpoints::class,
     PageTemplates::class,
     PostTypes::class,
     Taxonomies::class,
+    Ajax::class,
     Elementor::class
   ];
 
@@ -54,8 +57,7 @@ class Bootstrap {
   protected array $frontend = [
     FrontendAssets::class,
     FrontendViews::class,
-    Shortcodes::class,
-    Endpoints::class
+    Shortcodes::class
   ];
 
   /**

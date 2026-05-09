@@ -24,14 +24,7 @@ class Setup {
     add_action( 'template_redirect', [ $this, 'require_authentication' ] );
     add_action( 'template_redirect', [ $this, 'redirect_authenticated' ] );
     add_action( 'admin_init', [ $this, 'flush_rewrite_rules_on_update' ] );
-
-    register_activation_hook( _xe_plugin()->file(), [ $this, 'activation' ] );
-    register_deactivation_hook( _xe_plugin()->file(), [ $this, 'deactivation' ] );
-    register_uninstall_hook( _xe_plugin()->file(), [ self::class, 'uninstall' ] );
     add_action( 'init', [ $this, 'load_textdomain' ] );
-
-    // Replace the 'register_uninstall_hook' with following if Freemius SDK is used.
-    // _xe_plugin_fs()->add_action( 'after_uninstall', [ $this, 'uninstall' ] );
 
   }
 
@@ -181,33 +174,50 @@ class Setup {
   }
 
   /**
+   * Create custom city customers table
+   */
+  // public function create_city_customers_table() {
+
+  //   global $wpdb;
+
+  //   $table_name = $wpdb->prefix . 'city_customers';
+  //   $charset_collate = $wpdb->get_charset_collate();
+
+  //   require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+
+  //   $sql = "CREATE TABLE $table_name (
+  //     id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  //     name VARCHAR(100) NOT NULL,
+  //     phone VARCHAR(20) DEFAULT NULL,
+  //     email VARCHAR(100) DEFAULT NULL,
+  //     city VARCHAR(100) DEFAULT NULL,
+  //     address TEXT DEFAULT NULL,
+  //     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  //     PRIMARY KEY (id)
+  //   ) $charset_collate;";
+
+  //   dbDelta( $sql );
+
+  //   $wpdb->query( "ALTER TABLE $table_name ADD INDEX phone_index (phone)" );
+  //   $wpdb->query( "ALTER TABLE $table_name ADD INDEX email_index (email)" );
+  //   $wpdb->query( "ALTER TABLE $table_name ADD INDEX city_index (city)" );
+
+  // }
+
+  /**
    * Plugin Activation
    */
-  public function activation() {
+  public static function activation() {
+
+    // $instance = new self();
+    // $instance->create_city_customers_table();
+
   }
 
   /**
    * Plugin Deactivation
    */
-  public function deactivation() {
-  }
-
-  /**
-   * Plugin Uninstall
-   */
-  public static function uninstall() {
-
-    global $wpdb;
-
-    // $wpdb->query("DELETE FROM {$wpdb->posts} WHERE post_type IN ('xep-sales', 'xep-frames', 'xep-glasses', 'xep-w-customers')");
-    // $wpdb->query("DELETE FROM {$wpdb->postmeta} WHERE post_id NOT IN (SELECT id FROM {$wpdb->posts})");
-
-    // $wpdb->query("DELETE FROM {$wpdb->term_taxonomy} WHERE taxonomy = 'xep-glasses-cat'");
-
-    // $wpdb->query("DELETE FROM {$wpdb->usermeta} WHERE meta_key IN ('xep_company', 'xep_contactno', 'xep_address', 'xep_city', 'xep_postalcode')");
-
-    // $wpdb->query("DELETE FROM {$wpdb->options} WHERE option_name = 'xep_options'");
-
+  public static function deactivation() {
   }
 
   /**

@@ -24,6 +24,13 @@ Freelancers, agencies, or product developers who want a reliable, modern foundat
 
 == Changelog ==
 
+= 1.3.6 =
+
+* New: Added authentication sample code for web applications.
+* New: Added uninstall file.
+* Fixed: Activation and deactivation methods.
+* Fixed: Some minor bugs.
+
 = 1.3.5 =
 
 * Fixed: Some minor bugs.

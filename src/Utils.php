@@ -100,6 +100,19 @@ class Utils {
   }
 
   /**
+   * Add inline styles
+   */
+	public static function add_inline_styles( $main_css ) {
+
+    if ( ! empty( $main_css ) ) {
+
+      echo "<style type='text/css'>" . self::minify_css( $main_css ) . "</style>";
+
+    }
+
+	}
+
+  /**
    * Minifying styles
    *
    * @param string  $css   Not compressed css.

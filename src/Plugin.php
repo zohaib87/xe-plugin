@@ -9,7 +9,7 @@ namespace Xe_Plugin;
 
 use Xe_Plugin\PluginOptions;
 use Xe_Plugin\Defaults;
-use Xe_Plugin\Frontend\Endpoints;
+use Xe_Plugin\Endpoints;
 use Xe_Plugin\PageTemplates;
 
 final class Plugin {

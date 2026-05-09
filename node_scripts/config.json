@@ -1,5 +1,6 @@
 {
   "name": "Xe Plugin",
-  "global": "xePlugin",
-  "build": "E:/Projects/Xe Plugin"
+  "jsObject": "xePlugin",
+  "endpointsKeyPrefix": "xep-",
+  "build": "D:/Projects/Xe Plugin"
 }

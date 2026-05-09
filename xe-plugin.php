@@ -29,6 +29,43 @@ define( 'XE_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 require XE_PLUGIN_PATH . 'vendor/autoload.php';
 
 /**
+ * Runs on plugin activation.
+ *
+ * This function is triggered when the plugin is activated from the WordPress admin.
+ * It is responsible for setting up initial requirements such as:
+ * - Creating custom database tables
+ * - Setting default options
+ * - Running any one-time setup logic
+ *
+ * @return void
+ */
+function _xe_plugin_activation(): void {
+
+  \Xe_Plugin\Setup::activation();
+
+}
+register_activation_hook( XE_PLUGIN_FILE, '_xe_plugin_activation' );
+
+/**
+ * Runs on plugin deactivation.
+ *
+ * This function is triggered when the plugin is deactivated.
+ * It is typically used for cleanup tasks such as:
+ * - Flushing rewrite rules
+ * - Clearing scheduled events
+ *
+ * Note: This does NOT remove plugin data from the database.
+ *
+ * @return void
+ */
+function _xe_plugin_deactivation(): void {
+
+  \Xe_Plugin\Setup::deactivation();
+
+}
+register_deactivation_hook( XE_PLUGIN_FILE, '_xe_plugin_deactivation' );
+
+/**
  * Returns the main plugin instance.
  *
  * Acts as a global access point for plugin services like options, paths, and URLs.
