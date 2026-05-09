@@ -18,7 +18,7 @@ final class Strings {
 
     return [
       'pleaseWait'      => esc_html__( 'Please wait...', 'xe-plugin' ),
-      'dashboardUrl' => cc_manager()->endpoints()->get_url_by_key( 'xep-dashboard' ),
+      'dashboardUrl' => _xe_plugin()->endpoints()->get_url_by_key( 'xep-dashboard' ),
       'errorOccurred' => esc_html__( 'An error occurred: ', 'xe-plugin' ),
       // Add more strings here...
     ];
