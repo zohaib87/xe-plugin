@@ -63,10 +63,10 @@ class Endpoints {
         'slug' => 'sales',
         'auth' => true,
         'titles' => [
-          'trash' => esc_html__( 'Deleted Sales', 'xem-pos' ),
-          'add-new' => esc_html__( 'Add New Sale', 'xem-pos' ),
-          'edit' => esc_html__( 'Edit Sale', 'xem-pos' ),
-          'all' => esc_html__( 'Sales', 'xem-pos' ),
+          'trash' => esc_html__( 'Deleted Sales', 'xe-plugin' ),
+          'add-new' => esc_html__( 'Add New Sale', 'xe-plugin' ),
+          'edit' => esc_html__( 'Edit Sale', 'xe-plugin' ),
+          'all' => esc_html__( 'Sales', 'xe-plugin' ),
         ]
       ],
     ];

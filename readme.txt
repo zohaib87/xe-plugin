@@ -24,6 +24,11 @@ Freelancers, agencies, or product developers who want a reliable, modern foundat
 
 == Changelog ==
 
+= 1.3.7 =
+
+* Updated: Translation string generation to use WP-CLI.
+* Fixed: Some translation strings.
+
 = 1.3.6 =
 
 * New: Added authentication sample code for web applications.
@@ -64,18 +69,18 @@ Freelancers, agencies, or product developers who want a reliable, modern foundat
 
 = 1.2.6 =
 
-* New Added: Page Templates support.
+* New: Added Page Templates support.
 * Updated: Class Views static methods to action hooks.
 * Fixed: Some minor bugs.
 
 = 1.2.5 =
 
-* New Added: debug property in Helpers\PluginOptions class.
+* New: Added debug property in Helpers\PluginOptions class.
 * Fixed: Some minor bugs.
 
 = 1.2.4 =
 
-* New Added: verify_save method in helpers class.
+* New: Added verify_save method in helpers class.
 * Fixed: CSS & Nonce prefixes change on initialization.
 * Fixed: Some minor bugs.
 
@@ -104,35 +109,35 @@ Freelancers, agencies, or product developers who want a reliable, modern foundat
 
 = 1.1.13 =
 
-* New Added: Enqueue method in helper class.
-* New Added: localhost variable to localize script.
-* New Added: Auto change of global obj prefix in scripts on npm run init.
+* New: Added Enqueue method in helper class.
+* New: Added localhost variable to localize script.
+* New: Added Auto change of global obj prefix in scripts on npm run init.
 * Moved: localhost method from helpers class to plugin options class.
 * Fixed: Some minor bugs.
 
 = 1.1.12 =
 
-* New Added: Sample classes for product types, custom fields, tabs.
-* New Added: Views class for reusable sections.
-* New Added: wp_localize_script() function.
-* New Added: sanitize_email() and sanitize_url() to update_field().
+* New: Added Sample classes for product types, custom fields, tabs.
+* New: Added Views class for reusable sections.
+* New: Added wp_localize_script() function.
+* New: Added sanitize_email() and sanitize_url() to update_field().
 * Fixed: Plugin options not saving.
 * Fixed: Minor bugs.
 
 = 1.1.11 =
 
-* New Added: Shortcode sample.
-* New Added: Metabox sample.
+* New: Added Shortcode sample.
+* New: Added Metabox sample.
 * Fixed: Minor bugs.
 
 = 1.1.10 =
 
-* New Added: Sample Plugin Options menu page.
-* New Added: Class for default options.
+* New: Added Sample Plugin Options menu page.
+* New: Added Class for default options.
 
 = 1.1.9 =
 
-* New Added: Standalone .pot file generation script.
+* New: Added Standalone .pot file generation script.
 * Fixed: Generating empty .pot file
 
 = 1.1.8 =
@@ -145,13 +150,13 @@ Freelancers, agencies, or product developers who want a reliable, modern foundat
 
 = 1.1.6 =
 
-* New Added: Version control in scripts.
+* New: Added Version control in scripts.
 * Removed: Repeated code from build.js.
 * Removed: TGM plugin activation script.
 
 = 1.1.5 =
 
-* New Added: Custom name for global variable in config.json
+* New: Added Custom name for global variable in config.json
 
 = 1.1.4 =
 
@@ -164,7 +169,7 @@ Freelancers, agencies, or product developers who want a reliable, modern foundat
 
 = 1.1.2 =
 
-* New Added: Freemius SDK
+* New: Added Freemius SDK
 * Fixed: Uninstall function now compatible with Freemius.
 
 = 1.1.1 =
@@ -173,7 +178,7 @@ Freelancers, agencies, or product developers who want a reliable, modern foundat
 
 = 1.1.0 =
 
-* New Added: Sample custom post types and taxonomies.
+* New: Added Sample custom post types and taxonomies.
 * Updated: Structure is now more like an MVC Framework.
 
 = 1.0.0 =

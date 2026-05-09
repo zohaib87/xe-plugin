@@ -87,11 +87,8 @@ class Ajax {
 
         if ( empty( $user_data ) ) {
 
-          $error = sprintf(
-            esc_html__( '%sError:%s There is no account with that username or email address.', 'xe-plugin' ),
-            '<strong>',
-            '</strong>'
-          );
+          /* translators: 1: opening strong tag, 2: closing strong tag */
+          $error = sprintf( esc_html__( '%1$sError:%2$s There is no account with that username or email address.', 'xe-plugin' ), '<strong>', '</strong>' );
 
         } else {
 
@@ -162,11 +159,8 @@ class Ajax {
 
         if ( empty( $user_data ) ) {
 
-          $error = sprintf(
-            esc_html__( '%sError:%s There is no account with that username or email address.', 'xe-plugin' ),
-            '<strong>',
-            '</strong>'
-          );
+          /* translators: 1: opening strong tag, 2: closing strong tag */
+          $error = sprintf( esc_html__( '%1$sError:%2$s There is no account with that username or email address.', 'xe-plugin' ), '<strong>', '</strong>' );
 
         } else {
 
@@ -174,6 +168,7 @@ class Ajax {
 
           if ( $results === true ) {
 
+            /* translators: %s: user email address */
             $success = sprintf( esc_html__( 'A password reset link was emailed to %s.', 'xe-plugin' ), $user_login );
 
           } else {

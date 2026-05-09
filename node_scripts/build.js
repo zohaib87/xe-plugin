@@ -1,7 +1,7 @@
 
 var config = require( './config.json' );
 var fs  = require( 'fs' );
-var wpPot = require( 'wp-pot' );
+var execSync = require('child_process').execSync;
 var copydir = require( 'copy-dir' );
 var path = require( 'path' );
 var rimraf = require( "rimraf" );
@@ -91,11 +91,7 @@ console.log( "node_modules folder removed." );
 rimraf.sync( targetUrl+'/node_scripts/' );
 console.log( "node_scripts folder removed." );
 
-// Generate POT file.
-wpPot( {
-  destFile: targetUrl+'/languages/'+nameHyphen+'.pot',
-  relativeTo: targetUrl,
-  package: name,
-  src: targetUrl+'/**/*.php'
-} );
-console.log( 'POT file Generated.' );
+execSync(
+  `wp i18n make-pot "${targetUrl}" "${targetUrl}/languages/${nameHyphen}.pot"`,
+  { stdio: 'inherit' }
+);
