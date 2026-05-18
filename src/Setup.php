@@ -114,7 +114,7 @@ class Setup {
 
   //     $current_url = ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
-  //     wp_redirect( _xe_plugin()->endpoints()->get_url_by_key( 'mpos-login', '?redirect_to=' . urlencode( $current_url ) ) );
+  //     wp_redirect( _xe_plugin()->endpoints()->get_url_by_key( 'xep-login', '?redirect_to=' . urlencode( $current_url ) ) );
 
   //     exit;
 
@@ -146,7 +146,7 @@ class Setup {
 
   //   if ( in_array( $current_endpoint, $endpoints ) && is_user_logged_in() ) {
 
-  //     wp_redirect( _xe_plugin()->endpoints()->get_url_by_key( 'mpos-dashboard' ) );
+  //     wp_redirect( _xe_plugin()->endpoints()->get_url_by_key( 'xep-dashboard' ) );
   //     exit;
 
   //   }
