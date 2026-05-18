@@ -1,0 +1,51 @@
+<?php
+/**
+ * Database table schema for {{label}}.
+ *
+ * @package Xe Plugin
+ */
+
+namespace Xe_Plugin\Database\Tables;
+
+use Xe_Plugin\Database\DB;
+
+class {{class}} {
+
+  /**
+   * Database instance.
+   *
+   * @var DB
+   */
+  protected $db;
+
+  /**
+   * Constructor.
+   */
+  public function __construct() {
+
+    $this->db = new DB();
+
+  }
+
+  /**
+   * Table schema.
+   *
+   * @param string $charset_collate Character set and collation.
+   *
+   * @return string SQL query to create the table.
+   */
+  public function schema( $charset_collate ) {
+
+    global $wpdb;
+
+    $table = $this->db->table( '_xe_plugin_{{table_name}}' );
+
+    if ( $table === $wpdb->get_var( "SHOW TABLES LIKE '{$table}'" ) ) {
+      return '';
+    }
+
+    return "";
+
+  }
+
+}

@@ -1,0 +1,57 @@
+<?php
+/**
+ * Module for {{label}}.
+ *
+ * @package Xe Plugin
+ */
+
+namespace Xe_Plugin\Modules;
+
+use Xe_Plugin\Modules\BaseModule;
+
+class {{class}} extends BaseModule {
+
+  /**
+   * Nonce
+   *
+   * @var string
+   */
+  protected $nonce = '_xe_plugin_{{module_name}}_nonce';
+
+  /**
+   * Nonce action
+   *
+   * @var string
+   */
+  protected $nonce_action = '_xe_plugin_{{module_name}}_action';
+
+  /**
+   * Table
+   *
+   * @var string
+   */
+  protected $table = '_xe_plugin_{{module_name}}';
+
+  /**
+   * Endpoint
+   *
+   * @var string
+   */
+  protected $endpoint = '';
+
+  /**
+   * Fields
+   *
+   * @var array
+   */
+  protected $fields = array(
+
+    'full_name' => array(
+      'type' => 'text',
+      'required' => true,
+      'sanitize' => 'text',
+    ),
+
+  );
+
+}
