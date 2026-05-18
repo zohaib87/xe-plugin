@@ -10,6 +10,7 @@ class ComposerStaticInit204699843a132f2dbcca333d2a8315d1
         'X' => 
         array (
             'Xe_Plugin\\' => 10,
+            'XePlugin\\CLI\\' => 13,
         ),
     );
 
@@ -17,6 +18,10 @@ class ComposerStaticInit204699843a132f2dbcca333d2a8315d1
         'Xe_Plugin\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
+        ),
+        'XePlugin\\CLI\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/cli',
         ),
     );
 

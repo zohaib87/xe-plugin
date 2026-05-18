@@ -1,6 +1,7 @@
 {
   "autoload": {
     "psr-4": {
+      "XePlugin\\CLI\\": "cli/",
       "Xe_Plugin\\": "src/"
     }
   }

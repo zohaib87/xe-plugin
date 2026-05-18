@@ -1,0 +1,6 @@
+<?php
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+$console = new XePlugin\CLI\Console();
+$console->run( $argv );

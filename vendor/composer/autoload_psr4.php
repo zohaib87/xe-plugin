@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Xe_Plugin\\' => array($baseDir . '/src'),
+    'XePlugin\\CLI\\' => array($baseDir . '/cli'),
 );
