@@ -1,7 +1,7 @@
 === Xe Plugin ===
 Requires at least: 6
 Tested up to: 6.9
-Requires PHP: 7.4
+Requires PHP: 8
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,6 +23,18 @@ Xe Plugin is a starter boilerplate for WordPress plugin developers. It provides 
 Freelancers, agencies, or product developers who want a reliable, modern foundation for creating powerful WordPress plugins.
 
 == Changelog ==
+
+= 1.4.0 =
+
+* New: Added make:table and make:module CLI commands
+* New: Added make:elementor CLI command
+* Moved: init and build commands from nodejs to php
+* Removed: nodejs dependency
+* Fixed: Some minor bugs
+
+= 1.3.8 =
+
+* Fixed: Some minor bugs.
 
 = 1.3.7 =
 
