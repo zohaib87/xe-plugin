@@ -69,7 +69,7 @@ class Build {
 
     $exclude_extensions = [
       'psd',
-      'settings',
+      'settings'
     ];
 
     $exclude_files = [
@@ -79,8 +79,10 @@ class Build {
       'composer.json',
       'composer.lock',
       'sftp-config.json',
+      'config.json',
       'README.md',
       'LICENSE.md',
+      'xe'
     ];
 
     $exclude_directories = [
@@ -90,7 +92,7 @@ class Build {
       'node_modules',
       'node_scripts',
       'cli',
-      'vendor',
+      'stubs'
     ];
 
     if ( ! is_dir( $destination ) ) {
