@@ -31,16 +31,21 @@ class Elementor {
    */
   public function widgets( $widgets_manager ) {
 
-    $widgets = [
-      \Xe_Plugin\Elementor\Heading::class,
-      \Xe_Plugin\Elementor\Button::class,
-    ];
+    $widget_files = glob( _xe_plugin()->path() . 'Elementor/*.php' );
 
-    foreach ( $widgets as $widget_class ) {
+    if ( empty( $widget_files ) ) {
+      return;
+    }
 
-      if ( class_exists( $widget_class ) ) {
+    foreach ( $widget_files as $file ) {
 
-        $widgets_manager->register( new $widget_class() );
+      require_once $file;
+
+      $class_name = '\\Xe_Plugin\\Elementor\\' . basename( $file, '.php' );
+
+      if ( class_exists( $class_name ) ) {
+
+        $widgets_manager->register( new $class_name() );
 
       }
 

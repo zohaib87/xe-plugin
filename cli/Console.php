@@ -15,11 +15,12 @@ class Console {
    * @var array
    */
   protected array $commands = [
-    'init'        => Commands\Init::class,
-    'build'       => Commands\Build::class,
-    'docs'        => Commands\Docs::class,
-    'make:table'  => Commands\MakeTable::class,
-    'make:module' => Commands\MakeModule::class,
+    'init'           => Commands\Init::class,
+    'build'          => Commands\Build::class,
+    'docs'           => Commands\Docs::class,
+    'make:table'     => Commands\MakeTable::class,
+    'make:module'    => Commands\MakeModule::class,
+    'make:elementor' => Commands\MakeElementor::class,
   ];
 
   /**
