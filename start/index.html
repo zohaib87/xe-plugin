@@ -12,22 +12,22 @@
         <link rel="prev" href="..">
       
       
-        <link rel="next" href="../defaults/">
+        <link rel="next" href="../configuration/">
       
       
         
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Let's Start - Xe Plugin - Just a starter WordPress plugin</title>
+        <title>Installation & Setup - Xe Plugin - Just a starter WordPress plugin</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
       
 
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#get-starter-plugin" class="md-skip">
+        <a href="#installation-quickstart" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Let's Start
+              Installation & Setup
             
           </span>
         </div>
@@ -207,7 +207,67 @@
     
     
       <li class="md-tabs__item">
-        <a href="../defaults/" class="md-tabs__link">
+        <a href="../cli/overview/" class="md-tabs__link">
+          
+  
+  
+  CLI Commands
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../architecture/overview/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../features/options-and-defaults/" class="md-tabs__link">
+          
+  
+  
+  Core Features
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../helpers/utils/" class="md-tabs__link">
           
   
   
@@ -300,6 +360,8 @@
         
       
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
@@ -379,6 +441,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -387,7 +451,7 @@
   <span class="md-ellipsis">
     
   
-    Let's Start
+    Installation & Setup
   
 
     
@@ -405,7 +469,7 @@
   <span class="md-ellipsis">
     
   
-    Let's Start
+    Installation & Setup
   
 
     
@@ -421,6 +485,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -429,10 +495,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#get-starter-plugin" class="md-nav__link">
+  <a href="#step-1-download-or-clone-the-repository" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Get Starter Plugin
+        Step 1: Download or Clone the Repository
       
     </span>
   </a>
@@ -440,10 +506,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-nodejs" class="md-nav__link">
+  <a href="#step-2-install-composer-dependencies" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Install Nodejs
+        Step 2: Install Composer Dependencies
       
     </span>
   </a>
@@ -451,10 +517,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#initialization" class="md-nav__link">
+  <a href="#step-3-configure-configjson" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Initialization
+        Step 3: Configure config.json
       
     </span>
   </a>
@@ -462,10 +528,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#build" class="md-nav__link">
+  <a href="#step-4-run-the-initialization-command" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Build
+        Step 4: Run the Initialization Command
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4: Run the Initialization Command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-php-xe-init-does-automatically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What php xe init does automatically:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-activate-in-wordpress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Activate in WordPress
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-available-cli-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Available CLI Commands
       
     </span>
   </a>
@@ -476,6 +581,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration (config.json)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -500,13 +633,17 @@
     
       
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -516,7 +653,7 @@
   <span class="md-ellipsis">
     
   
-    Helpers
+    CLI Commands
   
 
     
@@ -532,7 +669,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Helpers
+    CLI Commands
   
 
           </label>
@@ -545,14 +682,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../defaults/" class="md-nav__link">
+      <a href="../cli/overview/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Class Defaults
+    CLI Overview
   
 
     
@@ -573,14 +710,617 @@
   
   
     <li class="md-nav__item">
-      <a href="../helpers/" class="md-nav__link">
+      <a href="../cli/init-build/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Class Helpers
+    Project Init & Build
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/generators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Generators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/plugin-container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plugin Container
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scoped Bootstrapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Core Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/options-and-defaults/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Options & Defaults
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Virtual Rewrite Endpoints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/page-templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Page Templates & Auth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CRUD Modules (BaseModule)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/sequences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Sequences
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/cpt-and-taxonomies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPTs & Taxonomies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/elementor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Elementor Widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/woocommerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WooCommerce Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/ajax/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AJAX Handlers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Helpers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Helpers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../helpers/utils/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Utils Library
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../helpers/strings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Centralized Strings
   
 
     
@@ -645,6 +1385,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -653,10 +1395,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#get-starter-plugin" class="md-nav__link">
+  <a href="#step-1-download-or-clone-the-repository" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Get Starter Plugin
+        Step 1: Download or Clone the Repository
       
     </span>
   </a>
@@ -664,10 +1406,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-nodejs" class="md-nav__link">
+  <a href="#step-2-install-composer-dependencies" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Install Nodejs
+        Step 2: Install Composer Dependencies
       
     </span>
   </a>
@@ -675,10 +1417,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#initialization" class="md-nav__link">
+  <a href="#step-3-configure-configjson" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Initialization
+        Step 3: Configure config.json
       
     </span>
   </a>
@@ -686,10 +1428,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#build" class="md-nav__link">
+  <a href="#step-4-run-the-initialization-command" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Build
+        Step 4: Run the Initialization Command
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4: Run the Initialization Command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-php-xe-init-does-automatically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What php xe init does automatically:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-activate-in-wordpress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Activate in WordPress
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-available-cli-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Available CLI Commands
       
     </span>
   </a>
@@ -713,50 +1494,75 @@
 
 
 
-  <h1>Let's Start</h1>
-
-<h2 id="get-starter-plugin">Get Starter Plugin</h2>
-<p>Download fresh copy of <a href="https://github.com/XeCreators/xe-plugin">Xe Plugin</a> and extract it to you development environment. Change folder name to your theme name. e.g: <code>xurais</code> or <code>xu-rais</code>.</p>
-<h2 id="install-nodejs">Install Nodejs</h2>
-<p><a href="https://nodejs.org/en/">Nodejs</a> is a JavaScript runtime built on <a href="https://v8.dev/">Chrome's V8 JavaScript engine</a>.  Install the latest version from their website if you don't have it installed already. You can check <code>Nodejs</code> version using the following command.</p>
-<pre><code>node -v
-</code></pre>
-<p>You can check <code>npm</code> version using the following command.</p>
-<pre><code>npm -v
-</code></pre>
-<h2 id="initialization">Initialization</h2>
+<h1 id="installation-quickstart">Installation &amp; Quickstart</h1>
+<p>This guide will walk you through setting up a new WordPress plugin using the <strong>Xe Plugin</strong> boilerplate.</p>
+<hr />
+<h2 id="step-1-download-or-clone-the-repository">Step 1: Download or Clone the Repository</h2>
+<p>Download the latest release or clone the repository directly into your WordPress installation's <code>wp-content/plugins/</code> directory:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>/path/to/wordpress/wp-content/plugins/
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/XeCreators/xe-plugin.git<span class="w"> </span>my-plugin
+</code></pre></div>
+<p>Rename the folder from <code>xe-plugin</code> to your desired plugin slug (e.g., <code>my-plugin</code> or <code>custom-crm</code>).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>my-plugin
+</code></pre></div>
+<hr />
+<h2 id="step-2-install-composer-dependencies">Step 2: Install Composer Dependencies</h2>
+<p>Xe Plugin utilizes PSR-4 autoloading via Composer. Ensure your dependencies and autoloader are installed:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>composer<span class="w"> </span>install
+</code></pre></div>
+<hr />
+<h2 id="step-3-configure-configjson">Step 3: Configure <code>config.json</code></h2>
+<p>Open <code>config.json</code> located at the root of the plugin directory:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Plugin"</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">"jsObject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myPlugin"</span><span class="p">,</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">"endpointsKeyPrefix"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mp"</span><span class="p">,</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nt">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"D:/Projects/Builds"</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">}</span>
+</code></pre></div>
+<ul>
+<li><strong><code>name</code></strong>: The human-readable name of your plugin (e.g., <code>"Custom CRM"</code> or <code>"Awesome Store"</code>).</li>
+<li><strong><code>jsObject</code></strong>: The global JavaScript object name for localized data (e.g., <code>customCrm</code>).</li>
+<li><strong><code>endpointsKeyPrefix</code></strong>: A unique prefix for rewrite endpoints and template IDs (e.g., <code>crm</code> or <code>as</code>).</li>
+<li><strong><code>build</code></strong>: Destination directory where production builds will be generated.</li>
+</ul>
+<hr />
+<h2 id="step-4-run-the-initialization-command">Step 4: Run the Initialization Command</h2>
+<p>Run the <code>init</code> command using the built-in PHP CLI runner:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>php<span class="w"> </span>xe<span class="w"> </span>init
+</code></pre></div>
+<h3 id="what-php-xe-init-does-automatically">What <code>php xe init</code> does automatically:</h3>
 <ol>
-<li>Navigate to <code>node_scripts</code> folder.</li>
-<li>Open <code>config.json</code> with your favorite editor.</li>
-<li>
-<p>Change <code>name</code> to your theme name. eg: <code>Xurais</code> or <code>Xu Rais</code> (Capitalized).</p>
-<pre><code>"name": "Xurais",
-</code></pre>
-</li>
-<li>
-<p>Chang <code>global</code> to a friendly and short name. eg: <code>xur</code> or <code>xura</code> (Lowercase).</p>
-<pre><code>"global": "xur",
-</code></pre>
-</li>
-<li>
-<p>Open command line, navigate to project folder and run this command to install dependencies:</p>
-<pre><code>npm install
-</code></pre>
-</li>
-<li>
-<p>Now run following command to automatically change <code>text-domain</code>, <code>prefixes</code>, <code>DocBlocks</code>, <code>global variables</code> and <code>global object (JavaScript)</code> according to your <code>config.json</code> file.</p>
-<pre><code>npm run init
-</code></pre>
-</li>
+<li>Replaces all instances of <code>Xe Plugin</code>, <code>xe-plugin</code>, <code>_xe_plugin</code>, <code>XE_PLUGIN_</code>, <code>Xe_Plugin</code>, <code>xePlugin</code>, and <code>xep-</code> across all <code>.php</code>, <code>.js</code>, <code>.css</code>, <code>.json</code>, <code>.txt</code>, and <code>.stub</code> files.</li>
+<li>Renames the main file from <code>xe-plugin.php</code> to your new slug (e.g., <code>my-plugin.php</code>).</li>
+<li>Updates the plugin header metadata (<code>Text Domain</code>, <code>Plugin Name</code>, etc.).</li>
+<li>Runs <code>composer dump-autoload</code> to re-index all renamed namespaces.</li>
 </ol>
-<h2 id="build">Build</h2>
-<p>Open <code>config.json</code> inside <code>node_scripts</code> folder and change <code>build</code> path to your desired location.</p>
-<pre><code>"build": "E:/Projects/Xe Plugin",
-</code></pre>
-<p>Once you have completed your plugin, run the below command to generate a clean copy. <code>.pot</code> file will also be generated inside languages folder.</p>
-<pre><code>npm run build
-</code></pre>
-<p><br></p>
+<hr />
+<h2 id="step-5-activate-in-wordpress">Step 5: Activate in WordPress</h2>
+<ol>
+<li>Log in to your WordPress Admin Dashboard.</li>
+<li>Navigate to <strong>Plugins</strong> &gt; <strong>Installed Plugins</strong>.</li>
+<li>Locate your newly named plugin and click <strong>Activate</strong>.</li>
+</ol>
+<hr />
+<h2 id="step-6-available-cli-commands">Step 6: Available CLI Commands</h2>
+<p>After initializing your plugin, you can use the built-in CLI to scaffold features rapidly:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Display help and list all commands</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>php<span class="w"> </span>xe
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Generate a new CRUD module controller</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>php<span class="w"> </span>xe<span class="w"> </span>make:module<span class="w"> </span>Ticket
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># Generate a custom database sequence table</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>php<span class="w"> </span>xe<span class="w"> </span>make:sequence<span class="w"> </span>Invoice
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1"># Generate a new Elementor widget</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>php<span class="w"> </span>xe<span class="w"> </span>make:elementor<span class="w"> </span>PricingTable
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="c1"># Compile a clean production release with POT translation file</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>php<span class="w"> </span>xe<span class="w"> </span>build
+</code></pre></div>
 
 
 
@@ -866,10 +1672,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
